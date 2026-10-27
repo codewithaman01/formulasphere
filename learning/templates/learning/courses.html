@@ -1,0 +1,7 @@
+{% extends "web/base.html" %}{% block title %}Courses · FormulaSphere{% endblock %}{% block content %}
+<div class="wrap"><section>{% include "learning/_top.html" %}<h1 style="font-size:2rem">Courses</h1>
+<p class="lead">Structured courses that follow the topics and formulas on this site.</p>{% include "learning/_filters.html" %}
+{% if courses %}<div class="grid">{% for c in courses %}<a class="card" href="{% url 'learning:course' c.slug %}"><h3>{{ c.title }}</h3>
+<p class="muted">{{ c.summary }}</p><div><span class="tag">{{ c.subject.name }}</span><span class="tag">{{ c.grade_label }}</span><span class="tag">{{ c.get_mode_display }}</span>
+{% if c.duration_weeks %}<span class="tag">{{ c.duration_weeks }} weeks</span>{% endif %}<span class="tag {% if c.is_free %}ok{% endif %}">{% if c.is_free %}Free{% else %}{{ currency }}{{ c.price|floatformat:"-2" }}{% endif %}</span></div></a>{% endfor %}</div>
+{% else %}<div class="empty">No courses match yet. Check back soon.</div>{% endif %}</section></div>{% endblock %}

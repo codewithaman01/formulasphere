@@ -1,0 +1,32 @@
+{% extends "panel/base.html" %}{% block title %}{% if role %}Edit role{% else %}Add role{% endif %}{% endblock %}{% block content %}
+<style>
+.pgroup{margin:0 0 18px}.pgroup h3{margin:0 0 6px;font-size:13px;letter-spacing:.03em;color:#9a4a00;display:flex;gap:10px;align-items:center}
+.pgroup h3 button{font-size:12px;font-weight:400;border:0;background:none;color:var(--mute);cursor:pointer;text-decoration:underline;padding:0}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:6px 18px}
+.pgrid label{display:flex;gap:8px;align-items:flex-start;font-weight:400;font-size:14px}.pgrid input{margin-top:3px}
+.pgrid label.off{opacity:.5}
+</style>
+<div class="top"><h1>{% if role %}Edit role “{{ role.name }}”{% else %}Add role{% endif %}</h1><a href="{% url 'panel:roles' %}">‹ Back</a></div>
+<form method="post" style="max-width:980px">{% csrf_token %}
+<div class="card" style="margin-bottom:16px">
+<p class="muted" style="margin-top:0">A role is a named set of permissions, for example “Subject reviewer” or “Content manager”. Give it to as many people as you like under Staff access.</p>
+{% if form.non_field_errors %}<div class="msg error">{{ form.non_field_errors }}</div>{% endif %}
+{% for field in form %}{% if field.name == 'name' or field.name == 'description' %}{% include "panel/_field.html" %}{% endif %}{% endfor %}
+<h2 style="margin:18px 0 12px">What this role may do</h2>
+{% for e in form.access.errors %}<div class="err">{{ e }}</div>{% endfor %}
+{% for group,items in groups %}<div class="pgroup"><h3>{{ group }} <button type="button" data-all>select all</button></h3><div class="pgrid">
+{% for c in items %}<label class="{% if c.locked %}off{% endif %}" title="{{ c.help }}"><input type="checkbox" name="access" value="{{ c.code }}" {% if c.checked %}checked{% endif %} {% if c.locked %}disabled title="You do not hold this permission yourself"{% endif %}>
+<span>{{ c.label }}{% if c.scoped %} <span class="tag">per subject</span>{% endif %}</span></label>{% endfor %}</div></div>{% endfor %}
+<h2 style="margin:18px 0 12px">Grades this role can see</h2>
+<p class="muted" style="margin-top:0">Which grades' formulas people with this role can open on the site. The list comes from Grades, so new grades appear here by themselves.</p>
+{% for field in form %}{% if field.name == 'all_grades' or field.name == 'grades' %}{% include "panel/_field.html" %}{% endif %}{% endfor %}
+<h2 style="margin:18px 0 12px">Other settings</h2>
+{% for field in form %}{% if field.name != 'name' and field.name != 'description' and field.name != 'access' and field.name != 'all_grades' and field.name != 'grades' %}{% include "panel/_field.html" %}{% endif %}{% endfor %}
+</div>
+<button class="btn">Save role</button> <a class="btn sec" href="{% url 'panel:roles' %}">Cancel</a></form>{% endblock %}
+{% block script %}<script>
+document.querySelectorAll("[data-all]").forEach(function(b){b.addEventListener("click",function(){
+  var boxes=b.closest(".pgroup").querySelectorAll("input[type=checkbox]:not(:disabled)");
+  var all=Array.prototype.every.call(boxes,function(x){return x.checked});
+  boxes.forEach(function(x){x.checked=!all});b.textContent=all?"select all":"clear all"})});
+</script>{% endblock %}

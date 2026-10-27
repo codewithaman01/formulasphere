@@ -1,0 +1,25 @@
+FormulaSphere (MongoDB Atlas) - no .env file needed
+
+1. Open config\settings.py, find the line  MONGODB_URI = env( ... )  and paste your Atlas connection string
+   (Atlas -> Connect -> Drivers). Put your real password in it (URL-encode @ : / ? if it has them).
+
+2. In PowerShell, from this folder (the one with manage.py), run one at a time:
+
+     python -m venv .venv
+     .venv\Scripts\activate
+     pip install -r requirements.txt
+     python manage.py migrate
+     python manage.py createsuperuser
+     python manage.py seed_content
+     python manage.py seed_account_types
+     python manage.py seed_roles
+     python manage.py seed_learning
+     python manage.py seed_plans
+     python manage.py runserver
+
+3. Open http://127.0.0.1:8000/   (staff panel: /panel/ , Django admin: /admin/)
+
+Next time only:  .venv\Scripts\activate   then   python manage.py runserver
+
+Do not upload config\settings.py to GitHub while it contains your password.
+Atlas must allow your IP: Atlas -> Network Access.

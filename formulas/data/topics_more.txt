@@ -1,0 +1,89 @@
+# Subject|Topic|formula titles separated by ;   (same topic name in the same subject adds to the existing topic)
+M|Basic arithmetic and averages|Average of numbers;Percentage;Distance, speed and time;Profit percentage;Loss percentage;Discount
+M|Mensuration|Perimeter of a square;Area of a square;Perimeter of a triangle;Volume of a cube;Perimeter of a regular polygon;Area of a parallelogram;Area of a rhombus;Surface area of a cuboid;Surface area of a cube;Curved surface area of a cylinder;Total surface area of a cylinder;Heron's formula;Area of an equilateral triangle;Slant height of a cone;Curved surface area of a cone;Total surface area of a cone;Curved surface area of a hemisphere;Volume of a hemisphere;Length of an arc;Area of a sector;Volume of a frustum of a cone
+M|Geometry|Angle sum of a triangle;Sum of interior angles of a polygon;Exterior angle of a regular polygon
+M|Algebra|Product of powers;Quotient of powers;Power of a power;Cube of a sum;Sum of cubes;Difference of cubes;Sum of roots of a quadratic;Product of roots of a quadratic;AM-GM inequality
+M|Trigonometry|Sine of an angle;Cosine of an angle;Secant identity;Cosecant identity;Sine of a sum;Cosine of a sum;Tangent of a sum;Double angle sine;Double angle cosine;Degree and radian measure;Arc length in radians;Standard limit of sine
+M|Coordinate geometry|Section formula;Area of a triangle from coordinates;Equation of a circle;Equation of a parabola;Equation of an ellipse;Equation of a hyperbola;Distance from a point to a line;Angle between two lines;Distance formula in three dimensions;Equation of a plane
+M|Sets, sequences and series|Number of subsets;Union of two sets;Sum of the first n natural numbers;Sum of squares of the first n natural numbers;Sum of cubes of the first n natural numbers;Sum to infinity of a GP
+M|Permutations and combinations|Permutations with repeated objects;Circular permutations;Pascal's rule
+M|Complex numbers and series|Modulus of a complex number;de Moivre's theorem;Maclaurin series of the exponential;Geometric series;Ratio test
+M|Differential calculus|Derivative from first principles;Derivative of sine;Derivative of cosine;Derivative of tangent;Derivative of the exponential function;Derivative of the natural logarithm;Derivative of a general exponential;Equation of a tangent;Mean value theorem;L'Hopital's rule
+M|Integral calculus|Integral of one over x;Integral of the exponential function;Integral of sine;Integral of cosine;Integral of secant squared;Area under a curve;Integral giving arctangent;Integral giving arcsine;Integration by substitution;Volume of revolution by discs;Arc length of a curve;Gamma function
+M|Differential equations|Integrating factor method;Characteristic equation of a linear ODE;Laplace transform
+M|Vectors and matrices|Angle between two vectors;Direction cosines;Scalar triple product;Inverse of a 2 by 2 matrix;Inverse using the adjoint
+M|Linear algebra|Eigenvalue equation;Characteristic equation;Rank-nullity theorem;Cauchy-Schwarz inequality;Triangle inequality;Cayley-Hamilton theorem;Singular value decomposition
+M|Multivariable calculus|Gradient;Green's theorem;Stokes' theorem;Divergence theorem;Area element in polar coordinates
+M|Numerical methods|Newton-Raphson method;Trapezoidal rule;Simpson's rule;Stirling's approximation
+M|Number theory|Fermat's little theorem;Euclidean algorithm;Chinese remainder theorem;Euler product for the zeta function;Prime number theorem;Riemann zeta function
+M|Complex analysis|Cauchy-Riemann equations;Cauchy's integral formula;Residue theorem;Hyperbolic identity
+M|Fourier analysis and variational methods|Fourier series;Fourier transform;Euler-Lagrange equation
+M|Geometry and topology|Gauss-Bonnet theorem;Euler characteristic of a polyhedron;Generalised Stokes' theorem
+M|Probability|Complement of an event;Total probability
+M|Statistics for school|Median of grouped data;Mode of grouped data;Mean deviation about the mean
+P|Motion|Average speed;Velocity;Free fall velocity;Free fall distance;Range of a projectile;Time of flight of a projectile;Maximum height of a projectile;Centripetal acceleration
+P|Force and laws of motion|Newton's second law;Newton's third law;Conservation of momentum;Friction force;Impulse-momentum theorem
+P|Work, energy and power|Work-energy theorem;Spring potential energy;Efficiency of a heat engine
+P|Rotational motion|Angular momentum;Rotational kinetic energy;Parallel axis theorem;Reduced mass
+P|Gravitation|Gravitational field strength;Orbital velocity
+P|Fluids and pressure|Archimedes' principle;Stokes' law;Equation of continuity
+P|Oscillations and waves|Frequency and time period;Simple harmonic motion;Angular frequency;Period of a spring-mass system;Beat frequency;Doppler effect for sound;Wave equation
+P|Heat and thermodynamics|Latent heat;Linear thermal expansion;Pressure of an ideal gas;Root-mean-square speed;Equipartition theorem;Boltzmann entropy;Boltzmann distribution
+P|Current electricity|Electric charge and current;Potential difference;Resistivity;Electrical energy;Kirchhoff's current law;Kirchhoff's voltage law;EMF of a cell;Drift velocity and current
+P|Electrostatics|Capacitors in series;Capacitors in parallel;Energy stored in a capacitor;Electric potential of a point charge;Potential energy of two charges
+P|Electromagnetism|Magnetic force on a moving charge;Force on a current-carrying wire;Magnetic field of a long straight wire;Magnetic field at the centre of a loop;Ampere's circuital law;Self-induced emf;Energy stored in an inductor;RMS value of alternating current;Impedance of a series LCR circuit;Resonant frequency of an LC circuit;Transformer equation
+P|Maxwell's equations|Gauss's law for magnetism;Faraday's law in differential form;Ampere-Maxwell law;Poynting vector;Speed of light from constants
+P|Optics|Mirror formula;Magnification of a mirror;Refractive index;Power of a lens;Magnification of a lens;Lens maker's formula;Critical angle;Fringe width in Young's experiment;Single-slit minima;Brewster's law;Bragg's law
+P|Modern physics|Photoelectric equation;Energy levels of hydrogen;Rydberg formula;Radioactive decay law;Half-life;Nuclear binding energy;Compton scattering;Planck's law
+P|Quantum mechanics|Time-independent Schrodinger equation;Particle in a box;Quantum harmonic oscillator;Position-momentum commutator;Fermi's golden rule;Path integral
+P|Classical mechanics advanced|Lagrangian;Euler-Lagrange equation of motion;Hamilton's equations
+P|Special and general relativity|Relativistic energy-momentum relation;Time dilation;Length contraction;Einstein field equations;Hawking temperature;Bekenstein-Hawking entropy
+P|Statistical physics|Partition function;Fermi-Dirac distribution;Bose-Einstein distribution
+P|Relativistic quantum theory|Klein-Gordon equation;Dirac equation
+C|Mole concept|Number of particles;Mass percentage;Molar volume of a gas at STP;Law of conservation of mass;Mole fraction;Molality
+C|Gas laws|Dalton's law of partial pressures;Graham's law of effusion;Avogadro's law;van der Waals equation
+C|Solutions|Raoult's law;Relative lowering of vapour pressure;Elevation of boiling point;Depression of freezing point;Osmotic pressure;van't Hoff factor
+C|Acids, bases and equilibrium|Relation between Kp and Kc;Ionic product of water;pOH;Degree of dissociation;Gibbs energy and equilibrium;Van't Hoff equation
+C|Thermodynamics and kinetics|Enthalpy change;Hess's law;Enthalpy from bond energies;Entropy change;Clausius-Clapeyron equation;Gibbs-Helmholtz equation;Rate law;First-order integrated rate law;Half-life of a first-order reaction;Eyring equation
+C|Electrochemistry|Faraday's first law of electrolysis;Cell potential;Gibbs energy and cell potential;Molar conductivity;Debye-Huckel limiting law
+C|Atomic structure and bonding|Bohr radius of orbit;Formal charge;Planck-Einstein relation;Energy of a particle in a box;Rydberg energy of hydrogen-like atoms
+C|Solid state and surfaces|Packing efficiency;Density of a unit cell;Langmuir isotherm
+C|Computational chemistry|Hartree-Fock energy;Marcus theory rate
+S|Descriptive statistics|Range;Median of ungrouped data;Mean of grouped data;Sample variance;Coefficient of variation;Interquartile range
+S|Probability|Addition rule of probability;Multiplication rule for independent events;Law of large numbers
+S|Probability distributions|Normal distribution density;Geometric distribution;Exponential distribution density;Uniform distribution mean and variance;Mean and variance of a binomial;Expected value of a discrete variable;Variance of a discrete variable
+S|Random variables and bounds|Covariance;Variance of a sum;Law of total expectation;Chebyshev's inequality;Markov's inequality;Central limit theorem
+S|Inference and regression|Confidence interval for a mean;t statistic;Chi-square statistic;Two-sample z statistic;Coefficient of determination;Least-squares intercept;Spearman rank correlation;ANOVA F statistic
+S|Advanced estimation|Maximum likelihood estimator;Normal equations;Fisher information;Cramer-Rao bound;Posterior distribution;Kullback-Leibler divergence
+CS|Number systems and data|Binary to decimal;Number of values in n bits;File size;Maximum unsigned value;Two's complement range
+CS|Algorithms and complexity|Sum of an arithmetic series of operations;Number of binary search steps;Binary search complexity;Master theorem;Merge sort recurrence;Fibonacci recurrence;Binet's formula;Catalan number
+CS|Graphs and trees|Number of edges in a complete graph;Handshake lemma;Nodes in a full binary tree;Number of subsets of a set
+CS|Networks and coding|Bit rate and transfer time;Hamming distance bound;Hamming code parity bits;Shannon-Hartley theorem;Nyquist sampling theorem;Propagation delay;Transmission delay
+CS|Information theory|Huffman code length bound;Kolmogorov complexity bound;Mutual information;Channel capacity
+CS|Systems and performance|Amdahl's law;CPU execution time;Little's law;Hash table load factor;Expected probes in open addressing
+CS|Cryptography|RSA encryption;RSA decryption
+CS|Probabilistic data structures|Probability of a hash collision;Bloom filter false-positive rate;PAC sample complexity
+DS|Evaluation metrics|Accuracy;Specificity;Mean absolute error;Root mean squared error;Adjusted R squared
+DS|Regression and classification|Linear regression model;Normal equation;Logistic regression;Softmax function;Binary cross-entropy;Naive Bayes classifier
+DS|Optimisation and loss|ReLU activation;L2 regularisation;L1 regularisation;Stochastic gradient descent with momentum;Adam update;Backpropagation chain rule;Batch normalisation
+DS|Clustering and distance|Euclidean distance;Manhattan distance;k-means objective;Min-max scaling
+DS|Trees and features|Gini impurity;Information gain;Principal component variance;TF-IDF;Bias-variance decomposition
+DS|Deep learning and kernels|Scaled dot-product attention;KL divergence for a VAE;Evidence lower bound;Kernel function (RBF);Support vector machine margin
+E|Electric circuits|Resistance of a wire;RC time constant;Voltage divider;Capacitor charging;Capacitive reactance;Inductive reactance;Real power in AC circuits;Three-phase power
+E|Electronics|Decibel (power);Decibel (voltage);Op-amp inverting gain;Op-amp non-inverting gain;Transfer function of an RC low-pass filter;Cut-off frequency
+E|Control and signals|PID controller;Second-order system damping ratio;Natural frequency;Convolution;Laplace transform of an exponential;Discrete Fourier transform;Kalman gain;Linear quadratic cost
+E|Mechanics of materials|Shear stress;Torsion formula;Power transmitted by a shaft;Moment of inertia of a rectangle;Euler buckling load;Deflection of a cantilever;Deflection of a simply supported beam;Factor of safety
+E|Heat transfer|Fourier's law of conduction;Newton's law of cooling;Convective heat transfer;Thermal resistance of a wall
+E|Fluid mechanics|Darcy-Weisbach equation;Hagen-Poiseuille equation
+E|Thermodynamics|Thermal efficiency of an engine;Coefficient of performance of a refrigerator;Ideal Rankine efficiency;Beer-Lambert absorbance for sensors
+B|Cell biology and physiology|Magnification;Cardiac output;Percentage change in mass;Surface area to volume ratio of a cube;Nernst potential of an ion;Goldman equation;Fick's law of diffusion;Water potential
+B|Metabolism|Respiratory quotient;Photosynthesis equation;Cellular respiration equation;Rate of reaction;Lineweaver-Burk equation;Hill equation
+B|Genetics|Allele frequency;Chi-square for genetics;Recombination frequency;Broad-sense heritability;Breeder's equation;Selection coefficient;Wright's fixation index;Price equation;Hamilton's rule
+B|Ecology|Birth rate;Population growth rate;Simpson's diversity index;Shannon diversity index;Doubling time;Generation time;Number of cells after n divisions;Allometric scaling;Lotka-Volterra prey equation
+Ec|Microeconomics|Total cost;Average cost;Marginal cost;Total revenue;Marginal revenue;Average product of labour;Profit-maximising rule;Consumer surplus;Lerner index;Herfindahl-Hirschman index;Expected utility;Slutsky equation
+Ec|Elasticity|Income elasticity of demand;Cross elasticity of demand;Price elasticity of supply
+Ec|Macroeconomics|Consumption function;Marginal propensity to consume;Investment multiplier;Inflation rate;Real GDP;Unemployment rate;Money multiplier;Quantity theory of money;Fiscal deficit;Arithmetic mean of index numbers;Cobb-Douglas production function;Solow growth equation;Gini coefficient;Euler equation for consumption
+Ec|Finance|Future value;Net present value;Internal rate of return;Rule of 72;Fisher equation;Capital asset pricing model;Black-Scholes call price;Bellman equation;Nash equilibrium condition
+A|Orbits and stars|Kepler's second law;Orbital speed;Synodic period;Orbital energy;Vis-viva equation;Orbital eccentricity;Roche limit;Hill sphere radius;Eddington luminosity;Mass-luminosity relation;Equilibrium temperature of a planet;Chandrasekhar mass;Tolman-Oppenheimer-Volkoff equation;Jeans length
+A|Distances and light|Light-year;Small-angle formula;Parallax distance;Flux and luminosity;Apparent magnitude difference;Angular resolution of a telescope;Light-gathering power
+A|Cosmology|Doppler redshift;Radial velocity from redshift;Friedmann equation;Critical density;Hubble parameter and redshift;Comoving distance

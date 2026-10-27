@@ -1,0 +1,39 @@
+# Economics
+Ec|S11|Total cost|TC=FC+VC|Fixed plus variable costs.
+Ec|S11|Average cost|AC=\frac{TC}{Q}|Cost per unit.
+Ec|S11|Marginal cost|MC=\frac{\Delta TC}{\Delta Q}|Extra cost of one more unit.
+Ec|S11|Total revenue|TR=P\times Q|Price times quantity sold.
+Ec|S11|Marginal revenue|MR=\frac{\Delta TR}{\Delta Q}|Extra revenue from one more unit.
+Ec|S11|Average product of labour|AP=\frac{TP}{L}|Output per worker.
+Ec|S11|Profit-maximising rule|MR=MC|A firm produces until marginal revenue equals marginal cost.
+Ec|S11|Arithmetic mean of index numbers|\text{Index}=\frac{\text{current value}}{\text{base value}}\times100|Prices or quantities relative to a base year.
+Ec|S12|Income elasticity of demand|E_Y=\frac{\%\Delta Q_d}{\%\Delta Y}|Response of demand to income.
+Ec|S12|Cross elasticity of demand|E_{xy}=\frac{\%\Delta Q_x}{\%\Delta P_y}|Response of demand to another good's price.
+Ec|S12|Price elasticity of supply|E_s=\frac{\%\Delta Q_s}{\%\Delta P}|Response of supply to price.
+Ec|S12|Consumption function|C=a+bY|Consumption from income.|a~Autonomous consumption;b~Marginal propensity to consume
+Ec|S12|Marginal propensity to consume|MPC=\frac{\Delta C}{\Delta Y}|Extra consumption per extra income.
+Ec|S12|Investment multiplier|k=\frac{1}{1-MPC}|Total income change per unit of new spending.
+Ec|S12|Inflation rate|\pi=\frac{CPI_t-CPI_{t-1}}{CPI_{t-1}}\times100|Percentage rise in the price level.
+Ec|S12|Real GDP|\text{Real GDP}=\frac{\text{Nominal GDP}}{\text{GDP deflator}}\times100|GDP adjusted for price changes.
+Ec|S12|Unemployment rate|u=\frac{\text{unemployed}}{\text{labour force}}\times100|Share of the labour force without work.
+Ec|S12|Money multiplier|m=\frac{1}{r}|Deposits created per unit of reserves, r the reserve ratio.
+Ec|S12|Quantity theory of money|MV=PY|Money supply times velocity equals nominal output.
+Ec|S12|Fiscal deficit|\text{Deficit}=G-T|Government spending minus tax revenue.
+Ec|U|Consumer surplus|CS=\int_0^{Q^*}D(q)\,dq-P^*Q^*|Value to buyers above what they pay.
+Ec|U|Cobb-Douglas production function|Y=AK^\alpha L^{1-\alpha}|Output from capital and labour.
+Ec|U|Future value|FV=PV(1+r)^n|Value of money after n periods of interest.
+Ec|U|Net present value|NPV=\sum_{t=0}^{n}\frac{C_t}{(1+r)^t}|Today's value of a stream of cash flows.
+Ec|U|Internal rate of return|\sum_{t=0}^{n}\frac{C_t}{(1+IRR)^t}=0|Discount rate that makes NPV zero.
+Ec|U|Rule of 72|t\approx\frac{72}{r\%}|Years for money to double.
+Ec|U|Fisher equation|r\approx i-\pi|Real rate is nominal rate minus inflation.
+Ec|U|Herfindahl-Hirschman index|HHI=\sum_is_i^2|Market concentration from squared shares.
+Ec|U|Lerner index|L=\frac{P-MC}{P}|Market power of a firm.
+Ec|U|Solow growth equation|\dot k=sf(k)-(n+\delta)k|Capital per worker over time.
+Ec|U|Gini coefficient|G=\frac{A}{A+B}|Inequality from the Lorenz curve areas.
+Ec|U|Expected utility|EU=\sum_ip_iu(x_i)|Choice under uncertainty.
+Ec|U|Slutsky equation|\frac{\partial x}{\partial p}=\left.\frac{\partial x^h}{\partial p}\right.-x\frac{\partial x}{\partial m}|Splits a price effect into substitution and income effects.
+Ec|U|Capital asset pricing model|E(R_i)=R_f+\beta_i\left(E(R_m)-R_f\right)|Expected return from market risk.
+Ec|U|Black-Scholes call price|C=S_0N(d_1)-Ke^{-rT}N(d_2)|Price of a European call option.
+Ec|P|Nash equilibrium condition|u_i(s_i^*,s_{-i}^*)\ge u_i(s_i,s_{-i}^*)|No player gains by changing strategy alone.
+Ec|P|Euler equation for consumption|u'(c_t)=\beta(1+r)\,E_t\,u'(c_{t+1})|Optimal consumption over time.
+Ec|R|Bellman equation|V(s)=\max_a\left\{u(s,a)+\beta E\,V(s')\right\}|Recursive form of dynamic optimisation.

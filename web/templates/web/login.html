@@ -1,0 +1,8 @@
+{% extends "web/base.html" %}{% block title %}Sign in · FormulaSphere{% endblock %}{% block content %}
+<div class="wrap"><section style="max-width:420px"><h1 style="font-size:2rem">Sign in</h1>
+{% if error %}<div role="alert" class="card" style="border-color:var(--err);color:var(--err)">{{ error }}</div>{% endif %}
+<form method="post" style="display:grid;gap:14px;margin-top:16px">{% csrf_token %}<input type="hidden" name="next" value="{{ next }}">
+<label>Username<br><input name="username" required style="width:100%;padding:10px"></label>
+<label>Password<br><input name="password" type="password" required style="width:100%;padding:10px"></label>
+<button class="btn">Sign in</button></form>
+<p class="muted">New here? <a href="{% url 'register' %}">Create an account</a></p></section></div>{% endblock %}

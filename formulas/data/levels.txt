@@ -1,0 +1,5 @@
+# slug|name|order|description
+school|School|0|Classes 1 to 12
+undergraduate|Undergraduate|1|College and university first degree
+postgraduate|Postgraduate|2|Master's level study
+research|Research and PhD|3|Doctoral and professional research

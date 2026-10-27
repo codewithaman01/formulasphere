@@ -1,0 +1,11 @@
+{% extends "panel/base.html" %}{% block title %}{{ title }}{% endblock %}{% block content %}
+<div class="top"><h1>{{ title }}</h1></div>
+<form method="post" enctype="multipart/form-data" class="card" style="max-width:720px">{% csrf_token %}
+{% if form.non_field_errors %}<div class="msg error">{{ form.non_field_errors }}</div>{% endif %}
+<p>The <strong>logo</strong> appears in the site header next to the name. The <strong>icon</strong> appears in the browser tab; if you leave it empty, the logo is used.</p>
+<p style="display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+{% if obj.logo_id %}<span>Current logo<br><img src="{{ obj.logo_url }}" alt="Current logo" style="height:56px;margin-top:6px"></span>{% endif %}
+{% if obj.favicon_id %}<span>Current icon<br><img src="{{ obj.favicon_url }}" alt="Current icon" style="height:32px;margin-top:6px"></span>{% endif %}
+{% if not obj.logo_id and not obj.favicon_id %}<span class="muted">Nothing uploaded yet, so the built-in logo is used.</span>{% endif %}</p>
+{% for field in form %}{% include "panel/_field.html" %}{% endfor %}
+{% if can_change %}<button class="btn">Save</button>{% endif %}</form>{% endblock %}

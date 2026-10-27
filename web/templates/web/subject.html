@@ -1,0 +1,5 @@
+{% extends "web/base.html" %}{% block title %}{{ subject.name }} · FormulaSphere{% endblock %}{% block content %}
+<div class="wrap"><section><h1 style="font-size:2rem">{{ subject.name }}</h1><p class="lead">{{ subject.description }}</p>
+<h2>Topics</h2>{% if topics %}<div class="grid">{% for t in topics %}<a class="card" href="{% url 'topic' subject.slug t.slug %}"><h3>{{ t.name }}</h3>
+<p class="muted">{{ t.nf }} formula{{ t.nf|pluralize }}{% if t.ns %} · {{ t.ns }} code example{{ t.ns|pluralize }}{% endif %}</p></a>{% endfor %}</div>
+{% else %}<div class="empty">No topics yet.</div>{% endif %}</section></div>{% endblock %}

@@ -1,0 +1,208 @@
+# Explanations for formulas. Format:
+#   @@ formula|Exact formula title
+#   explanation paragraphs (blank line = new paragraph)
+#   ## example|Title|Problem|Solution (use // between steps)|Result|Units
+# Loading only fills an explanation that is still empty, and adds an example only if the formula has none with that title.
+@@ formula|Percentage
+A percentage is a fraction written out of 100. To find it, divide the part by the whole and multiply by 100. Read "per cent" as "per hundred".
+
+Common mistake: dividing the whole by the part. The part always goes on top.
+## example|Marks as a percentage|A student scores 36 marks out of 45. What percentage is that?|p = 36/45 x 100 // 36/45 = 0.8 // 0.8 x 100 = 80|80|%
+@@ formula|Area of a circle
+The area of a circle grows with the square of its radius, so doubling the radius makes the area four times as large. The number pi (about 3.14159) is the same for every circle, because it is the ratio of circumference to diameter.
+
+Use the radius, not the diameter. If you are given the diameter, halve it first.
+## example|Area of a round table|A round table has a radius of 0.7 m. Find its area.|A = π r² // A = 3.1416 x 0.7 x 0.7 // A = 3.1416 x 0.49 = 1.539|1.54|m²
+@@ formula|Pythagorean theorem
+In a right triangle the square on the longest side (the hypotenuse) equals the sum of the squares on the other two sides. It lets you find a missing side when two sides are known, and it is also used to test whether a triangle has a right angle.
+
+The hypotenuse is always the side opposite the right angle, and it is always the longest.
+## example|Length of a ladder|A ladder reaches 4 m up a wall and its foot is 3 m from the wall. How long is it?|c² = 3² + 4² = 9 + 16 = 25 // c = square root of 25 = 5|5|m
+@@ formula|Simple interest
+Simple interest is charged only on the original amount (the principal), so it grows by the same amount every year. The formula multiplies the principal by the rate per cent per year and by the number of years, then divides by 100.
+
+Compound interest differs because interest is also earned on earlier interest.
+## example|Interest on a deposit|Find the simple interest on 5000 rupees at 8% per year for 3 years.|I = P R T / 100 // I = 5000 x 8 x 3 / 100 // I = 120000 / 100 = 1200|1200|rupees
+@@ formula|Quadratic formula
+Every equation of the form ax² + bx + c = 0 can be solved by substituting its coefficients into this formula. The plus-or-minus sign gives the two roots. The part under the root, b² - 4ac, is the discriminant: if it is positive there are two real roots, if zero one repeated root, and if negative no real roots.
+
+Check that the equation equals zero before reading off a, b and c, and keep their signs.
+## example|Solve a quadratic|Solve x² - 5x + 6 = 0.|a = 1, b = -5, c = 6 // b² - 4ac = 25 - 24 = 1 // x = (5 plus or minus 1) / 2 // x = 3 or x = 2|x = 2 or 3|
+@@ formula|nth term of an AP
+In an arithmetic progression each term is the previous one plus a fixed common difference d. To reach the nth term you start at the first term a and add d exactly n - 1 times, which is why the formula has n - 1 and not n.
+## example|Find the 20th term|Find the 20th term of the AP 3, 7, 11, 15, ...|a = 3, d = 4, n = 20 // a_n = a + (n - 1)d // a_20 = 3 + 19 x 4 = 3 + 76 = 79|79|
+@@ formula|Sum of an AP
+The sum of the first n terms of an AP is the number of terms times the average of the first and last term. Carl Friedrich Gauss is said to have used this idea as a boy to add the numbers 1 to 100 quickly.
+## example|Sum of the first 10 odd numbers|Find 1 + 3 + 5 + ... + 19.|a = 1, d = 2, n = 10 // S = n/2 x (2a + (n - 1)d) // S = 5 x (2 + 18) = 5 x 20 = 100|100|
+@@ formula|Compound interest
+With compound interest the interest is added to the amount and then earns interest itself, so growth speeds up over time. The formula gives the final amount A, not just the interest. Subtract the principal to find the interest earned.
+
+Make sure the rate and the time use the same period: monthly compounding needs a monthly rate and a number of months.
+## example|Yearly compounding|What is 10000 rupees worth after 2 years at 10% compounded yearly?|A = P (1 + r/n)^(nt) // A = 10000 x (1 + 0.10)² // A = 10000 x 1.21 = 12100|12100|rupees
+@@ formula|Distance formula
+The distance between two points is the hypotenuse of a right triangle whose legs are the differences in x and in y, so the formula is the Pythagorean theorem written with coordinates. The order of the points does not matter because the differences are squared.
+## example|Distance between two points|Find the distance between (1, 2) and (4, 6).|dx = 3, dy = 4 // d = square root of (9 + 16) // d = square root of 25 = 5|5|units
+@@ formula|Combinations
+A combination counts the ways to choose r items from n when the order does not matter. It equals the permutation count divided by r!, because each group of r items can be arranged in r! orders that all count as one choice.
+## example|Choosing a team|In how many ways can a team of 3 be chosen from 5 students?|C(5,3) = 5! / (3! x 2!) // = (5 x 4) / 2 = 10|10|ways
+@@ formula|Power rule of differentiation
+To differentiate x to the power n, bring the power down in front and reduce the power by one. It works for any real n, including fractions and negatives, and it is the rule you will use most in calculus.
+## example|Differentiate a polynomial|Differentiate y = 4x³ + 2x.|d/dx (4x³) = 12x² // d/dx (2x) = 2 // dy/dx = 12x² + 2|12x² + 2|
+@@ formula|Chain rule
+Use the chain rule when a function sits inside another function. Differentiate the outer function, keep the inside unchanged, then multiply by the derivative of the inside. It is the rule behind many other derivative formulas.
+## example|Differentiate a composite function|Differentiate y = (3x + 1)^5.|Outer: 5(3x + 1)^4 // Inner derivative: 3 // dy/dx = 15(3x + 1)^4|15(3x + 1)^4|
+@@ formula|Integration by parts
+This rule turns the integral of a product into a simpler integral. Choose u to be the part that gets simpler when differentiated and dv the part you can integrate easily. A common memory aid for choosing u is: logarithms, then algebraic terms, then trigonometric, then exponential.
+## example|Integrate x times e^x|Find the integral of x e^x dx.|u = x, dv = e^x dx // du = dx, v = e^x // integral = x e^x - integral of e^x dx // = x e^x - e^x + C|x e^x - e^x + C|
+@@ formula|Binomial theorem
+The binomial theorem expands (a + b) to any power without multiplying out. The coefficients come from combinations, or from Pascal's triangle, and the powers of a fall while the powers of b rise.
+## example|Expand a binomial|Expand (x + 2)³.|Coefficients 1, 3, 3, 1 // x³ + 3 x² (2) + 3 x (4) + 8 // = x³ + 6x² + 12x + 8|x³ + 6x² + 12x + 8|
+@@ formula|Eigenvalue equation
+An eigenvector is a direction that a matrix does not turn; it only stretches or shrinks it by the factor lambda, the eigenvalue. Finding them tells you the natural directions and scaling of the transformation, and they are used in stability analysis, vibrations and principal component analysis.
+## example|Eigenvalue of a diagonal matrix|Find the eigenvalues of A = [[2, 0], [0, 5]].|det(A - lambda I) = (2 - lambda)(5 - lambda) = 0 // lambda = 2 or lambda = 5|2 and 5|
+@@ formula|Speed
+Speed tells you how far something moves in each unit of time. To change units, remember that 1 m/s equals 3.6 km/h.
+## example|Speed of a cyclist|A cyclist covers 900 m in 3 minutes. Find her speed in m/s.|d = 900 m, t = 3 x 60 = 180 s // v = d / t = 900 / 180 = 5|5|m/s
+@@ formula|Newton's second law
+The net force on an object equals its mass times its acceleration. The same force gives a light object a large acceleration and a heavy object a small one. Force and acceleration point in the same direction.
+
+Use the net force: add all the forces, with signs, before applying the law.
+## example|Pushing a trolley|A net force of 30 N acts on a 6 kg trolley. Find its acceleration.|a = F / m // a = 30 / 6 = 5|5|m/s²
+@@ formula|Kinetic energy
+Kinetic energy is the energy of motion. It depends on the square of the speed, so doubling the speed makes the energy four times as large, which is why high-speed crashes are so much more dangerous.
+## example|Energy of a moving car|A 1000 kg car moves at 20 m/s. Find its kinetic energy.|KE = 1/2 m v² // KE = 0.5 x 1000 x 400 // KE = 200000|200000|J
+@@ formula|Ohm's law
+For many conductors, the current is proportional to the voltage across them, and the constant of proportionality is the resistance. A higher resistance allows less current for the same voltage.
+## example|Current through a resistor|A 12 V battery is connected across a 4 ohm resistor. Find the current.|I = V / R // I = 12 / 4 = 3|3|A
+@@ formula|Resistors in series
+When resistors are joined end to end, the same current passes through each and their resistances simply add. The total is always larger than the biggest single resistor.
+## example|Three resistors in series|Resistors of 2, 3 and 5 ohms are in series. Find the total resistance.|R = 2 + 3 + 5 = 10|10|ohm
+@@ formula|Resistors in parallel
+In parallel each resistor has the same voltage, and the currents add, so the reciprocals of the resistances add. The total is always smaller than the smallest single resistor.
+## example|Two resistors in parallel|Find the total resistance of 6 ohm and 3 ohm in parallel.|1/R = 1/6 + 1/3 = 1/6 + 2/6 = 3/6 // R = 6/3 = 2|2|ohm
+@@ formula|Law of universal gravitation
+Every two masses attract each other with a force proportional to the product of their masses and inversely proportional to the square of the distance between their centres. Doubling the distance makes the force four times weaker.
+## example|Force between two masses|Two 10 kg masses are 1 m apart. Find the force (G = 6.67e-11).|F = G m1 m2 / r² // F = 6.67e-11 x 10 x 10 / 1 // F = 6.67e-9|6.67e-9|N
+@@ formula|Snell's law
+When light passes from one medium into another it changes speed and bends. Snell's law relates the angles of incidence and refraction to the refractive indexes. Light bends towards the normal when it enters a denser medium.
+
+Measure both angles from the normal, not from the surface.
+## example|Light entering water|Light hits water (n = 1.33) from air (n = 1) at 30 degrees. Find the angle of refraction.|1 x sin 30 = 1.33 x sin r // sin r = 0.5 / 1.33 = 0.376 // r = 22.1 degrees|22.1|degrees
+@@ formula|Coulomb's law
+The electric force between two point charges is proportional to the product of the charges and falls with the square of their separation. Like charges repel and unlike charges attract.
+## example|Force between charges|Two charges of 2 microcoulomb are 0.3 m apart. Find the force (k = 9e9).|F = k q1 q2 / r² // F = 9e9 x (2e-6)(2e-6) / 0.09 // F = 9e9 x 4e-12 / 0.09 = 0.4|0.4|N
+@@ formula|Hooke's law
+Within its elastic limit, a spring stretches in proportion to the force that pulls it. The constant k tells you how stiff the spring is. Beyond the limit the spring is permanently deformed and the law no longer applies.
+## example|Stretching a spring|A spring of constant 200 N/m is stretched by 0.05 m. Find the force.|F = k x // F = 200 x 0.05 = 10|10|N
+@@ formula|Photoelectric equation
+Light arrives in packets of energy h times frequency. An electron leaves the metal only if one photon carries more than the work function; the extra becomes kinetic energy. Making the light brighter adds photons but does not raise their energy.
+## example|Maximum kinetic energy|Light of photon energy 4.0 eV falls on a metal with work function 2.5 eV. Find the maximum kinetic energy.|K = h f - phi // K = 4.0 - 2.5 = 1.5|1.5|eV
+@@ formula|Time dilation
+A moving clock runs slow as seen by an observer at rest. The factor gamma is close to 1 at everyday speeds, so we never notice, but it grows rapidly as the speed approaches that of light.
+## example|Moving clock|A clock moves at a speed where gamma = 2. A moving person ages 1 year. How much time passes for the observer at rest?|dt = gamma x dt0 // dt = 2 x 1 = 2|2|years
+@@ formula|Radioactive decay law
+The number of undecayed nuclei falls exponentially: the same fraction decays in each equal interval. After one half-life half remain, after two half-lives a quarter, and so on.
+## example|Decay after two half-lives|A sample has 800 undecayed nuclei. How many remain after 2 half-lives?|After 1 half-life: 400 // After 2 half-lives: 200|200|nuclei
+@@ formula|Escape velocity
+Escape velocity is the minimum speed needed to leave a planet's gravity without further push. It does not depend on the mass of the escaping object and it is larger for heavier or smaller planets.
+## example|Escape speed from Earth|Find the escape speed for Earth (M = 5.97e24 kg, R = 6.371e6 m, G = 6.67e-11).|v = square root of (2GM/R) // 2GM/R = 2 x 6.67e-11 x 5.97e24 / 6.371e6 = 1.25e8 // v = 11200|11200|m/s
+@@ formula|Moles from mass
+The number of moles is the mass divided by the molar mass. This is the usual first step in chemistry calculations, because reactions work in moles and not in grams.
+## example|Moles of water|How many moles are in 36 g of water (M = 18 g/mol)?|n = m / M // n = 36 / 18 = 2|2|mol
+@@ formula|Ideal gas law
+The ideal gas law connects pressure, volume, amount and temperature of a gas. It works well for gases at low pressure and high temperature. Temperature must always be in kelvin, and the units of R must match the units of P and V.
+## example|Volume of a gas|Find the volume of 1 mol of an ideal gas at 273 K and 101325 Pa (R = 8.314).|V = nRT / P // V = 1 x 8.314 x 273 / 101325 // V = 0.0224 m³ = 22.4 L|22.4|L
+@@ formula|Molarity
+Molarity is the number of moles of solute in each litre of solution. Note that it is per litre of the whole solution, not per litre of solvent.
+## example|Concentration of a solution|4 g of NaOH (M = 40 g/mol) is dissolved to make 500 mL of solution. Find the molarity.|n = 4 / 40 = 0.1 mol // V = 0.5 L // M = 0.1 / 0.5 = 0.2|0.2|mol/L
+@@ formula|pH
+The pH is minus the base-10 logarithm of the hydrogen ion concentration. Because it is a logarithm, a change of one pH unit means the concentration is ten times different. pH 7 is neutral at 25 degrees Celsius, lower is acidic and higher is basic.
+## example|pH of an acid|Find the pH of a solution with [H+] = 0.001 mol/L.|pH = -log10(0.001) // pH = -(-3) = 3|3|
+@@ formula|Gibbs free energy
+The change in Gibbs energy decides whether a process can happen by itself at constant temperature and pressure: it can if the change is negative. It balances the heat change, which favours energy release, against the entropy change, which favours disorder.
+## example|Is a reaction spontaneous?|A reaction has dH = -100 kJ/mol and dS = 0.2 kJ/(mol K). Find dG at 300 K.|dG = dH - T dS // dG = -100 - 300 x 0.2 = -100 - 60 = -160|-160 (spontaneous)|kJ/mol
+@@ formula|Arithmetic mean
+The mean is the sum of all the values divided by how many there are. It is the balance point of the data, but a few extreme values can pull it away from what is typical, in which case the median is a better choice.
+## example|Mean of test scores|Find the mean of 12, 15, 9, 14, 10.|Sum = 12 + 15 + 9 + 14 + 10 = 60 // n = 5 // mean = 60 / 5 = 12|12|
+@@ formula|Standard deviation
+The standard deviation tells you how far values typically lie from the mean, in the same units as the data. A small value means the data are tightly clustered and a large value means they are spread out.
+## example|Spread of a small data set|Find the population standard deviation of 2, 4, 4, 4, 5, 5, 7, 9.|Mean = 40 / 8 = 5 // Squared differences: 9, 1, 1, 1, 0, 0, 4, 16 = 32 // Variance = 32 / 8 = 4 // SD = 2|2|
+@@ formula|Bayes' theorem
+Bayes' theorem reverses a conditional probability: it turns "how likely is the evidence if the cause is true" into "how likely is the cause given the evidence". It shows why a positive result from a very accurate test can still mean a low chance of disease when the disease is rare.
+## example|Medical test|1% of people have a disease. A test is positive for 95% of the sick and for 5% of the healthy. What is the chance a positive person is sick?|P(sick and positive) = 0.01 x 0.95 = 0.0095 // P(healthy and positive) = 0.99 x 0.05 = 0.0495 // P(positive) = 0.059 // P(sick given positive) = 0.0095 / 0.059 = 0.161|0.16 (about 16%)|
+@@ formula|Z-score
+A z-score says how many standard deviations a value is above or below the mean. It lets you compare values from different data sets on the same scale.
+## example|Comparing an exam mark|A mark of 78 comes from a class with mean 70 and standard deviation 4. Find the z-score.|z = (x - mean) / SD // z = (78 - 70) / 4 = 2|2|
+@@ formula|Binomial distribution
+Use this when you repeat n independent trials and each has the same chance p of success. The formula multiplies the number of ways to place k successes by the probability of any one such pattern.
+## example|Coin tosses|Find the probability of exactly 2 heads in 3 fair tosses.|C(3,2) = 3 // P = 3 x 0.5² x 0.5^1 = 3 x 0.125 = 0.375|0.375|
+@@ formula|Pearson correlation
+The correlation coefficient measures how closely two variables follow a straight-line pattern, from -1 (perfect downward line) to +1 (perfect upward line). Zero means no straight-line relation.
+
+Correlation does not show that one variable causes the other.
+## example|Perfect line|For the points (1, 2), (2, 4), (3, 6) find r.|The points lie on y = 2x // They fit a straight line going up exactly // r = 1|1|
+@@ formula|Number of values in n bits
+Each bit has two possible values, and every extra bit doubles the number of combinations. So n bits can represent 2^n different values, which is why 8 bits give 256 values and 10 bits give 1024.
+## example|Colours in 8 bits|How many different values can 8 bits represent?|2^8 = 256|256|values
+@@ formula|Amdahl's law
+Speeding up one part of a program can only help the time that part takes. If a fraction p of the work is sped up by a factor s, the overall speed-up is limited by the part that stays slow.
+## example|Speed-up of half a program|Half of a program (p = 0.5) is made 4 times faster. Find the overall speed-up.|S = 1 / ((1 - p) + p/s) // S = 1 / (0.5 + 0.125) = 1 / 0.625 = 1.6|1.6|times
+@@ formula|Shannon entropy
+Entropy measures the average surprise, or the average number of bits needed to describe an outcome. A fair coin has the highest entropy for two outcomes, while an outcome that is certain has zero entropy.
+## example|Fair coin|Find the entropy of a fair coin.|H = -(0.5 log2 0.5 + 0.5 log2 0.5) // H = -(0.5 x -1 + 0.5 x -1) = 1|1|bit
+@@ formula|Gradient descent update
+Gradient descent improves a model step by step: compute the slope of the loss, then move the parameters a small distance in the opposite direction. The learning rate sets the step size; too large and it overshoots, too small and it is slow.
+## example|One update|A parameter is 3.0, the gradient is 2.0 and the learning rate is 0.1. Find the new value.|theta_new = theta - eta x gradient // = 3.0 - 0.1 x 2.0 = 2.8|2.8|
+@@ formula|Sigmoid function
+The sigmoid squeezes any number into the range 0 to 1, so it can be read as a probability. Large positive inputs give values near 1, large negative inputs give values near 0, and an input of 0 gives exactly 0.5.
+## example|Sigmoid of zero|Find sigma(0).|sigma(0) = 1 / (1 + e^0) = 1 / 2 = 0.5|0.5|
+@@ formula|Mean squared error
+MSE averages the squares of the prediction errors. Squaring makes every error positive and punishes large errors more than small ones. Its square root, RMSE, is in the same units as the target.
+## example|Errors of three predictions|Actual values are 3, 5, 7 and predictions are 2, 5, 9. Find the MSE.|Errors: 1, 0, -2 // Squares: 1, 0, 4 // MSE = 5 / 3 = 1.667|1.67|
+@@ formula|F1 score
+F1 is the harmonic mean of precision and recall, so it is high only when both are high. It is useful when classes are unbalanced and plain accuracy is misleading.
+## example|Balanced precision and recall|Precision is 0.8 and recall is 0.6. Find F1.|F1 = 2PR / (P + R) // = 2 x 0.8 x 0.6 / 1.4 = 0.96 / 1.4 = 0.686|0.69|
+@@ formula|RC time constant
+The product of resistance and capacitance is the time scale of an RC circuit. After one time constant a charging capacitor reaches about 63% of its final voltage, and after five it is practically full.
+## example|Time constant|A circuit has R = 10 kilo-ohm and C = 100 microfarad. Find the time constant.|tau = R C // = 10000 x 100e-6 = 1|1|s
+@@ formula|Euler buckling load
+A slender column under a compressive load fails by sideways bending (buckling) at the Euler load, long before the material itself crushes. The load falls with the square of the effective length, so doubling the length cuts the load to a quarter.
+@@ formula|Hardy-Weinberg equation
+In a large population that mates randomly, with no selection, mutation or migration, genotype frequencies stay the same from generation to generation. With allele frequencies p and q, the three genotypes occur in the proportions p², 2pq and q².
+## example|Carrier frequency|If q² = 0.04 (4% show the recessive trait), find the frequency of carriers 2pq.|q = square root of 0.04 = 0.2 // p = 1 - 0.2 = 0.8 // 2pq = 2 x 0.8 x 0.2 = 0.32|0.32 (32%)|
+@@ formula|Logistic growth
+Population growth slows as the population N approaches the carrying capacity K, because food and space run out. Growth is fastest when N is about half of K, and stops when N equals K.
+## example|Growth rate of a population|r = 0.5 per year, K = 1000 and N = 500. Find dN/dt.|dN/dt = r N (1 - N/K) // = 0.5 x 500 x (1 - 0.5) = 125|125|per year
+@@ formula|Michaelis-Menten equation
+The rate of an enzyme-catalysed reaction rises with substrate concentration and then levels off at the maximum rate, because all enzyme molecules are busy. K_m is the concentration at which the rate is half of the maximum.
+## example|Half the maximum rate|When [S] equals K_m, what is v in terms of Vmax?|v = Vmax K_m / (K_m + K_m) // = Vmax / 2|Vmax / 2|
+@@ formula|Body mass index
+BMI compares weight with height squared, to give a quick, rough indication of whether someone's weight is in a typical range for their height. It does not measure body fat or health directly.
+## example|Calculating BMI|A person weighs 60 kg and is 1.5 m tall. Find the BMI.|BMI = m / h² // = 60 / (1.5 x 1.5) = 60 / 2.25 = 26.7|26.7|kg/m²
+@@ formula|Price elasticity of demand
+This measures how strongly the quantity demanded reacts to a price change. If its size is above 1, demand is elastic, meaning buyers react strongly, and a price rise lowers revenue. If it is below 1, demand is inelastic.
+## example|Elasticity after a price rise|Price rises by 10% and quantity demanded falls by 20%. Find the elasticity.|E = %change in Q / %change in P // = -20 / 10 = -2|-2 (elastic)|
+@@ formula|Present value
+Money received in the future is worth less than the same amount today, because today's money can earn interest. Present value divides the future amount by (1 + r) for each year of waiting.
+## example|Value today of a future payment|What is 11000 rupees due in 1 year worth today at a 10% rate?|PV = FV / (1 + r)^n // = 11000 / 1.10 = 10000|10000|rupees
+@@ formula|Break-even quantity
+Break-even is the output at which total revenue equals total cost. Each unit sold adds its price minus its variable cost (the contribution) towards the fixed costs, so you divide the fixed costs by that contribution.
+## example|Units to break even|Fixed costs are 20000, price is 50 and variable cost is 30 per unit. Find the break-even quantity.|Contribution = 50 - 30 = 20 // Q = 20000 / 20 = 1000|1000|units
+@@ formula|Investment multiplier
+An initial amount of spending is received as income, part of which is spent again, and so on. The total effect is the first amount times 1 / (1 - MPC). The larger the share of extra income people spend, the larger the multiplier.
+## example|Multiplier effect|The marginal propensity to consume is 0.8 and investment rises by 100. Find the total rise in income.|k = 1 / (1 - 0.8) = 5 // Change in income = 5 x 100 = 500|500|
+@@ formula|Rule of 72
+A mental shortcut: divide 72 by the annual interest rate in percent to estimate how many years it takes money to double. It is quite accurate for rates from about 5% to 10%.
+## example|Doubling time|About how long to double money at 9% a year?|t = 72 / 9 = 8|8|years
+@@ formula|Kepler's third law
+The square of a planet's orbital period is proportional to the cube of the semi-major axis of its orbit. Planets far from the Sun therefore take much longer to go round it. In units of years and astronomical units, T² = a³ for the Sun.
+## example|Period of a planet|A planet orbits the Sun at 4 AU. Find its period.|T² = a³ = 64 // T = 8|8|years
+@@ formula|Hubble's law
+Distant galaxies move away from us at a speed proportional to their distance. The constant H0 tells how fast space is expanding; a value of about 70 km/s per megaparsec is commonly used.
+## example|Speed of a distant galaxy|A galaxy is 100 Mpc away. Using H0 = 70 km/s/Mpc, find its recession speed.|v = H0 x d // = 70 x 100 = 7000|7000|km/s
+@@ formula|Distance modulus
+The distance modulus is the difference between a star's apparent magnitude m and its absolute magnitude M. It gives the distance d in parsecs: since m - M = 5 log10 d - 5, a larger difference means a more distant star.
+## example|Distance to a star|A star has m = 5 and M = 0. Find its distance.|m - M = 5 // 5 log10 d - 5 = 5 // log10 d = 2 // d = 100|100|parsecs
+@@ formula|Schwarzschild radius
+This is the radius to which a mass would have to be squeezed to become a black hole: the escape speed at that radius equals the speed of light. For the Sun it is about 3 km.
+## example|Schwarzschild radius of the Sun|Find r_s for M = 2e30 kg (G = 6.67e-11, c = 3e8).|r_s = 2GM / c² // = 2 x 6.67e-11 x 2e30 / 9e16 // = 2.67e20 / 9e16 = 2964|2960|m

@@ -1,0 +1,11 @@
+{% extends "panel/base.html" %}{% block title %}Give a role{% endblock %}{% block content %}
+<div class="top"><h1>{% if a %}Edit {{ a.user.username }}{% else %}Give a role to a user{% endif %}</h1><a href="{% url 'panel:staff' %}">‹ Back</a></div>
+<form method="post" class="card" style="max-width:720px">{% csrf_token %}
+{% if form.non_field_errors %}<div class="msg error">{{ form.non_field_errors }}</div>{% endif %}
+{% for field in form %}<div {% if field.name == 'subjects' %}id="subjects-box"{% endif %}>{% include "panel/_field.html" %}</div>{% endfor %}
+<button class="btn">Save</button> <a class="btn sec" href="{% url 'panel:staff' %}">Cancel</a></form>{% endblock %}
+{% block script %}<script>
+// Subjects only matter for roles that work per subject (writing, reviewing, publishing formulas).
+(function(){var scoped={{ scoped|safe }},sel=document.getElementById("id_role"),box=document.getElementById("subjects-box");
+function upd(){box.style.display=scoped[sel.value]?"":"none"}sel.addEventListener("change",upd);upd()})();
+</script>{% endblock %}

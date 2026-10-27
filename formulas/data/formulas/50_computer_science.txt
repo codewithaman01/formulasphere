@@ -1,0 +1,39 @@
+# Computer Science
+CS|S9|Binary to decimal|N=\sum_{i=0}^{n-1}b_i2^i|Value of a binary number with bits b_i.|b_i~Bit (0 or 1)
+CS|S9|Number of values in n bits|\text{values}=2^n|How many different values n bits can hold.|n~Number of bits
+CS|S10|File size|\text{size}=\text{width}\times\text{height}\times\text{bits per pixel}|Size of an uncompressed image in bits.
+CS|S11|Maximum unsigned value|2^n-1|Largest unsigned integer in n bits.
+CS|S11|Two's complement range|-2^{n-1}\le x\le2^{n-1}-1|Range of signed integers in n bits.
+CS|S11|Bit rate and transfer time|t=\frac{\text{file size}}{\text{bit rate}}|Time to send a file over a link.
+CS|S12|Sum of an arithmetic series of operations|1+2+\dots+n=\frac{n(n+1)}{2}|Counts steps of nested loops, which gives O(n^2).
+CS|S12|Number of binary search steps|k=\lceil\log_2(n+1)\rceil|Worst-case comparisons to search n sorted items.
+CS|S12|Number of edges in a complete graph|E=\frac{n(n-1)}{2}|Edges when every pair of n vertices is joined.
+CS|S12|Handshake lemma|\sum_v\deg(v)=2E|Degrees in a graph add up to twice the edges.
+CS|S12|Nodes in a full binary tree|N=2^{h+1}-1|Maximum nodes in a binary tree of height h.
+CS|U|Binary search complexity|T(n)=T(n/2)+O(1)=O(\log n)|Recurrence for binary search.
+CS|U|Master theorem|T(n)=aT\left(\frac nb\right)+f(n)|Solves divide-and-conquer recurrences by comparing f(n) with n^{\log_ba}.
+CS|U|Merge sort recurrence|T(n)=2T(n/2)+O(n)=O(n\log n)|Time of merge sort.
+CS|U|Fibonacci recurrence|F_n=F_{n-1}+F_{n-2}|Each term is the sum of the previous two.
+CS|U|Binet's formula|F_n=\frac{\varphi^n-\psi^n}{\sqrt5}|Closed form for Fibonacci numbers.|\varphi~Golden ratio;\psi~Conjugate of the golden ratio
+CS|U|Catalan number|C_n=\frac{1}{n+1}\binom{2n}{n}|Counts binary trees and balanced bracket strings.
+CS|U|Hamming distance bound|d_{\min}\ge2t+1|Minimum distance needed to correct t errors.
+CS|U|Hamming code parity bits|2^r\ge m+r+1|Parity bits r needed for m data bits.
+CS|U|Hash table load factor|\alpha=\frac{n}{m}|Items per slot in a hash table.|n~Items stored;m~Number of slots
+CS|U|Expected probes in open addressing|\frac{1}{1-\alpha}|Expected probes for an unsuccessful search at load factor alpha.
+CS|U|Amdahl's law|S=\frac{1}{(1-p)+p/s}|Overall speed-up when a fraction p is sped up s times.
+CS|U|CPU execution time|T=\frac{\text{instructions}\times\text{CPI}}{\text{clock rate}}|Run time from instruction count, cycles per instruction and clock.
+CS|U|Little's law|L=\lambda W|Items in a queue equal arrival rate times wait.
+CS|U|Shannon-Hartley theorem|C=B\log_2\left(1+\frac SN\right)|Maximum data rate of a noisy channel.|B~Bandwidth~\mathrm{Hz};S/N~Signal-to-noise ratio
+CS|U|Nyquist sampling theorem|f_s\ge2f_{\max}|Sample at least twice the highest frequency.
+CS|U|Propagation delay|d=\frac{L}{s}|Time for a signal to cross a link of length L.
+CS|U|Transmission delay|d=\frac{N}{R}|Time to push N bits onto a link of rate R.
+CS|U|Huffman code length bound|H(X)\le\bar L<H(X)+1|Average code length against entropy.
+CS|U|Kolmogorov complexity bound|K(x)\le\lvert x\rvert+c|A string can always be described by itself plus a constant.
+CS|U|Number of subsets of a set|\lvert\mathcal P(S)\rvert=2^{\lvert S\rvert}|Size of a power set.
+CS|U|RSA encryption|c\equiv m^e\pmod n|Ciphertext from message m, public key (e, n).
+CS|U|RSA decryption|m\equiv c^d\pmod n|Message from ciphertext with private key d.
+CS|P|Probability of a hash collision|p\approx1-e^{-k(k-1)/(2N)}|Birthday bound for k items in N slots.
+CS|P|PAC sample complexity|m\ge\frac1\epsilon\left(\ln\lvert H\rvert+\ln\frac1\delta\right)|Samples to learn a finite hypothesis class.
+CS|P|Bloom filter false-positive rate|p\approx\left(1-e^{-kn/m}\right)^k|Chance of a wrong "present" answer.
+CS|R|Mutual information|I(X;Y)=H(X)+H(Y)-H(X,Y)|Information two variables share.
+CS|R|Channel capacity|C=\max_{p(x)}I(X;Y)|Highest reliable rate of a channel.

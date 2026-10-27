@@ -1,0 +1,4 @@
+{% extends "web/base.html" %}{% block title %}Please slow down · FormulaSphere{% endblock %}{% block content %}
+<div class="wrap"><section class="card" style="max-width:640px;margin:40px auto"><h1 style="font-size:1.6rem">You are opening formulas very quickly</h1>
+<p>To protect the content, one account can open up to {{ limit }} formula pages an hour. Please wait a little and try again. If you think this is a mistake, use the Contact page.</p>
+<a class="btn" href="{% url 'explore' %}">Back to Explore</a></section></div>{% endblock %}

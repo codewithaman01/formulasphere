@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="FormulaSphere">
+<defs>
+<radialGradient id="s" cx="32%" cy="28%" r="80%"><stop offset="0" stop-color="#fff"/><stop offset=".3" stop-color="#8E8EF0"/><stop offset="1" stop-color="#4A4AC4"/></radialGradient>
+<radialGradient id="h" cx="30%" cy="22%" r="30%"><stop offset="0" stop-color="#fff" stop-opacity=".85"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+<filter id="d" x="-20%" y="-20%" width="150%" height="150%"><feDropShadow dx="1.5" dy="2" stdDeviation="1.8" flood-color="#22243A" flood-opacity=".35"/></filter>
+</defs>
+<circle cx="32" cy="32" r="28" fill="url(#s)" filter="url(#d)"/>
+<circle cx="32" cy="32" r="28" fill="url(#h)"/>
+<path d="M42 21H23.5L33 32 23.5 43H42" fill="none" stroke="#fff" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

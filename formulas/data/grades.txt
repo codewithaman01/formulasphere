@@ -1,0 +1,18 @@
+# code|grade slug|name|level slug|class number|usual access (basic or premium)|usual difficulty|order
+# The code (S9, U, P, R...) is what the formula files use. Add a line for a new grade, then use its code there.
+# Class 1-10 formulas are 'basic' (open in the free trial); everything else is 'premium'. Change any of it here or in the panel.
+S1|class-1|Class 1|school|1|basic|beginner|1
+S2|class-2|Class 2|school|2|basic|beginner|2
+S3|class-3|Class 3|school|3|basic|beginner|3
+S4|class-4|Class 4|school|4|basic|beginner|4
+S5|class-5|Class 5|school|5|basic|beginner|5
+S6|class-6|Class 6|school|6|basic|beginner|6
+S7|class-7|Class 7|school|7|basic|beginner|7
+S8|class-8|Class 8|school|8|basic|beginner|8
+S9|class-9|Class 9|school|9|basic|beginner|9
+S10|class-10|Class 10|school|10|basic|intermediate|10
+S11|class-11|Class 11|school|11|premium|intermediate|11
+S12|class-12|Class 12|school|12|premium|intermediate|12
+U|undergraduate|Undergraduate|undergraduate||premium|advanced|13
+P|postgraduate|Postgraduate|postgraduate||premium|advanced|14
+R|research|Research and PhD|research||premium|advanced|15

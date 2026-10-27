@@ -1,0 +1,56 @@
+{% extends "panel/base.html" %}{% block title %}{% if f %}Edit{% else %}New{% endif %} formula{% endblock %}{% block content %}
+<div class="top"><h1>{% if f %}Edit “{{ f.title }}”{% else %}New formula{% endif %}</h1><a href="{% if f %}{% url 'panel:formula_view' f.pk %}{% else %}{% url 'panel:formulas' %}{% endif %}">‹ Back</a></div>
+<style>.lx-bar{display:flex;flex-wrap:wrap;gap:4px;margin:0 0 6px}.lx-bar button{border:1px solid var(--line);background:#fff;border-radius:6px;padding:3px 9px;cursor:pointer;font:inherit;min-width:34px}.lx-bar button:hover{border-color:var(--brand);color:var(--brand)}.lx-prev{margin-top:6px;padding:10px 12px;border:1px dashed #cfcee0;border-radius:8px;background:#fafafe;overflow-x:auto;min-height:44px}.lx-prev.bad{border-color:var(--err);background:#fdecea;color:var(--err);font-size:13px}</style>
+<form method="post">{% csrf_token %}
+<div class="card" style="margin-bottom:16px">{% if form.non_field_errors %}<div class="msg error">{{ form.non_field_errors }}</div>{% endif %}
+{% for field in form %}{% include "panel/_field.html" %}{% endfor %}</div>
+{% for key,title,fs in sets %}<h2>{{ title }}</h2><div class="formset" data-formset="{{ fs.prefix }}">{{ fs.management_form }}{% for e in fs.non_form_errors %}<div class="err">{{ e }}</div>{% endfor %}
+<div class="rows">{% for sub in fs %}<div class="row">{% for h in sub.hidden_fields %}{{ h }}{% endfor %}{% for field in sub.visible_fields %}{% include "panel/_field.html" %}{% endfor %}</div>{% endfor %}</div>
+<template><div class="row">{% for h in fs.empty_form.hidden_fields %}{{ h }}{% endfor %}{% for field in fs.empty_form.visible_fields %}{% include "panel/_field.html" %}{% endfor %}</div></template>
+<p style="margin:10px 0 0"><button type="button" class="btn sec sm add-row">+ Add row</button> <span class="muted">Tick “Delete” on a row to remove it.</span></p></div>{% endfor %}
+<button class="btn">Save</button> <a class="btn sec" href="{% url 'panel:formulas' %}">Cancel</a></form>{% endblock %}
+{% block script %}<script>
+document.querySelectorAll('[data-formset]').forEach(function(box){
+  var total=box.querySelector('#id_'+box.dataset.formset+'-TOTAL_FORMS');
+  box.querySelector('.add-row').addEventListener('click',function(){
+    var n=parseInt(total.value,10);
+    box.querySelector('.rows').insertAdjacentHTML('beforeend',box.querySelector('template').innerHTML.replace(/__prefix__/g,n));
+    total.value=n+1;
+  });
+});
+
+/* ---- Live LaTeX editor: preview + symbol toolbar on every LaTeX box ---- */
+(function(){
+  var TOOLS=[["a/b","\\frac{}{}",2],["√","\\sqrt{}",1],["xⁿ","^{}",1],["xₙ","_{}",1],["Σ","\\sum_{i=1}^{n} ",0],["∫","\\int_{a}^{b} \\, dx",0],
+   ["lim","\\lim_{x \\to 0} ",0],["∂","\\partial ",0],["∞","\\infty ",0],["±","\\pm ",0],["≤","\\leq ",0],["≥","\\geq ",0],["≠","\\neq ",0],["≈","\\approx ",0],
+   ["×","\\times ",0],["·","\\cdot ",0],["α","\\alpha ",0],["β","\\beta ",0],["θ","\\theta ",0],["λ","\\lambda ",0],["μ","\\mu ",0],["π","\\pi ",0],["σ","\\sigma ",0],["ω","\\omega ",0],
+   ["Δ","\\Delta ",0],["vec","\\vec{}",1],["x̄","\\bar{}",1],["matrix","\\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix}",0],["cases","\\begin{cases} x & x>0 \\\\ 0 & x\\le 0 \\end{cases}",0]];
+  function render(el,box,display){
+    var v=el.value.trim();
+    if(!v){box.textContent="Preview appears here as you type.";box.className="lx-prev muted";return}
+    try{katex.render(v,box,{displayMode:display,throwOnError:true,trust:false,maxExpand:200,maxSize:20});box.className="lx-prev"}
+    catch(e){box.className="lx-prev bad";box.textContent="LaTeX problem: "+String(e.message||e).replace(/^KaTeX parse error:\s*/,"")}
+  }
+  function insert(el,text,back){
+    var a=el.selectionStart||0,b=el.selectionEnd||0,sel=el.value.slice(a,b);
+    if(sel&&text.indexOf("{}")>-1){text=text.replace("{}","{"+sel+"}");back=0}
+    el.value=el.value.slice(0,a)+text+el.value.slice(b);
+    var pos=a+text.length-back;el.focus();el.setSelectionRange(pos,pos);el.dispatchEvent(new Event("input",{bubbles:true}));
+  }
+  function setup(el){
+    if(el.dataset.lx)return;el.dataset.lx="1";
+    var main=el.id==="id_latex",wrap=document.createElement("div");wrap.className="lx";
+    if(main){var bar=document.createElement("div");bar.className="lx-bar";
+      TOOLS.forEach(function(t){var b=document.createElement("button");b.type="button";b.textContent=t[0];b.title=t[1].replace(/\\\\/g,"\\");
+        b.addEventListener("click",function(){insert(el,t[1],t[2])});bar.append(b)});el.before(bar)}
+    var box=document.createElement("div");box.className="lx-prev muted";wrap.append(box);el.after(wrap);
+    var display=main||/-latex$/.test(el.name||"");
+    el.addEventListener("input",function(){render(el,box,display)});render(el,box,display);
+  }
+  function scan(){document.querySelectorAll("textarea[name$='latex'],input[name$='-symbol'],input[name$='-unit'],input[name='symbol']").forEach(function(el){
+    if(el.closest("template"))return;setup(el)})}
+  window.addEventListener("load",scan);
+  document.addEventListener("click",function(e){if(e.target.closest(".add-row"))setTimeout(scan,0)});
+  document.addEventListener("focusin",scan);
+})();
+</script>{% endblock %}

@@ -1,0 +1,4 @@
+{% extends "panel/base.html" %}{% block title %}{{ title }}{% endblock %}{% block content %}
+<h1>{{ title }}</h1><form method="post" class="card" style="max-width:560px">{% csrf_token %}
+<p><strong>{{ obj }}</strong></p>{% if warn %}<p class="msg error">{{ warn }}</p>{% endif %}<p class="muted">This cannot be undone.</p>
+<button class="btn red">Yes, continue</button> <a class="btn sec" href="{{ back }}">Cancel</a></form>{% endblock %}

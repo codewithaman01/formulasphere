@@ -1,0 +1,49 @@
+# Subject|Topic|formula titles separated by ;
+M|Mensuration|Area of a rectangle;Perimeter of a rectangle;Area of a triangle;Area of a circle;Circumference of a circle;Volume of a cuboid;Area of a trapezium;Volume of a cylinder;Volume of a cone;Volume of a sphere;Surface area of a sphere
+M|Algebra|Square of a sum;Square of a difference;Difference of squares;Quadratic formula;Discriminant
+M|Coordinate geometry|Pythagorean theorem;Distance formula;Slope of a line;Equation of a line;Midpoint formula
+M|Sequences and series|nth term of an AP;Sum of an AP;nth term of a GP;Sum of a GP
+M|Trigonometry|Pythagorean trigonometric identity;Tangent identity;Sine rule;Cosine rule
+M|Logarithms and interest|Simple interest;Compound interest;Product rule of logarithms;Change of base
+M|Permutations and combinations|Binomial theorem;Permutations;Combinations
+M|Differential calculus|Power rule of differentiation;Product rule;Quotient rule;Chain rule
+M|Integral calculus|Power rule of integration;Integration by parts;Fundamental theorem of calculus;Gaussian integral
+M|Vectors and matrices|Dot product;Cross product magnitude;Determinant of a 2 by 2 matrix
+M|Complex numbers and series|Euler's formula;Euler's identity;Taylor series;Basel problem
+P|Motion|Speed;Acceleration;First equation of motion;Second equation of motion;Third equation of motion
+P|Force and laws of motion|Newton's second law;Weight;Momentum;Centripetal force;Torque
+P|Work, energy and power|Kinetic energy;Gravitational potential energy;Work done;Power
+P|Gravitation|Law of universal gravitation;Escape velocity
+P|Fluids and pressure|Pressure;Density;Hydrostatic pressure
+P|Oscillations and waves|Wave speed;Hooke's law;Simple pendulum period
+P|Heat and thermodynamics|Heat transfer;First law of thermodynamics;Stefan-Boltzmann law
+P|Current electricity|Ohm's law;Electric power;Resistors in series;Resistors in parallel;Joule heating
+P|Electrostatics|Coulomb's law;Electric field;Capacitance;Gauss's law
+P|Electromagnetism|Faraday's law of induction
+P|Optics|Lens formula;Snell's law
+P|Modern physics|Mass-energy equivalence;Photon energy;de Broglie wavelength;Time-dependent Schrodinger equation;Heisenberg uncertainty principle;Lorentz factor
+C|Mole concept|Moles from mass
+C|Gas laws|Ideal gas law;Boyle's law;Charles's law
+C|Solutions|Molarity;Dilution equation;Beer-Lambert law
+C|Acids, bases and equilibrium|pH;Equilibrium constant;Henderson-Hasselbalch equation
+C|Thermodynamics and kinetics|Gibbs free energy;Arrhenius equation
+C|Electrochemistry|Nernst equation
+S|Descriptive statistics|Arithmetic mean;Population variance;Standard deviation;Z-score
+S|Probability|Probability of an event;Conditional probability;Bayes' theorem
+S|Probability distributions|Binomial distribution;Poisson distribution;Normal distribution density
+S|Inference and regression|Standard error of the mean;Pearson correlation;Least-squares slope
+CS|Information theory|Shannon entropy
+DS|Optimisation and loss|Sigmoid function;Mean squared error;Gradient descent update;Cross-entropy loss
+DS|Evaluation metrics|Precision;Recall;F1 score;Cosine similarity
+E|Mechanics of materials|Normal stress;Strain;Young's modulus;Flexure formula
+E|Fluid mechanics|Bernoulli's equation;Reynolds number
+E|Thermodynamics|Carnot efficiency
+B|Human biology|Body mass index
+B|Genetics|Hardy-Weinberg equation
+B|Ecology|Exponential population growth;Logistic growth
+B|Biochemistry|Michaelis-Menten equation
+Ec|Microeconomics|Profit;Price elasticity of demand;Break-even quantity
+Ec|Macroeconomics|National income identity
+Ec|Finance|Present value
+A|Cosmology|Hubble's law;Schwarzschild radius
+A|Orbits and stars|Kepler's third law;Stellar luminosity;Wien's displacement law;Distance modulus

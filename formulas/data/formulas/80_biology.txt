@@ -1,0 +1,33 @@
+# Biology
+B|S8|Magnification|\text{Magnification}=\frac{\text{image size}}{\text{actual size}}|How much a microscope enlarges a specimen.
+B|S10|Cardiac output|CO=HR\times SV|Blood pumped per minute.|HR~Heart rate~\mathrm{beats\,min^{-1}};SV~Stroke volume~\mathrm{mL}
+B|S10|Percentage change in mass|\%\Delta m=\frac{m_f-m_i}{m_i}\times100|Used in osmosis experiments.
+B|S11|Surface area to volume ratio of a cube|\frac{SA}{V}=\frac{6}{a}|Smaller cells have a larger ratio.
+B|S11|Respiratory quotient|RQ=\frac{CO_2\ \text{produced}}{O_2\ \text{consumed}}|Tells which fuel is being respired.
+B|S11|Photosynthesis equation|6CO_2+6H_2O\xrightarrow{\text{light}}C_6H_{12}O_6+6O_2|Summary of photosynthesis.
+B|S11|Cellular respiration equation|C_6H_{12}O_6+6O_2\rightarrow6CO_2+6H_2O+\text{energy}|Summary of aerobic respiration.
+B|S11|Rate of reaction|\text{rate}=\frac{\text{change in product}}{\text{time}}|Rate of an enzyme-catalysed reaction.
+B|S12|Allele frequency|p+q=1|Frequencies of two alleles add to one.
+B|S12|Birth rate|\text{birth rate}=\frac{\text{births}}{\text{population}}\times1000|Births per thousand individuals.
+B|S12|Population growth rate|\Delta N=(B+I)-(D+E)|Births and immigration minus deaths and emigration.
+B|S12|Simpson's diversity index|D=1-\frac{\sum n(n-1)}{N(N-1)}|Species diversity in a sample.
+B|S12|Chi-square for genetics|\chi^2=\sum\frac{(O-E)^2}{E}|Tests whether offspring ratios fit a prediction.
+B|S12|Recombination frequency|RF=\frac{\text{recombinants}}{\text{total offspring}}\times100|Map distance between genes in centimorgans.
+B|U|Shannon diversity index|H'=-\sum p_i\ln p_i|Diversity from the proportions of species.
+B|U|Doubling time|t_d=\frac{\ln2}{r}|Time for a population to double.
+B|U|Generation time|g=\frac{t}{n}|Time per generation of dividing cells.
+B|U|Number of cells after n divisions|N=N_02^n|Exponential growth of cells.
+B|U|Lineweaver-Burk equation|\frac1v=\frac{K_m}{V_{\max}}\frac1{[S]}+\frac1{V_{\max}}|Linear form of the Michaelis-Menten equation.
+B|U|Nernst potential of an ion|E_{\text{ion}}=\frac{RT}{zF}\ln\frac{[\text{ion}]_{out}}{[\text{ion}]_{in}}|Equilibrium potential across a membrane.
+B|U|Goldman equation|V_m=\frac{RT}{F}\ln\frac{P_K[K^+]_o+P_{Na}[Na^+]_o}{P_K[K^+]_i+P_{Na}[Na^+]_i}|Membrane potential from several ions.
+B|U|Fick's law of diffusion|J=-D\frac{dC}{dx}|Flux down a concentration gradient.
+B|U|Water potential|\Psi=\Psi_s+\Psi_p|Solute plus pressure potential.
+B|U|Broad-sense heritability|H^2=\frac{V_G}{V_P}|Share of phenotypic variance that is genetic.
+B|U|Breeder's equation|R=h^2S|Response to selection.
+B|U|Selection coefficient|s=1-w|Reduction in fitness of a genotype.
+B|U|Allometric scaling|Y=aM^b|Body traits scale as a power of mass.
+B|U|Lotka-Volterra prey equation|\frac{dx}{dt}=\alpha x-\beta xy|Prey population with a predator y.
+B|U|Hill equation|\theta=\frac{[L]^n}{K_d+[L]^n}|Cooperative binding of a ligand.
+B|P|Wright's fixation index|F_{ST}=\frac{H_T-H_S}{H_T}|Genetic differentiation between populations.
+B|P|Price equation|\Delta\bar z=\frac{\mathrm{Cov}(w,z)}{\bar w}+\frac{E(w\Delta z)}{\bar w}|Change in a trait across generations.
+B|R|Hamilton's rule|rB>C|Altruism evolves when relatedness times benefit exceeds cost.

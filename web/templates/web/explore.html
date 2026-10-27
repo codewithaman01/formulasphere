@@ -1,0 +1,12 @@
+{% extends "web/base.html" %}{% block title %}Explore formulas · FormulaSphere{% endblock %}{% block content %}
+<div class="wrap"><section><h1 style="font-size:2rem">Explore formulas</h1>
+<form class="filters" role="search"><input id="q" name="q" type="search" value="{{ q }}" placeholder="Search" aria-label="Search" autocomplete="off">
+<select name="subject" aria-label="Subject"><option value="">All subjects</option>{% for s in subjects %}<option value="{{ s.slug }}" {% if filters.subject == s.slug %}selected{% endif %}>{{ s.name }}</option>{% endfor %}</select>
+<select name="level" aria-label="Level"><option value="">All levels</option>{% for l in levels %}<option value="{{ l.slug }}" {% if filters.level == l.slug %}selected{% endif %}>{{ l.name }}</option>{% endfor %}</select>
+<select name="difficulty" aria-label="Difficulty"><option value="">Any difficulty</option>{% for v, l in difficulties %}<option value="{{ v }}" {% if filters.difficulty == v %}selected{% endif %}>{{ l }}</option>{% endfor %}</select>
+<select name="sort" aria-label="Sort"><option value="relevance">Relevance</option><option value="title">Title</option><option value="recent">Recently updated</option></select>
+<button class="btn">Apply</button><a class="btn sec" href="{% url 'explore' %}">Reset</a></form>
+<p class="muted">{{ page.paginator.count }} result{{ page.paginator.count|pluralize }}</p>
+{% if page.object_list %}<div class="grid">{% for f in page %}{% include "web/_card.html" %}{% endfor %}</div>
+<div class="pager">{% if page.has_previous %}<a href="?{{ qs }}&page={{ page.previous_page_number }}">Previous</a>{% endif %}<span>Page {{ page.number }} of {{ page.paginator.num_pages }}</span>{% if page.has_next %}<a href="?{{ qs }}&page={{ page.next_page_number }}">Next</a>{% endif %}</div>
+{% else %}<div class="empty">No published formulas match. Try fewer filters or a different spelling.</div>{% endif %}</section></div>{% endblock %}

@@ -1,0 +1,144 @@
+# Mathematics. subject|grade code|title|LaTeX|short explanation|variables|access|difficulty|other subjects
+M|S3|Perimeter of a square|P=4a|The distance around a square is four times its side.|P~Perimeter~\mathrm{cm};a~Side~\mathrm{cm}
+M|S4|Area of a square|A=a^2|Area of a square is its side multiplied by itself.|A~Area~\mathrm{cm^2};a~Side~\mathrm{cm}
+M|S4|Perimeter of a triangle|P=a+b+c|Add the lengths of the three sides.|P~Perimeter~\mathrm{cm}
+M|S5|Average of numbers|\text{Average}=\frac{\text{sum of the numbers}}{\text{how many numbers}}|Add all the numbers, then divide by how many there are.
+M|S5|Volume of a cube|V=a^3|The side multiplied by itself three times.|V~Volume~\mathrm{cm^3};a~Side~\mathrm{cm}
+M|S5|Percentage|p=\frac{\text{part}}{\text{whole}}\times 100|Shows a part as a number out of 100.
+M|S5|Distance, speed and time|\text{distance}=\text{speed}\times\text{time}|How far something travels at a steady speed.
+M|S5|Perimeter of a regular polygon|P=ns|A polygon with n equal sides of length s.|n~Number of sides;s~Side length~\mathrm{cm}
+M|S7|Pythagorean theorem|a^2+b^2=c^2|Relates the sides of a right triangle.|a, b~Legs;c~Hypotenuse
+M|S7|Area of a parallelogram|A=bh|Base times the perpendicular height.|A~Area~\mathrm{m^2};b~Base~\mathrm{m};h~Height~\mathrm{m}
+M|S7|Angle sum of a triangle|\angle A+\angle B+\angle C=180^\circ|The three angles of a triangle add up to 180 degrees.
+M|S7|Product of powers|a^m\times a^n=a^{m+n}|Same base: add the exponents.
+M|S7|Quotient of powers|\frac{a^m}{a^n}=a^{m-n}|Same base: subtract the exponents.
+M|S7|Power of a power|(a^m)^n=a^{mn}|Multiply the exponents.
+M|S7|Profit percentage|\text{Profit \%}=\frac{\text{profit}}{\text{cost price}}\times100|Profit as a percentage of the cost price.
+M|S7|Loss percentage|\text{Loss \%}=\frac{\text{loss}}{\text{cost price}}\times100|Loss as a percentage of the cost price.
+M|S8|Sum of interior angles of a polygon|S=(n-2)\times180^\circ|Interior angles of an n-sided polygon add up to this.|n~Number of sides
+M|S8|Exterior angle of a regular polygon|\theta=\frac{360^\circ}{n}|Each exterior angle of a regular n-sided polygon.|n~Number of sides
+M|S8|Area of a rhombus|A=\tfrac12 d_1d_2|Half the product of the two diagonals.|d_1, d_2~Diagonals~\mathrm{m}
+M|S8|Surface area of a cuboid|A=2(lw+wh+hl)|Total area of the six faces.|l~Length~\mathrm{m};w~Width~\mathrm{m};h~Height~\mathrm{m}
+M|S8|Surface area of a cube|A=6a^2|Six equal square faces.|a~Side~\mathrm{m}
+M|S8|Curved surface area of a cylinder|A=2\pi rh|Area of the side of a cylinder.|r~Radius~\mathrm{m};h~Height~\mathrm{m}
+M|S8|Total surface area of a cylinder|A=2\pi r(r+h)|Curved surface plus the two circular ends.|r~Radius~\mathrm{m};h~Height~\mathrm{m}
+M|S8|Discount|\text{Discount}=\text{marked price}-\text{selling price}|The reduction from the marked price.
+M|S9|Cube of a sum|(a+b)^3=a^3+b^3+3ab(a+b)|Identity for expanding a cubed sum.
+M|S9|Sum of cubes|a^3+b^3=(a+b)(a^2-ab+b^2)|Factorisation of a sum of two cubes.
+M|S9|Difference of cubes|a^3-b^3=(a-b)(a^2+ab+b^2)|Factorisation of a difference of two cubes.
+M|S9|Heron's formula|A=\sqrt{s(s-a)(s-b)(s-c)},\quad s=\frac{a+b+c}{2}|Area of a triangle from its three sides.|a, b, c~Sides~\mathrm{m};s~Semi-perimeter~\mathrm{m}
+M|S9|Area of an equilateral triangle|A=\frac{\sqrt3}{4}a^2|Area of a triangle with three equal sides.|a~Side~\mathrm{m}
+M|S9|Slant height of a cone|l=\sqrt{r^2+h^2}|Distance from the apex to the rim of the base.|r~Radius~\mathrm{m};h~Height~\mathrm{m}
+M|S9|Curved surface area of a cone|A=\pi rl|Area of the sloping side of a cone.|r~Radius~\mathrm{m};l~Slant height~\mathrm{m}
+M|S9|Total surface area of a cone|A=\pi r(r+l)|Curved surface plus the circular base.|r~Radius~\mathrm{m};l~Slant height~\mathrm{m}
+M|S9|Curved surface area of a hemisphere|A=2\pi r^2|Half of the surface of a sphere.|r~Radius~\mathrm{m}
+M|S9|Volume of a hemisphere|V=\tfrac23\pi r^3|Half the volume of a sphere.|r~Radius~\mathrm{m}
+M|S10|Sine of an angle|\sin\theta=\frac{\text{opposite}}{\text{hypotenuse}}|Sine ratio in a right triangle.
+M|S10|Cosine of an angle|\cos\theta=\frac{\text{adjacent}}{\text{hypotenuse}}|Cosine ratio in a right triangle.
+M|S10|Secant identity|1+\tan^2\theta=\sec^2\theta|Holds for every angle where tangent is defined.
+M|S10|Cosecant identity|1+\cot^2\theta=\csc^2\theta|Holds for every angle where cotangent is defined.
+M|S10|Section formula|P=\left(\frac{mx_2+nx_1}{m+n},\frac{my_2+ny_1}{m+n}\right)|Point dividing a line segment internally in the ratio m:n.
+M|S10|Area of a triangle from coordinates|A=\tfrac12\left\lvert x_1(y_2-y_3)+x_2(y_3-y_1)+x_3(y_1-y_2)\right\rvert|Area from the coordinates of the three vertices.
+M|S10|Sum of roots of a quadratic|\alpha+\beta=-\frac{b}{a}|For ax^2+bx+c=0.
+M|S10|Product of roots of a quadratic|\alpha\beta=\frac{c}{a}|For ax^2+bx+c=0.
+M|S10|Length of an arc|\ell=\frac{\theta}{360^\circ}\times2\pi r|Part of the circumference cut off by an angle.|\theta~Angle at the centre~^\circ;r~Radius~\mathrm{m}
+M|S10|Area of a sector|A=\frac{\theta}{360^\circ}\times\pi r^2|Part of the circle cut off by an angle.|\theta~Angle at the centre~^\circ;r~Radius~\mathrm{m}
+M|S10|Volume of a frustum of a cone|V=\tfrac13\pi h(r_1^2+r_1r_2+r_2^2)|Volume of a cone with its top cut off.|r_1, r_2~Radii of the two ends~\mathrm{m};h~Height~\mathrm{m}
+M|S10|Median of grouped data|\text{Median}=l+\frac{\frac n2-cf}{f}\times h|Middle value estimated from a frequency table.|l~Lower limit of median class;cf~Cumulative frequency before it;f~Frequency of median class;h~Class width
+M|S10|Mode of grouped data|\text{Mode}=l+\frac{f_1-f_0}{2f_1-f_0-f_2}\times h|Most common value estimated from a frequency table.|l~Lower limit of modal class;f_1~Frequency of modal class;h~Class width
+M|S10|Complement of an event|P(\bar E)=1-P(E)|Probability that an event does not happen.
+M|S11|Number of subsets|\text{subsets}=2^n|A set with n elements has 2^n subsets.|n~Number of elements
+M|S11|Union of two sets|n(A\cup B)=n(A)+n(B)-n(A\cap B)|Counts elements of two sets without counting any twice.
+M|S11|Sum of the first n natural numbers|1+2+\dots+n=\frac{n(n+1)}{2}|Closed form for the sum 1 + 2 + ... + n.
+M|S11|Sum of squares of the first n natural numbers|\sum_{k=1}^{n}k^2=\frac{n(n+1)(2n+1)}{6}|Closed form for 1^2 + 2^2 + ... + n^2.
+M|S11|Sum of cubes of the first n natural numbers|\sum_{k=1}^{n}k^3=\left(\frac{n(n+1)}{2}\right)^2|Equals the square of the sum of the first n numbers.
+M|S11|Sum to infinity of a GP|S_\infty=\frac{a}{1-r}|Valid when the common ratio r is between -1 and 1.|a~First term;r~Common ratio
+M|S11|Degree and radian measure|\pi\ \text{radians}=180^\circ|Converts between degrees and radians.
+M|S11|Arc length in radians|s=r\theta|Arc length when the angle is in radians.|s~Arc length~\mathrm{m};r~Radius~\mathrm{m};\theta~Angle~\mathrm{rad}
+M|S11|Sine of a sum|\sin(A+B)=\sin A\cos B+\cos A\sin B|Addition formula for sine.
+M|S11|Cosine of a sum|\cos(A+B)=\cos A\cos B-\sin A\sin B|Addition formula for cosine.
+M|S11|Tangent of a sum|\tan(A+B)=\frac{\tan A+\tan B}{1-\tan A\tan B}|Addition formula for tangent.
+M|S11|Double angle sine|\sin2A=2\sin A\cos A|Sine of twice an angle.
+M|S11|Double angle cosine|\cos2A=\cos^2A-\sin^2A|Cosine of twice an angle.
+M|S11|Equation of a circle|(x-h)^2+(y-k)^2=r^2|Circle with centre (h, k) and radius r.|h, k~Centre coordinates;r~Radius
+M|S11|Equation of a parabola|y^2=4ax|Standard parabola opening to the right.|a~Distance from vertex to focus
+M|S11|Equation of an ellipse|\frac{x^2}{a^2}+\frac{y^2}{b^2}=1|Standard ellipse centred at the origin.|a~Semi-axis along x;b~Semi-axis along y
+M|S11|Equation of a hyperbola|\frac{x^2}{a^2}-\frac{y^2}{b^2}=1|Standard hyperbola centred at the origin.|a~Semi-transverse axis;b~Semi-conjugate axis
+M|S11|Distance from a point to a line|d=\frac{\lvert ax_1+by_1+c\rvert}{\sqrt{a^2+b^2}}|Shortest distance from (x_1, y_1) to the line ax+by+c=0.
+M|S11|Angle between two lines|\tan\theta=\left\lvert\frac{m_1-m_2}{1+m_1m_2}\right\rvert|Acute angle between lines with slopes m_1 and m_2.
+M|S11|Distance formula in three dimensions|d=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2}|Distance between two points in space.
+M|S11|Permutations with repeated objects|\frac{n!}{p!\,q!\,r!}|Arrangements of n objects when some are identical.
+M|S11|Circular permutations|(n-1)!|Ways to seat n people round a table.
+M|S11|Modulus of a complex number|\lvert z\rvert=\sqrt{a^2+b^2}|Distance of a+bi from the origin.
+M|S11|Standard limit of sine|\lim_{x\to0}\frac{\sin x}{x}=1|Key limit used to differentiate trigonometric functions.
+M|S11|Derivative from first principles|f'(x)=\lim_{h\to0}\frac{f(x+h)-f(x)}{h}|Definition of the derivative.
+M|S11|AM-GM inequality|\frac{a+b}{2}\ge\sqrt{ab}|Arithmetic mean is at least the geometric mean, for non-negative a and b.
+M|S11|Mean deviation about the mean|\text{M.D.}=\frac{\sum\lvert x_i-\bar x\rvert}{n}|Average distance of the data from the mean.
+M|S12|Derivative of sine|\frac{d}{dx}\sin x=\cos x|Standard derivative.
+M|S12|Derivative of cosine|\frac{d}{dx}\cos x=-\sin x|Standard derivative.
+M|S12|Derivative of tangent|\frac{d}{dx}\tan x=\sec^2x|Standard derivative.
+M|S12|Derivative of the exponential function|\frac{d}{dx}e^x=e^x|The exponential function is its own derivative.
+M|S12|Derivative of the natural logarithm|\frac{d}{dx}\ln x=\frac1x|Standard derivative for x > 0.
+M|S12|Derivative of a general exponential|\frac{d}{dx}a^x=a^x\ln a|Standard derivative for a > 0.
+M|S12|Integral of one over x|\int\frac1x\,dx=\ln\lvert x\rvert+C|Standard integral.
+M|S12|Integral of the exponential function|\int e^x\,dx=e^x+C|Standard integral.
+M|S12|Integral of sine|\int\sin x\,dx=-\cos x+C|Standard integral.
+M|S12|Integral of cosine|\int\cos x\,dx=\sin x+C|Standard integral.
+M|S12|Integral of secant squared|\int\sec^2x\,dx=\tan x+C|Standard integral.
+M|S12|Area under a curve|A=\int_a^b f(x)\,dx|Area between the curve and the x-axis from a to b.
+M|S12|Integral giving arctangent|\int\frac{dx}{a^2+x^2}=\frac1a\tan^{-1}\frac{x}{a}+C|Standard integral.
+M|S12|Integral giving arcsine|\int\frac{dx}{\sqrt{a^2-x^2}}=\sin^{-1}\frac{x}{a}+C|Standard integral.
+M|S12|Integration by substitution|\int f(g(x))\,g'(x)\,dx=\int f(u)\,du|Replace g(x) by u to simplify an integral.
+M|S12|Equation of a tangent|y-y_0=f'(x_0)(x-x_0)|Tangent to a curve at the point (x_0, y_0).
+M|S12|Mean value theorem|f'(c)=\frac{f(b)-f(a)}{b-a}|Some point has a slope equal to the average slope.
+M|S12|Integrating factor method|y\,e^{\int P\,dx}=\int Q\,e^{\int P\,dx}\,dx+C|Solves dy/dx + Py = Q.
+M|S12|Angle between two vectors|\cos\theta=\frac{\vec a\cdot\vec b}{\lvert\vec a\rvert\,\lvert\vec b\rvert}|Found from the dot product.
+M|S12|Direction cosines|l^2+m^2+n^2=1|Squares of the direction cosines of a line add to one.
+M|S12|Scalar triple product|[\vec a\ \vec b\ \vec c]=\vec a\cdot(\vec b\times\vec c)|Volume of the parallelepiped on three vectors.
+M|S12|Inverse of a 2 by 2 matrix|A^{-1}=\frac{1}{ad-bc}\begin{pmatrix}d&-b\\-c&a\end{pmatrix}|Exists when ad - bc is not zero.
+M|S12|Inverse using the adjoint|A^{-1}=\frac{\operatorname{adj}A}{\det A}|Inverse of a square matrix whose determinant is not zero.
+M|S12|Equation of a plane|ax+by+cz+d=0|General equation of a plane in space.|a, b, c~Normal vector components
+M|S12|Total probability|P(A)=\sum_i P(E_i)\,P(A\mid E_i)|Splits an event over a set of exclusive cases.
+M|U|Eigenvalue equation|A\mathbf v=\lambda\mathbf v|A vector that a matrix only stretches.|\lambda~Eigenvalue;\mathbf v~Eigenvector
+M|U|Characteristic equation|\det(A-\lambda I)=0|Its roots are the eigenvalues of A.
+M|U|Rank-nullity theorem|\operatorname{rank}A+\operatorname{nullity}A=n|For a matrix with n columns.
+M|U|Cauchy-Schwarz inequality|\lvert\langle u,v\rangle\rvert\le\lVert u\rVert\,\lVert v\rVert|Bounds an inner product by the lengths of the vectors.
+M|U|Triangle inequality|\lVert x+y\rVert\le\lVert x\rVert+\lVert y\rVert|One side of a triangle is at most the sum of the other two.
+M|U|L'Hopital's rule|\lim\frac{f(x)}{g(x)}=\lim\frac{f'(x)}{g'(x)}|For 0/0 or infinity/infinity limits.
+M|U|Gradient|\nabla f=\left(\frac{\partial f}{\partial x},\frac{\partial f}{\partial y},\frac{\partial f}{\partial z}\right)|Vector of partial derivatives pointing uphill.
+M|U|Green's theorem|\oint_C(L\,dx+M\,dy)=\iint_D\left(\frac{\partial M}{\partial x}-\frac{\partial L}{\partial y}\right)dA|Relates a line integral to a double integral.
+M|U|Stokes' theorem|\oint_C\mathbf F\cdot d\mathbf r=\iint_S(\nabla\times\mathbf F)\cdot d\mathbf S|Circulation round a loop equals the curl through the surface.
+M|U|Divergence theorem|\iiint_V(\nabla\cdot\mathbf F)\,dV=\iint_S\mathbf F\cdot d\mathbf S|Total divergence inside equals the flux through the boundary.
+M|U|Area element in polar coordinates|dA=r\,dr\,d\theta|Used to integrate over circular regions.
+M|U|Fourier series|f(x)=\frac{a_0}{2}+\sum_{n=1}^{\infty}\left(a_n\cos\frac{n\pi x}{L}+b_n\sin\frac{n\pi x}{L}\right)|Writes a periodic function as sines and cosines.
+M|U|Laplace transform|\mathcal L\{f\}(s)=\int_0^\infty e^{-st}f(t)\,dt|Turns differential equations into algebra.
+M|U|Maclaurin series of the exponential|e^x=\sum_{n=0}^{\infty}\frac{x^n}{n!}|Power series valid for every real x.
+M|U|Geometric series|\sum_{n=0}^{\infty}r^n=\frac{1}{1-r}|Converges when r is between -1 and 1.
+M|U|Ratio test|L=\lim_{n\to\infty}\left\lvert\frac{a_{n+1}}{a_n}\right\rvert|The series converges when L < 1.
+M|U|Characteristic equation of a linear ODE|ar^2+br+c=0|Gives solutions e^{rt} of ay'' + by' + cy = 0.
+M|U|Newton-Raphson method|x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}|Repeated improvement of a root estimate.
+M|U|Trapezoidal rule|\int_a^b f\,dx\approx\frac{h}{2}\left[f_0+2(f_1+\dots+f_{n-1})+f_n\right]|Approximate integral from equally spaced values.
+M|U|Simpson's rule|\int_a^b f\,dx\approx\frac{h}{3}\left[f_0+4f_1+2f_2+\dots+4f_{n-1}+f_n\right]|More accurate numerical integral, n even.
+M|U|Volume of revolution by discs|V=\pi\int_a^b[f(x)]^2\,dx|Volume when a curve is turned round the x-axis.
+M|U|Arc length of a curve|L=\int_a^b\sqrt{1+[f'(x)]^2}\,dx|Length of the graph of f from a to b.
+M|U|Stirling's approximation|n!\approx\sqrt{2\pi n}\left(\frac{n}{e}\right)^n|Good estimate of a factorial for large n.
+M|U|Gamma function|\Gamma(z)=\int_0^\infty t^{z-1}e^{-t}\,dt|Extends the factorial: Gamma(n) = (n-1)!.
+M|U|Pascal's rule|\binom{n}{k}=\binom{n-1}{k-1}+\binom{n-1}{k}|Each binomial coefficient is the sum of the two above it.
+M|U|Fermat's little theorem|a^{p-1}\equiv1\pmod p|For a prime p that does not divide a.
+M|U|Euclidean algorithm|\gcd(a,b)=\gcd(b,\ a\bmod b)|Repeated remainders give the greatest common divisor.
+M|U|de Moivre's theorem|(\cos\theta+i\sin\theta)^n=\cos n\theta+i\sin n\theta|Powers of a complex number on the unit circle.
+M|U|Hyperbolic identity|\cosh^2x-\sinh^2x=1|Hyperbolic counterpart of sin^2 + cos^2 = 1.
+M|U|Cauchy-Riemann equations|\frac{\partial u}{\partial x}=\frac{\partial v}{\partial y},\quad\frac{\partial u}{\partial y}=-\frac{\partial v}{\partial x}|Conditions for f = u + iv to be complex differentiable.
+M|P|Cauchy's integral formula|f(a)=\frac{1}{2\pi i}\oint_\gamma\frac{f(z)}{z-a}\,dz|Values inside a loop come from values on the loop.
+M|P|Residue theorem|\oint_\gamma f(z)\,dz=2\pi i\sum_k\operatorname{Res}(f,a_k)|Contour integral as a sum of residues.
+M|P|Cayley-Hamilton theorem|p(A)=0|A square matrix satisfies its own characteristic equation.
+M|P|Singular value decomposition|A=U\Sigma V^{\mathsf T}|Factorises any matrix into rotations and scaling.
+M|P|Euler-Lagrange equation|\frac{\partial L}{\partial y}-\frac{d}{dx}\frac{\partial L}{\partial y'}=0|Condition for a functional to be stationary.
+M|P|Fourier transform|\hat f(\xi)=\int_{-\infty}^{\infty}f(x)\,e^{-2\pi ix\xi}\,dx|Frequency content of a function.
+M|P|Riemann zeta function|\zeta(s)=\sum_{n=1}^{\infty}\frac{1}{n^s}|Series for real part of s greater than 1.
+M|P|Chinese remainder theorem|x\equiv a_i\pmod{n_i}|A system with pairwise coprime moduli has a unique solution modulo their product.
+M|R|Euler product for the zeta function|\zeta(s)=\prod_{p\ \text{prime}}\frac{1}{1-p^{-s}}|Links the zeta function to the primes.
+M|R|Prime number theorem|\pi(x)\sim\frac{x}{\ln x}|Number of primes up to x for large x.
+M|R|Generalised Stokes' theorem|\int_{\partial M}\omega=\int_M d\omega|One theorem behind the fundamental theorem of calculus, Green, Stokes and divergence.
+M|R|Gauss-Bonnet theorem|\int_M K\,dA=2\pi\chi(M)|Total curvature of a closed surface depends only on its topology.
+M|R|Euler characteristic of a polyhedron|V-E+F=2|Vertices minus edges plus faces for a convex polyhedron.

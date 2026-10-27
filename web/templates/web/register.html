@@ -1,0 +1,16 @@
+{% extends "web/base.html" %}{% block title %}Create account · FormulaSphere{% endblock %}{% block content %}
+<div class="wrap"><section style="max-width:460px"><h1 style="font-size:2rem">Create your account</h1>
+<p class="muted">Start with a {{ trial_days }}-day free trial of basic formulas for your level.</p>
+{% if errors %}<div role="alert" class="card" style="border-color:var(--err);color:var(--err)"><ul style="margin:0;padding-left:18px">{% for e in errors %}<li>{{ e }}</li>{% endfor %}</ul></div>{% endif %}
+{% if not types %}<div class="card"><p>Sign-up is not open yet. An admin needs to add account types first.</p></div>{% else %}
+<form method="post" style="display:grid;gap:14px;margin-top:16px">{% csrf_token %}
+<label>Username<br><input name="username" value="{{ values.username }}" required style="width:100%;padding:10px"></label>
+<label>Email<br><input name="email" type="email" value="{{ values.email }}" required style="width:100%;padding:10px"></label>
+<label>I am a<br><select name="account_type" id="account_type" required style="width:100%;padding:10px"><option value="">Select who you are</option>
+{% for t in types %}<option value="{{ t.pk }}" data-asks-grade="{{ t.asks_grade|yesno:'1,0' }}" {% if values.account_type == t.pk|stringformat:"s" %}selected{% endif %}>{{ t.name }}</option>{% endfor %}</select></label>
+<label id="grade_box">Grade<br><select name="grade" id="grade" style="width:100%;padding:10px"><option value="">Select your grade</option>
+{% regroup grades by level as groups %}{% for grp in groups %}<optgroup label="{{ grp.grouper.name }}">{% for g in grp.list %}<option value="{{ g.slug }}" {% if values.grade == g.slug %}selected{% endif %}>{{ g.name }}</option>{% endfor %}</optgroup>{% endfor %}</select></label>
+<label>Password<br><input name="password" type="password" required style="width:100%;padding:10px"></label>
+<label>Confirm password<br><input name="password2" type="password" required style="width:100%;padding:10px"></label>
+<button class="btn">Create account</button></form>{% endif %}
+<p class="muted">Already registered? <a href="{% url 'login' %}">Sign in</a></p></section></div>{% endblock %}

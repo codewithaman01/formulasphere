@@ -1,0 +1,26 @@
+{% extends "panel/base.html" %}{% block title %}Two-factor sign-in{% endblock %}{% block content %}
+<h1>Two-factor sign-in</h1>
+<p class="muted">An extra 6-digit code from an authenticator app (Google Authenticator, Microsoft Authenticator, Authy) after your password.</p>
+<div class="card" style="max-width:560px">
+{% if state == "none" %}
+  {% if forced %}<p class="msg error">Your role requires two-factor sign-in. Set it up to continue.</p>{% else %}<p>Two-factor is <strong>off</strong> for your account.</p>{% endif %}
+  <form method="post">{% csrf_token %}<input type="hidden" name="action" value="start"><button class="btn">Set up two-factor</button></form>
+{% elif state == "pending" %}
+  <p><strong>1.</strong> In your authenticator app choose “Add account” → “Enter a setup key”, and type this key (spaces don't matter):</p>
+  <p style="font:600 1.15rem ui-monospace,Menlo,monospace;letter-spacing:.05em;word-break:break-all">{{ spaced }}</p>
+  <p class="muted" style="font-size:13px">Account name: {{ user.username }} · Type: time based. Phone apps can also open this link: <a href="{{ uri }}">{{ uri|truncatechars:40 }}</a></p>
+  <p><strong>2.</strong> Enter the 6-digit code the app shows:</p>
+  <form method="post">{% csrf_token %}<input type="hidden" name="action" value="setup">
+  <div class="f"><input type="text" name="code" inputmode="numeric" autocomplete="one-time-code" maxlength="7" required style="max-width:160px" aria-label="6-digit code"></div><button class="btn">Turn on</button></form>
+{% elif state == "ask" %}
+  <p>Enter the 6-digit code from your authenticator app.</p>
+  <form method="post">{% csrf_token %}<input type="hidden" name="action" value="verify">
+  <div class="f"><input type="text" name="code" inputmode="numeric" autocomplete="one-time-code" maxlength="7" required autofocus style="max-width:160px" aria-label="6-digit code"></div><button class="btn">Continue</button></form>
+  <p class="muted" style="font-size:13px">Lost your phone? An administrator can reset your two-factor.</p>
+{% else %}
+  <p>Two-factor is <strong>on</strong> and you are verified for this session.</p>
+  {% if forced %}<p class="muted">Your role requires it, so it cannot be turned off.</p>
+  {% else %}<form method="post">{% csrf_token %}<input type="hidden" name="action" value="disable">
+  <div class="f"><label for="c">To turn it off, enter a current code</label><input id="c" type="text" name="code" inputmode="numeric" maxlength="7" required style="max-width:160px"></div><button class="btn red">Turn off</button></form>{% endif %}
+{% endif %}
+</div>{% endblock %}

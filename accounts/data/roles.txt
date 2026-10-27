@@ -1,0 +1,7 @@
+# name|description|access codes (comma separated; "area.*" means add, change, delete and view)|grades it can see (comma separated slugs, or * for every grade)
+# These are examples. Add, edit or delete roles any time in /panel/roles/.
+Contributor|Writes and edits draft formulas in assigned subjects|formulas.create|*
+Reviewer|Checks formulas in assigned subjects and approves or sends them back|formulas.review|*
+Publisher|Reviews and publishes formulas in assigned subjects|formulas.review,formulas.publish|*
+Content manager|Looks after subjects, topics, grades, snippets and references|subjects.*,topics.*,levels.*,grades.*,snippets.*,references.*|*
+Student support|Sees students and grants premium|students.view,students.grant|

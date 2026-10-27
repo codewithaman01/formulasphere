@@ -1,0 +1,41 @@
+{% extends "web/base.html" %}{% block title %}{{ f.title }} · FormulaSphere{% endblock %}{% block desc %}{{ f.short_explanation }}{% endblock %}
+{% block content %}<div class="wrap"><article class="paper">
+<nav aria-label="Breadcrumb" class="crumbs"><a href="{% url 'home' %}">Home</a> / <a href="{% url 'explore' %}">Explore</a> / {{ f.title }}</nav>
+<header class="ptitle"><h1>{{ f.title }}</h1><p class="lead">{{ f.short_explanation }}</p></header>
+<aside class="margin" aria-label="Record details"><dl>
+<dt>Subject</dt><dd>{% for s in f.subjects.all %}{{ s.name }}{% if not forloop.last %}, {% endif %}{% endfor %}</dd>
+<dt>Level</dt><dd>{% for l in f.levels.all %}{{ l.name }}{% if not forloop.last %}, {% endif %}{% endfor %}</dd>
+<dt>Difficulty</dt><dd>{{ f.get_difficulty_display }}</dd>
+<dt>Sources</dt><dd class="{% if f.source_verification == 'source_checked' %}ok{% endif %}">{{ f.get_source_verification_display }}</dd>
+<dt>Expert review</dt><dd>{% if f.last_reviewed_at %}{{ f.last_reviewed_at|date:"j M Y" }}{% else %}Not yet reviewed{% endif %}</dd>
+{% if f.is_demo %}<dt>Record type</dt><dd class="warn">Demo record</dd>{% endif %}</dl></aside>
+<div class="body">
+<div class="statement numbered"><div class="eqrow"><div class="eq" data-math="{{ f.latex }}" data-display="1"></div></div>
+{% if is_panel_user %}<button class="btn sec" data-copy="{{ f.latex }}">Copy LaTeX</button>{% endif %}</div>
+<form method="post" action="{% url 'bookmark' f.slug %}" style="margin:10px 0">{% csrf_token %}<button class="btn sec" aria-pressed="{% if is_saved %}true{% else %}false{% endif %}">{% if is_saved %}★ Saved. Remove{% else %}☆ Save this formula{% endif %}</button></form>
+{% if f.calc_expression %}<section class="card" id="calc" data-expr="{{ f.calc_expression }}" aria-label="Calculator" style="margin:14px 0"><h2 style="margin-top:0">Calculator</h2>
+<p class="muted" style="margin-top:0">Type the values you know. The result appears as you type.</p><div class="calc-in" style="display:grid;gap:8px;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))"></div>
+<p class="calc-out" style="font-size:1.2rem;font-weight:700;margin:12px 0 0" aria-live="polite"></p></section>
+{{ calc_labels|json_script:"calc-labels" }}
+<script src="https://cdn.jsdelivr.net/npm/mathjs@12.4.2/lib/browser/math.js"></script><script>
+(function(){var box=document.getElementById('calc');if(!box||!window.math)return;
+var expr=box.dataset.expr,labels=JSON.parse(document.getElementById('calc-labels').textContent||'{}'),out=box.querySelector('.calc-out'),ins=box.querySelector('.calc-in'),node,names=[];
+try{node=math.parse(expr)}catch(e){out.textContent='This calculator is not set up correctly.';return}
+node.traverse(function(n,path){if(n.isSymbolNode&&path!=='fn'&&!(n.name in math)&&names.indexOf(n.name)<0)names.push(n.name)});
+var fields={};names.forEach(function(nm){var l=document.createElement('label');l.style.display='block';l.append(document.createTextNode(nm+(labels[nm]?' · '+labels[nm]:'')));
+ var i=document.createElement('input');i.type='number';i.step='any';i.inputMode='decimal';i.style.cssText='display:block;width:100%;padding:8px;border:1px solid var(--border);border-radius:8px;font:inherit;margin-top:3px';
+ i.addEventListener('input',calc);l.append(i);ins.append(l);fields[nm]=i});
+function calc(){var sc={};for(var k in fields){if(fields[k].value==='')return void(out.textContent='');sc[k]=parseFloat(fields[k].value)}
+ try{var r=math.evaluate(expr,sc);out.textContent=(typeof r==='number'&&isFinite(r))?'Result = '+math.format(r,{precision:8}):'No result for these values.'}catch(e){out.textContent='No result for these values.'}}
+})();
+</script>{% endif %}
+<h2>Explanation</h2>{{ f.detailed_explanation|linebreaks }}
+{% if f.variables.all %}<h2>Variables and units</h2><div class="tablewrap"><table><thead><tr><th>Symbol</th><th>Name</th><th>Unit</th><th>Constraints</th></tr></thead><tbody>
+{% for v in f.variables.all %}<tr><td><span data-math="{{ v.symbol }}"></span></td><td>{{ v.name }}</td><td>{% if v.unit %}<span data-math="{{ v.unit }}"></span>{% else %}—{% endif %}</td><td>{{ v.constraints }}</td></tr>{% endfor %}</tbody></table></div>{% endif %}
+{% if f.derivation_steps.all %}<h2>Derivation</h2><ol class="deriv">{% for s in f.derivation_steps.all %}<li><div class="eqrow"><div class="eq" data-math="{{ s.latex }}" data-display="1"></div></div><p>{{ s.explanation }}</p></li>{% endfor %}</ol>{% endif %}
+{% if f.assumptions.all %}<h2>Assumptions and limitations</h2><ul>{% for a in f.assumptions.all %}<li>{{ a.description }} {{ a.validity }}</li>{% endfor %}</ul>{% endif %}
+{% if f.examples.all %}<h2>Worked examples</h2>{% for e in f.examples.all %}<div class="card example"><h3>{{ e.title }}</h3><p>{{ e.problem }}</p>{{ e.solution|linebreaks }}<p><strong>{{ e.result }} {{ e.units }}</strong></p></div>{% endfor %}{% endif %}
+<h2>References</h2><ol class="refs">{% for fr in f.formula_references.all %}<li>{{ fr.reference.authors }} ({{ fr.reference.year }}). <em>{{ fr.reference.title }}</em>. {{ fr.reference.publisher }}. {% if fr.reference.doi %}DOI: {{ fr.reference.doi }}.{% endif %} {{ fr.locator }}</li>{% empty %}<li class="muted none">No references have been attached to this record yet.</li>{% endfor %}</ol>
+</div></article>
+{% if f.related.all %}<section><h2>Related formulas</h2><div class="grid">{% for f in f.related.all %}{% include "web/_card.html" %}{% endfor %}</div></section>{% endif %}
+</div>{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "web/base.html" %}{% block content %}
+<div class="wrap"><div class="hero"><div>
+<h1>Every formula, with its proof and its source.</h1>
+<p class="lead">Look up a formula, follow its derivation step by step, and check the references behind it. Coverage runs from school mathematics to advanced academic work.</p>
+<form class="search" action="{% url 'explore' %}" role="search"><label class="skip" for="q">Search formulas</label>
+<input id="q" name="q" type="search" placeholder="Search by name, topic or symbol" autocomplete="off"><button class="btn">Search</button>
+<ul class="suggest" id="suggest" hidden></ul></form>
+<p class="links"><a href="#subjects">Browse subjects</a><a href="{% url 'explore' %}">Explore all topics</a></p></div>
+<figure class="plates numbered" aria-label="Three well-known results">
+<div class="plate-row"><div class="eqrow"><div data-math="\int_a^b f(x)\,dx = F(b)-F(a)" data-display="1"></div></div><figcaption>The fundamental theorem of calculus</figcaption></div>
+<div class="plate-row"><div class="eqrow"><div data-math="\nabla\cdot\vec{E}=\frac{\rho}{\varepsilon_0}" data-display="1"></div></div><figcaption>Gauss's law for electric fields</figcaption></div>
+<div class="plate-row"><div class="eqrow"><div data-math="\sum_{n=1}^{\infty}\frac{1}{n^2}=\frac{\pi^2}{6}" data-display="1"></div></div><figcaption>The Basel problem, solved by Euler</figcaption></div>
+</figure></div>
+<section id="subjects"><h2>Subjects</h2>
+{% if subjects %}<ul class="contents">{% for s in subjects %}<li><a href="{% url 'subject' s.slug %}"><span class="ct">{{ s.name }}</span><span class="muted">{{ s.description }}</span></a></li>{% endfor %}</ul>
+{% else %}<div class="empty">No subjects published yet. Add them in the admin.</div>{% endif %}</section>
+<section id="levels"><h2>Academic levels</h2><ul class="contents cols3">{% for l in levels %}<li><a href="{% url 'explore' %}?level={{ l.slug }}"><span class="ct">{{ l.name }}</span><span class="muted">{{ l.description }}</span></a></li>{% endfor %}</ul></section>
+<section><h2>Featured formulas</h2>
+{% if featured %}<div class="grid">{% for f in featured %}{% include "web/_card.html" %}{% endfor %}</div>
+{% else %}<div class="empty">No published formulas yet.</div>{% endif %}</section></div>{% endblock %}

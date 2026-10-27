@@ -1,0 +1,264 @@
+@subject CS
+@@ Variables and data types|Declaring variables|python|b|Name a value; Python infers the type.
+age = 16
+name = "Asha"
+price = 9.5
+ok = True
+print(type(age), name, price, ok)
+##
+<class 'int'> Asha 9.5 True
+@@ Variables and data types|Declaring variables|java|b|Java needs the type written out.
+int age = 16;
+String name = "Asha";
+double price = 9.5;
+boolean ok = true;
+System.out.println(age + " " + name + " " + price + " " + ok);
+##
+16 Asha 9.5 true
+@@ Conditionals|if / else if / else|python|b|Run different code depending on a condition.
+marks = 72
+if marks >= 90:
+    print("A")
+elif marks >= 60:
+    print("B")
+else:
+    print("C")
+##
+B
+@@ Conditionals|if / else if / else|java|b|Run different code depending on a condition.
+int marks = 72;
+if (marks >= 90) System.out.println("A");
+else if (marks >= 60) System.out.println("B");
+else System.out.println("C");
+##
+B
+@@ Loops|for and while loops|python|b|Repeat code a fixed or conditional number of times.
+total = 0
+for i in range(1, 6):
+    total += i
+print(total)
+n = 3
+while n > 0:
+    print(n)
+    n -= 1
+##
+15
+3
+2
+1
+@@ Loops|for and while loops|java|b|Repeat code a fixed or conditional number of times.
+int total = 0;
+for (int i = 1; i <= 5; i++) total += i;
+System.out.println(total);
+int n = 3;
+while (n > 0) { System.out.println(n); n--; }
+##
+15
+3
+2
+1
+@@ Functions and methods|Defining a function|python|b|Package reusable code with parameters and a return value.
+def area(r):
+    return 3.14159 * r * r
+print(area(2))
+##
+12.56636
+@@ Functions and methods|Defining a function|java|b|Java functions are methods inside a class.
+public class Main {
+    static double area(double r) {
+        return 3.14159 * r * r;
+    }
+    public static void main(String[] args) {
+        System.out.println(area(2));
+    }
+}
+##
+12.56636
+@@ Lists and arrays|Storing many values|python|b|A list grows and shrinks as needed.
+nums = [4, 1, 7]
+nums.append(9)
+print(nums, len(nums), nums[0])
+##
+[4, 1, 7, 9] 4 4
+@@ Lists and arrays|Storing many values|java|b|An ArrayList is the resizable counterpart of a Python list.
+java.util.List<Integer> nums = new java.util.ArrayList<>(java.util.List.of(4, 1, 7));
+nums.add(9);
+System.out.println(nums + " " + nums.size() + " " + nums.get(0));
+##
+[4, 1, 7, 9] 4 4
+@@ Strings|Common string operations|python|b|Change case, measure, slice and reverse text.
+s = "Formula"
+print(s.upper(), len(s), s[0:3], s[::-1])
+##
+FORMULA 7 For alumroF
+@@ Strings|Common string operations|java|b|Change case, measure, slice and reverse text.
+String s = "Formula";
+System.out.println(s.toUpperCase() + " " + s.length() + " " + s.substring(0, 3) + " " + new StringBuilder(s).reverse());
+##
+FORMULA 7 For alumroF
+@@ Dictionaries and maps|Key-value storage|python|b|Look up a value by its key.
+marks = {"math": 90, "sci": 85}
+marks["eng"] = 78
+print(marks["math"], len(marks))
+for k, v in marks.items():
+    print(k, v)
+##
+90 3
+math 90
+sci 85
+eng 78
+@@ Dictionaries and maps|Key-value storage|java|b|A LinkedHashMap keeps insertion order like a Python dict.
+java.util.Map<String, Integer> marks = new java.util.LinkedHashMap<>();
+marks.put("math", 90); marks.put("sci", 85); marks.put("eng", 78);
+System.out.println(marks.get("math") + " " + marks.size());
+for (var e : marks.entrySet()) System.out.println(e.getKey() + " " + e.getValue());
+##
+90 3
+math 90
+sci 85
+eng 78
+@@ Classes and objects|A simple class|python|p|A class bundles data and behaviour.
+class Student:
+    def __init__(self, name):
+        self.name = name
+    def greet(self):
+        return "Hi, " + self.name
+print(Student("Asha").greet())
+##
+Hi, Asha
+@@ Classes and objects|A simple class|java|p|A class bundles data and behaviour.
+class Student {
+    String name;
+    Student(String name) { this.name = name; }
+    String greet() { return "Hi, " + name; }
+}
+public class Main {
+    public static void main(String[] args) {
+        System.out.println(new Student("Asha").greet());
+    }
+}
+##
+Hi, Asha
+@@ Inheritance|Overriding a method|python|p|A subclass reuses a parent class and changes behaviour.
+class Animal:
+    def sound(self):
+        return "..."
+class Dog(Animal):
+    def sound(self):
+        return "Woof"
+print(Dog().sound())
+##
+Woof
+@@ Inheritance|Overriding a method|java|p|A subclass reuses a parent class and changes behaviour.
+class Animal {
+    String sound() { return "..."; }
+}
+class Dog extends Animal {
+    @Override String sound() { return "Woof"; }
+}
+public class Main {
+    public static void main(String[] args) {
+        System.out.println(new Dog().sound());
+    }
+}
+##
+Woof
+@@ Exception handling|try, catch and finally|python|p|Handle errors without crashing the program.
+try:
+    print(10 / 0)
+except ZeroDivisionError:
+    print("Cannot divide by zero")
+finally:
+    print("Done")
+##
+Cannot divide by zero
+Done
+@@ Exception handling|try, catch and finally|java|p|Handle errors without crashing the program.
+try {
+    System.out.println(10 / 0);
+} catch (ArithmeticException e) {
+    System.out.println("Cannot divide by zero");
+} finally {
+    System.out.println("Done");
+}
+##
+Cannot divide by zero
+Done
+@@ Recursion|Factorial|python|p|A function that calls itself on a smaller problem.
+def fact(n):
+    return 1 if n <= 1 else n * fact(n - 1)
+print(fact(5))
+##
+120
+@@ Recursion|Factorial|java|p|A method that calls itself on a smaller problem.
+public class Main {
+    static long fact(int n) {
+        return n <= 1 ? 1 : n * fact(n - 1);
+    }
+    public static void main(String[] args) {
+        System.out.println(fact(5));
+    }
+}
+##
+120
+@@ Searching and sorting|Binary search|python|p|Find a value in a sorted list by halving the range.
+def search(a, x):
+    lo, hi = 0, len(a) - 1
+    while lo <= hi:
+        mid = (lo + hi) // 2
+        if a[mid] == x:
+            return mid
+        if a[mid] < x:
+            lo = mid + 1
+        else:
+            hi = mid - 1
+    return -1
+print(search([1, 3, 5, 7, 9], 7))
+##
+3
+@@ Searching and sorting|Binary search|java|p|Find a value in a sorted array by halving the range.
+public class Main {
+    static int search(int[] a, int x) {
+        int lo = 0, hi = a.length - 1;
+        while (lo <= hi) {
+            int mid = (lo + hi) / 2;
+            if (a[mid] == x) return mid;
+            if (a[mid] < x) lo = mid + 1; else hi = mid - 1;
+        }
+        return -1;
+    }
+    public static void main(String[] args) {
+        System.out.println(search(new int[]{1, 3, 5, 7, 9}, 7));
+    }
+}
+##
+3
+@@ Searching and sorting|Bubble sort|python|p|Repeatedly swap neighbours that are out of order.
+a = [5, 2, 9, 1]
+for i in range(len(a)):
+    for j in range(len(a) - i - 1):
+        if a[j] > a[j + 1]:
+            a[j], a[j + 1] = a[j + 1], a[j]
+print(a)
+##
+[1, 2, 5, 9]
+@@ Searching and sorting|Bubble sort|java|p|Repeatedly swap neighbours that are out of order.
+int[] a = {5, 2, 9, 1};
+for (int i = 0; i < a.length; i++)
+    for (int j = 0; j < a.length - i - 1; j++)
+        if (a[j] > a[j + 1]) { int t = a[j]; a[j] = a[j + 1]; a[j + 1] = t; }
+System.out.println(java.util.Arrays.toString(a));
+##
+[1, 2, 5, 9]
+@@ File handling|Write and read a text file|python|p|Open files with a context manager so they always close.
+with open("notes.txt", "w") as f:
+    f.write("hello")
+with open("notes.txt") as f:
+    print(f.read())
+##
+hello
+@@ File handling|Write and read a text file|java|p|Files can throw IOException, so main declares it.
+java.nio.file.Files.writeString(java.nio.file.Path.of("notes.txt"), "hello");
+System.out.println(java.nio.file.Files.readString(java.nio.file.Path.of("notes.txt")));
+##
+hello

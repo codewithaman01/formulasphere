@@ -1,0 +1,33 @@
+# Data Science
+DS|S11|Accuracy|\mathrm{Accuracy}=\frac{TP+TN}{TP+TN+FP+FN}|Fraction of predictions that are right.
+DS|U|Mean absolute error|\mathrm{MAE}=\frac1n\sum_{i=1}^{n}\lvert y_i-\hat y_i\rvert|Average size of the errors.
+DS|U|Root mean squared error|\mathrm{RMSE}=\sqrt{\frac1n\sum_{i=1}^{n}(y_i-\hat y_i)^2}|Error in the units of the target.
+DS|U|Specificity|\mathrm{Specificity}=\frac{TN}{TN+FP}|Share of real negatives found.
+DS|U|Linear regression model|\hat y=w^{\mathsf T}x+b|Prediction as a weighted sum of features.
+DS|U|Normal equation|w=(X^{\mathsf T}X)^{-1}X^{\mathsf T}y|Closed-form least-squares weights.
+DS|U|Logistic regression|P(y=1\mid x)=\sigma(w^{\mathsf T}x+b)|Probability of the positive class.
+DS|U|Softmax function|\mathrm{softmax}(z)_i=\frac{e^{z_i}}{\sum_je^{z_j}}|Turns scores into probabilities.
+DS|U|ReLU activation|\mathrm{ReLU}(x)=\max(0,x)|Passes positives, blocks negatives.
+DS|U|Binary cross-entropy|L=-\left[y\log\hat y+(1-y)\log(1-\hat y)\right]|Loss for two-class prediction.
+DS|U|L2 regularisation|J(w)=J_0(w)+\lambda\lVert w\rVert_2^2|Ridge penalty that shrinks weights.
+DS|U|L1 regularisation|J(w)=J_0(w)+\lambda\lVert w\rVert_1|Lasso penalty that drives weights to zero.
+DS|U|Stochastic gradient descent with momentum|v_{t+1}=\beta v_t+\nabla J(\theta_t),\quad\theta_{t+1}=\theta_t-\eta v_{t+1}|Accumulates past gradients.
+DS|U|Adam update|\theta_{t+1}=\theta_t-\eta\frac{\hat m_t}{\sqrt{\hat v_t}+\epsilon}|Adaptive step sizes from moment estimates.
+DS|U|Backpropagation chain rule|\frac{\partial L}{\partial w}=\frac{\partial L}{\partial a}\frac{\partial a}{\partial z}\frac{\partial z}{\partial w}|Gradient of the loss through one neuron.
+DS|U|Batch normalisation|\hat x=\frac{x-\mu_B}{\sqrt{\sigma_B^2+\epsilon}}|Normalises a layer's inputs over a batch.
+DS|U|Euclidean distance|d(x,y)=\sqrt{\sum_i(x_i-y_i)^2}|Straight-line distance between points.
+DS|U|Manhattan distance|d(x,y)=\sum_i\lvert x_i-y_i\rvert|City-block distance between points.
+DS|U|k-means objective|J=\sum_{k=1}^{K}\sum_{x\in C_k}\lVert x-\mu_k\rVert^2|Within-cluster squared distance to minimise.
+DS|U|Naive Bayes classifier|\hat y=\arg\max_cP(c)\prod_iP(x_i\mid c)|Assumes features are independent given the class.
+DS|U|Gini impurity|G=1-\sum_kp_k^2|How mixed a decision-tree node is.
+DS|U|Information gain|IG=H(\text{parent})-\sum_j\frac{n_j}{n}H(\text{child}_j)|Reduction in entropy from a split.
+DS|U|Adjusted R squared|\bar R^2=1-(1-R^2)\frac{n-1}{n-p-1}|R squared penalised for the number of predictors.
+DS|U|Principal component variance|\text{explained}=\frac{\lambda_k}{\sum_j\lambda_j}|Share of variance on the kth component.
+DS|U|Bias-variance decomposition|E[(y-\hat f)^2]=\text{Bias}^2+\text{Variance}+\sigma^2|Sources of prediction error.
+DS|U|TF-IDF|\mathrm{tfidf}(t,d)=\mathrm{tf}(t,d)\cdot\log\frac{N}{\mathrm{df}(t)}|Weights a word by how special it is to a document.
+DS|U|Min-max scaling|x'=\frac{x-x_{\min}}{x_{\max}-x_{\min}}|Rescales a feature to the range 0 to 1.
+DS|P|Scaled dot-product attention|\mathrm{Attention}(Q,K,V)=\mathrm{softmax}\left(\frac{QK^{\mathsf T}}{\sqrt{d_k}}\right)V|Core operation of transformers.
+DS|P|KL divergence for a VAE|D_{KL}=-\tfrac12\sum_j\left(1+\ln\sigma_j^2-\mu_j^2-\sigma_j^2\right)|Regulariser of a variational autoencoder.
+DS|P|Kernel function (RBF)|K(x,y)=\exp\left(-\gamma\lVert x-y\rVert^2\right)|Similarity used by kernel methods.
+DS|P|Support vector machine margin|\text{margin}=\frac{2}{\lVert w\rVert}|Width between the two class boundaries.
+DS|P|Evidence lower bound|\ln p(x)\ge E_q[\ln p(x\mid z)]-D_{KL}(q(z)\Vert p(z))|Objective of variational inference.

@@ -1,0 +1,6 @@
+# slug|title|subject code|grades (separated by ;)|mode (online, home, centre, any)|area|fee note (or leave empty and set a fee per hour in the panel)|batch size (empty = one-to-one)|description
+# Starter offers. They load as unpublished drafts: check the details and fees, then tick Published in the panel.
+maths-class-6-10|Mathematics tuition, Classes 6 to 10|M|class-6;class-7;class-8;class-9;class-10|any|Kattigenahalli, Bengaluru|Ask for the fee||Clear explanations, regular practice and doubt clearing for school mathematics.
+maths-class-11-12|Mathematics tuition, Classes 11 and 12|M|class-11;class-12|any|Kattigenahalli, Bengaluru|Ask for the fee||Calculus, algebra, vectors and matrices with exam practice.
+programming-school|Programming for school students|CS|class-8;class-9;class-10;class-11;class-12|any|Kattigenahalli, Bengaluru|Ask for the fee||Python and Java from the basics, with small projects.
+programming-and-maths-degree|Programming and mathematics for BCA and MCA|CS|undergraduate;postgraduate|any|Kattigenahalli, Bengaluru|Ask for the fee||Data structures, algorithms, databases and the mathematics behind them.

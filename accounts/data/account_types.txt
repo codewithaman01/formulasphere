@@ -1,0 +1,5 @@
+# slug|name|asks grade (1 or 0)|main grade (a grade slug, for types that do not ask)|opens every grade (1 or 0)|extra grades (comma separated slugs)|description
+student|Student|1||0||School, undergraduate or postgraduate student
+teacher|Teacher|0|undergraduate|0||Teaches school or college classes
+professor|Professor|0|postgraduate|1||University teaching staff
+research-scholar|Research Scholar|0|research|0||PhD or independent researcher

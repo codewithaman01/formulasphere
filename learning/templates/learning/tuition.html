@@ -1,0 +1,18 @@
+{% extends "web/base.html" %}{% block title %}Tuition · FormulaSphere{% endblock %}{% block content %}
+<div class="wrap"><section>{% include "learning/_top.html" %}<h1 style="font-size:2rem">Tuition</h1>
+<p class="lead">One-to-one and small-group tuition. Pick what fits and send a request; we will get back to you.</p>{% include "learning/_filters.html" %}
+{% if offers %}<div class="grid">{% for o in offers %}<div class="card"><h3>{{ o.title }}</h3><p class="muted">{{ o.description|truncatewords:30 }}</p>
+<div><span class="tag">{{ o.subject.name }}</span><span class="tag">{{ o.grade_label }}</span><span class="tag">{{ o.get_mode_display }}</span>{% if o.area %}<span class="tag">{{ o.area }}</span>{% endif %}<span class="tag">{% if o.group_size %}Batch of {{ o.group_size }}{% else %}One-to-one{% endif %}</span><span class="tag ok">{% if o.fee_per_hour is not None %}{{ currency }}{% endif %}{{ o.fee_label }}</span></div></div>{% endfor %}</div>
+{% else %}<div class="empty">No tuition options are listed yet. You can still send a request below.</div>{% endif %}
+<h2 id="request">Ask for tuition</h2>
+{% if errors %}<div role="alert" class="card" style="border-color:var(--err);color:var(--err)"><ul style="margin:0;padding-left:18px">{% for e in errors %}<li>{{ e }}</li>{% endfor %}</ul></div>{% endif %}
+<form method="post" action="{% url 'learning:tuition' %}#request" style="display:grid;gap:12px;max-width:520px;margin-top:12px">{% csrf_token %}
+<input name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+<label>Your name<br><input name="name" value="{{ values.name }}" required style="width:100%;padding:10px"></label>
+<label>Phone<br><input name="phone" value="{{ values.phone }}" style="width:100%;padding:10px"></label>
+<label>Email<br><input name="email" type="email" value="{{ values.email }}" style="width:100%;padding:10px"></label>
+<label>Which tuition<br><select name="offer" style="width:100%;padding:10px"><option value="">Not sure yet</option>{% for o in offers %}<option value="{{ o.pk }}" {% if values.offer == o.pk|stringformat:"s" %}selected{% endif %}>{{ o.title }}</option>{% endfor %}</select></label>
+<label>Student's grade<br><select name="grade" style="width:100%;padding:10px"><option value="">Select</option>{% for g in grades %}<option value="{{ g.slug }}" {% if values.grade == g.slug %}selected{% endif %}>{{ g.name }}</option>{% endfor %}</select></label>
+<label>Subject or topic needed<br><input name="subject_wanted" value="{{ values.subject_wanted }}" style="width:100%;padding:10px"></label>
+<label>Message<br><textarea name="message" rows="4" style="width:100%;padding:10px">{{ values.message }}</textarea></label>
+<button class="btn">Send request</button></form></section></div>{% endblock %}

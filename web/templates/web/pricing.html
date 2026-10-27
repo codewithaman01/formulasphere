@@ -1,0 +1,46 @@
+{% extends "web/base.html" %}{% block title %}Premium plans · FormulaSphere{% endblock %}{% block content %}
+<div class="wrap"><section>
+{% if messages %}{% for m in messages %}<div role="status" class="card" style="margin-bottom:12px;border-color:{% if m.tags == 'error' %}var(--err){% else %}var(--ok){% endif %}">{{ m }}</div>{% endfor %}{% endif %}
+<h1 style="font-size:2rem">Premium plans</h1>
+<p class="lead">Open every formula for your grade, with derivations, worked examples and explanations.</p>
+{% if profile %}<div class="card" style="margin-bottom:20px"><p style="margin:0 0 4px">Account: <strong>{{ profile.identity }}</strong></p>
+{% if profile.plan == "premium" %}<p style="margin:0"><span class="tag ok">Premium</span> active until {{ profile.premium_until|date:"j M Y" }}. You can add another plan to extend it.</p>
+{% elif profile.plan == "trial" %}<p style="margin:0"><span class="tag">Free trial</span> ends on {{ profile.trial_ends_at|date:"j M Y" }}. Basic formulas for your grade are open.</p>
+{% else %}<p style="margin:0"><span class="tag demo">Trial ended</span> Your {{ trial_days }}-day trial has ended. Choose a plan to continue.</p>{% endif %}</div>{% endif %}
+
+{% if requests %}<div class="card" style="margin-bottom:20px"><h3>Your plan requests</h3>
+{% for r in requests %}<div style="padding:10px 0;border-top:1px solid var(--border)"><strong>{{ r.plan.name }}</strong> · {{ currency }}{{ r.amount|floatformat:"-2" }}
+<span class="tag {% if r.status == 'paid' %}ok{% elif r.status == 'pending' %}demo{% endif %}">{{ r.get_status_display }}</span>
+{% if r.status == 'pending' %}{% if instructions %}<p class="muted" style="margin:6px 0">{{ instructions }}</p>{% endif %}
+<form method="post" action="{% url 'plan_reference' r.pk %}" style="display:flex;gap:8px;flex-wrap:wrap;margin-top:6px">{% csrf_token %}
+<input name="reference" value="{{ r.reference }}" placeholder="Payment reference (for example UPI transaction id)" aria-label="Payment reference" style="flex:1;min-width:220px;padding:9px;border:1px solid var(--border);border-radius:8px;font:inherit">
+<button class="btn sec">Save reference</button></form>
+{% if online_pay %}<button type="button" class="btn" data-start="{% url 'pay_start' r.pk %}" data-verify="{% url 'pay_verify' r.pk %}" style="margin-top:8px">Pay {{ currency }}{{ r.amount|floatformat:"-2" }} online</button>{% endif %}
+<form method="post" action="{% url 'plan_cancel' r.pk %}" style="margin-top:6px">{% csrf_token %}<button class="btn sec" style="font-size:.85rem;padding:5px 10px">Cancel this request</button></form>
+{% elif r.reference %}<span class="muted"> · ref {{ r.reference }}</span>{% endif %}</div>{% endfor %}</div>{% endif %}
+
+<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));align-items:stretch">
+<div class="card"><h3>Free trial</h3><p style="font-size:1.8rem;margin:6px 0"><strong>{{ currency }}0</strong></p><p class="muted">{{ trial_days }} days</p>
+<ul style="padding-left:0;list-style:none;margin:12px 0"><li>✓ Basic formulas for your grade</li><li>✓ Short explanations and variables</li></ul></div>
+{% for p in plans %}<div class="card" style="{% if p.is_featured %}border:2px solid var(--accent){% endif %}">
+{% if p.is_featured %}<span class="tag ok">Most popular</span>{% endif %}<h3>{{ p.name }}</h3>
+{% if p.tagline %}<p class="muted" style="margin:0">{{ p.tagline }}</p>{% endif %}
+<p style="margin:8px 0 0"><span style="font-size:1.9rem;font-weight:700">{{ currency }}{{ p.price|floatformat:"-2" }}</span> <span class="muted">/ {{ p.period_label }}</span></p>
+<p class="muted" style="margin:2px 0 0">{% if p.original_price %}<s>{{ currency }}{{ p.original_price|floatformat:"-2" }}</s> {% if p.saving_percent %}<span class="tag ok">Save {{ p.saving_percent }}%</span>{% endif %} {% endif %}{% if p.duration_days > 30 %}About {{ currency }}{{ p.per_month|floatformat:"-2" }} a month{% endif %}</p>
+<ul style="padding-left:0;list-style:none;margin:14px 0">{% for f in p.feature_list %}<li style="padding:3px 0">✓ {{ f }}</li>{% endfor %}</ul>
+{% if p.description %}<p class="muted">{{ p.description }}</p>{% endif %}
+{% if user.is_authenticated %}<form method="post" action="{% url 'plan_choose' p.slug %}">{% csrf_token %}<button class="btn" style="width:100%">Choose {{ p.name }}</button></form>
+{% else %}<a class="btn" style="display:block;text-align:center" href="{% url 'login' %}?next={% url 'pricing' %}">Sign in to choose</a>{% endif %}</div>
+{% empty %}<div class="card"><h3>Premium plans</h3><p class="muted">Plans will be listed here soon.</p></div>{% endfor %}</div>
+<p class="muted" style="margin-top:20px">{% if online_pay %}Choose a plan, then pay online (Premium starts at once) or pay by UPI and enter your payment reference.{% else %}Choose a plan, pay as shown, enter your payment reference and Premium is added to your account as soon as the payment is confirmed.{% endif %}</p>
+{% if not user.is_authenticated %}<a class="btn" href="{% url 'register' %}">Create account</a>{% endif %}</section></div>
+{% if online_pay %}<script src="https://checkout.razorpay.com/v1/checkout.js"></script><script>
+document.querySelectorAll('[data-start]').forEach(function(b){b.addEventListener('click',function(){
+  var csrf=document.querySelector('[name=csrfmiddlewaretoken]').value;b.disabled=true;
+  fetch(b.dataset.start,{method:'POST',headers:{'X-CSRFToken':csrf}}).then(function(r){return r.json()}).then(function(d){
+    b.disabled=false;if(d.error){alert(d.error);return}
+    new Razorpay({key:d.key,order_id:d.order_id,amount:d.amount,currency:d.currency,name:d.name,description:d.description,prefill:d.prefill,
+      handler:function(x){var fd=new FormData();fd.append('razorpay_order_id',x.razorpay_order_id);fd.append('razorpay_payment_id',x.razorpay_payment_id);fd.append('razorpay_signature',x.razorpay_signature);
+        fetch(b.dataset.verify,{method:'POST',headers:{'X-CSRFToken':csrf},body:fd}).then(function(r){return r.json()}).then(function(v){if(v.ok){location.reload()}else{alert(v.error)}})}}).open();
+  }).catch(function(){b.disabled=false;alert('Could not start the payment. Please try again.')});})});
+</script>{% endif %}{% endblock %}

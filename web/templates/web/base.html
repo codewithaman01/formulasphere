@@ -1,0 +1,38 @@
+{% load static %}<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script>(function(){try{var m=localStorage.getItem('fs-theme')||'system',a=localStorage.getItem('fs-accent'),r=document.documentElement;r.dataset.theme=(m==='dark'||(m==='system'&&matchMedia('(prefers-color-scheme: dark)').matches))?'dark':'light';if(a)r.dataset.accent=a}catch(e){}})()</script>
+{% if site_favicon_url %}<link rel="icon" href="{{ site_favicon_url }}"><link rel="apple-touch-icon" href="{{ site_favicon_url }}">
+{% else %}<link rel="icon" href="{% static 'web/img/favicon.svg' %}" type="image/svg+xml">
+<link rel="icon" href="{% static 'web/img/favicon-32.png' %}" type="image/png" sizes="32x32">
+<link rel="icon" href="{% static 'web/img/favicon.ico' %}" sizes="any">
+<link rel="apple-touch-icon" href="{% static 'web/img/apple-touch-icon.png' %}">
+{% endif %}<meta name="theme-color" content="#5B5BD6">
+<title>{% block title %}FormulaSphere{% endblock %}</title>
+<meta name="description" content="{% block desc %}Verified formulas, derivations and references across academic fields.{% endblock %}">
+<link rel="canonical" href="{{ request.scheme }}://{{ request.get_host }}{{ request.path }}">
+<meta property="og:site_name" content="FormulaSphere"><meta property="og:type" content="website"><meta property="og:title" content="{% block ogtitle %}FormulaSphere{% endblock %}">
+<meta property="og:description" content="{% block ogdesc %}Verified formulas, derivations and references across academic fields.{% endblock %}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="{% static 'web/site.css' %}">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="{% static 'web/site.js' %}"></script>{% if protect_content %}<script defer src="{% static 'web/protect.js' %}"></script>{% endif %}</head><body{% if protect_content %} data-protect="1" data-wm="{{ user.username }} · {{ user.pk }}"{% endif %}>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site"><div class="wrap mast">
+<a class="logo" href="{% url 'home' %}"><img class="logo-img" src="{% if site_logo_url %}{{ site_logo_url }}{% else %}{% static 'web/img/logo.svg' %}{% endif %}" alt="" width="40" height="40">FormulaSphere<span class="tagline">Verified formulas, derivations and sources</span></a>
+<button class="btn sec menu-toggle" aria-controls="nav" aria-expanded="false">Menu</button>
+<div class="acct"><div class="theme"><button type="button" class="btn sec icon" id="theme-toggle" aria-pressed="false" aria-label="Dark mode" title="Switch light / dark">&#9680;</button>
+<details class="themebox"><summary class="btn sec">Theme</summary><div class="themepanel">
+<fieldset><legend>Appearance</legend><label><input type="radio" name="fs-mode" value="system"> Match my device</label><label><input type="radio" name="fs-mode" value="light"> Light</label><label><input type="radio" name="fs-mode" value="dark"> Dark</label></fieldset>
+<fieldset><legend>Colour</legend><div class="swatches"><button type="button" class="sw sw-indigo" data-accent-pick="indigo" aria-label="Indigo" aria-pressed="false"></button><button type="button" class="sw sw-teal" data-accent-pick="teal" aria-label="Teal" aria-pressed="false"></button><button type="button" class="sw sw-rose" data-accent-pick="rose" aria-label="Rose" aria-pressed="false"></button><button type="button" class="sw sw-amber" data-accent-pick="amber" aria-label="Amber" aria-pressed="false"></button><button type="button" class="sw sw-green" data-accent-pick="green" aria-label="Green" aria-pressed="false"></button></div></fieldset>
+<button type="button" class="btn sec" id="theme-reset">Reset</button></div></details></div>
+{% if user.is_authenticated %}{% if is_panel_user %}<a href="{% url 'panel:dashboard' %}">Staff panel</a>{% endif %}<a href="{% url 'saved' %}">Saved</a><a href="{% url 'practice' %}">Practice</a><a href="{% url 'submit_formula' %}">Add a formula</a><a href="{% url 'learning:my' %}">My learning</a><a href="{% url 'pricing' %}">Account</a><form method="post" action="{% url 'logout' %}" style="margin:0">{% csrf_token %}<button class="btn sec">Sign out</button></form>{% else %}<a href="{% url 'login' %}">Sign In</a><a class="btn" href="{% url 'register' %}">Get Started</a>{% endif %}
+</div>
+<nav class="main" id="nav" aria-label="Main"><a href="{% url 'explore' %}">Explore</a><a href="{% url 'learning:courses' %}">Courses</a><a href="{% url 'learning:live' %}">Live classes</a><a href="{% url 'learning:tuition' %}">Tuition</a><a href="{% url 'home' %}#subjects">Subjects</a><a href="{% url 'home' %}#levels">Academic levels</a><a href="{% url 'about' %}">About</a></nav>
+</div></header>
+<main id="main">{% block content %}{% endblock %}</main>
+<footer class="site"><div class="wrap">{% if leaders %}<div class="leaders"><h2>Meet the people behind FormulaSphere</h2><div class="grid leadgrid">{% for l in leaders %}<article class="card leader">{% if l.photo_id %}<img class="avatar" src="{{ l.photo_url }}" alt="{{ l.name }}" width="96" height="96" loading="lazy">{% else %}<div class="avatar ph" aria-hidden="true">{{ l.name|slice:":1" }}</div>{% endif %}
+<div><h3>{{ l.name }}</h3><p class="muted">{{ l.role_title }}</p>{% if l.short_bio %}<p>{{ l.short_bio }}</p>{% endif %}<p>{% for i in l.items.all %}{% if i.kind == "qualification" %}<span class="tag">{{ i.title }}</span>{% endif %}{% endfor %}</p><a href="{% url 'about' %}#person-{{ l.pk }}">Read more</a></div></article>{% endfor %}</div></div>{% endif %}
+<p><a href="{% url 'about' %}">About</a>{% for fp in footer_pages %}<a href="{% url 'static_page' fp.slug %}">{{ fp.title }}</a>{% endfor %}</p><p>&copy; FormulaSphere. Content is credited to its cited sources.</p></div></footer>
+</body></html>

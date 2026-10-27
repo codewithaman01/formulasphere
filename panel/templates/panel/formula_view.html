@@ -1,0 +1,14 @@
+{% extends "panel/base.html" %}{% block title %}{{ f.title }}{% endblock %}{% block content %}
+<div class="top"><div><h1>{{ f.title }}</h1><span class="tag">{{ f.get_status_display }}</span> <span class="muted">{% for s in f.subjects.all %}{{ s.name }}{% if not forloop.last %}, {% endif %}{% endfor %}</span></div>
+<div style="display:flex;gap:8px"><a class="btn sec" href="{% url 'panel:formulas' %}">‹ All formulas</a>{% if editable %}<a class="btn" href="{% url 'panel:formula_edit' f.pk %}">Edit</a>{% endif %}</div></div>
+{% if moves %}<form method="post" action="{% url 'panel:formula_move' f.pk %}" class="card" style="margin-bottom:16px">{% csrf_token %}
+<div class="f"><label for="notes">Note (shown in the review history)</label><textarea id="notes" name="notes" rows="2"></textarea></div>
+{% for m in moves %}<button class="btn {% if m.needs_note %}red{% endif %}" name="target" value="{{ m.target }}">{{ m.label }}</button> {% endfor %}</form>{% endif %}
+<div class="card"><div data-latex="{{ f.latex }}"><code>{{ f.latex }}</code></div><p>{{ f.short_explanation }}</p>{% if f.detailed_explanation %}<p style="white-space:pre-wrap">{{ f.detailed_explanation }}</p>{% endif %}</div>
+{% if f.variables.all %}<h2>Variables</h2><table><tbody>{% for v in f.variables.all %}<tr><td><code>{{ v.symbol }}</code></td><td>{{ v.name }}</td><td>{{ v.unit }}</td><td>{{ v.constraints }}</td></tr>{% endfor %}</tbody></table>{% endif %}
+{% if f.derivation_steps.all %}<h2>Derivation</h2>{% for s in f.derivation_steps.all %}<div class="card" style="margin-bottom:8px"><strong>Step {{ s.step_number }}</strong>{% if s.latex %}<div data-latex="{{ s.latex }}"><code>{{ s.latex }}</code></div>{% endif %}<div>{{ s.explanation }}</div></div>{% endfor %}{% endif %}
+{% if f.assumptions.all %}<h2>Assumptions</h2><ul>{% for a in f.assumptions.all %}<li>{{ a.description }}{% if a.validity %} <span class="muted">({{ a.validity }})</span>{% endif %}</li>{% endfor %}</ul>{% endif %}
+{% if f.examples.all %}<h2>Examples</h2>{% for e in f.examples.all %}<div class="card" style="margin-bottom:8px"><strong>{{ e.title }}</strong><p>{{ e.problem }}</p><p class="muted">{{ e.solution }}</p>{% if e.result %}<strong>{{ e.result }} {{ e.units }}</strong>{% endif %}</div>{% endfor %}{% endif %}
+{% if f.formula_references.all %}<h2>Sources</h2><ul>{% for r in f.formula_references.all %}<li>{{ r.reference }} {% if r.locator %}<span class="muted">· {{ r.locator }}</span>{% endif %}</li>{% endfor %}</ul>{% endif %}
+{% if reviews %}<h2>Review history</h2>{% for r in reviews %}<div class="card" style="margin-bottom:8px"><strong>{{ r.get_decision_display }}</strong> by {{ r.reviewer.username }} · {{ r.created_at|date:"d M Y H:i" }}<br>{{ r.notes|default:"No note." }}</div>{% endfor %}{% endif %}
+{% endblock %}

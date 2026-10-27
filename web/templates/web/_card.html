@@ -1,0 +1,8 @@
+<a class="card entry" href="{% url 'formula_detail' f.slug %}">
+<h3>{{ f.title }}</h3>
+<div class="eq plate" data-math="{{ f.latex }}" data-display="1" aria-label="{{ f.plain_text|default:f.title }}"></div>
+<p class="muted">{{ f.short_explanation }}</p>
+<div>{% for s in f.subjects.all %}<span class="tag">{{ s.name }}</span>{% endfor %}{% for l in f.levels.all %}<span class="tag">{{ l.name }}</span>{% endfor %}
+<span class="tag">{{ f.get_difficulty_display }}</span>{% if f.locked %}<span class="tag demo">Locked</span>{% elif f.access_tier == "basic" %}<span class="tag ok">Basic</span>{% else %}<span class="tag">Premium</span>{% endif %}
+{% if f.is_demo %}<span class="tag demo">Demo record</span>{% endif %}
+<span class="tag {% if f.source_verification == 'source_checked' %}ok{% endif %}">{{ f.get_source_verification_display }}</span></div></a>

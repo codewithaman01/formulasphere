@@ -1,0 +1,4 @@
+{% extends "web/base.html" %}{% block title %}Recently viewed · FormulaSphere{% endblock %}
+{% block content %}<div class="wrap"><section><h1 style="font-size:2rem">Recently viewed</h1>
+<p class="lead">The last formulas you opened. <a href="{% url 'saved' %}">Saved formulas</a></p>
+{% include "web/_formula_list.html" with empty="You have not opened any formula yet." %}</section></div>{% endblock %}

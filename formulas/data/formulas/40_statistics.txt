@@ -1,0 +1,37 @@
+# Statistics
+S|U|Normal distribution density|f(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}|Probability density of a normal random variable.|\mu~Mean;\sigma~Standard deviation|premium|advanced|M
+S|S8|Range|\text{Range}=\text{largest}-\text{smallest}|Spread of a data set.
+S|S9|Median of ungrouped data|\text{Median}=\frac{n+1}{2}\text{th value}|Middle value of an ordered list of n values.
+S|S9|Mean of grouped data|\bar x=\frac{\sum f_ix_i}{\sum f_i}|Mean from a frequency table.|f_i~Frequency;x_i~Class mark
+S|S11|Sample variance|s^2=\frac{1}{n-1}\sum_{i=1}^{n}(x_i-\bar x)^2|Unbiased estimate of population variance.
+S|S11|Coefficient of variation|CV=\frac{\sigma}{\mu}\times100|Spread relative to the mean.
+S|S11|Interquartile range|IQR=Q_3-Q_1|Spread of the middle half of the data.
+S|S12|Addition rule of probability|P(A\cup B)=P(A)+P(B)-P(A\cap B)|Probability of A or B.
+S|S12|Multiplication rule for independent events|P(A\cap B)=P(A)P(B)|Probability of both independent events.
+S|S12|Expected value of a discrete variable|E(X)=\sum x_ip_i|Probability-weighted average.
+S|S12|Variance of a discrete variable|\mathrm{Var}(X)=E(X^2)-[E(X)]^2|Spread of a random variable.
+S|S12|Mean and variance of a binomial|\mu=np,\quad\sigma^2=np(1-p)|Moments of the binomial distribution.
+S|U|Covariance|\mathrm{Cov}(X,Y)=E[(X-\mu_X)(Y-\mu_Y)]|How two variables vary together.
+S|U|Variance of a sum|\mathrm{Var}(X+Y)=\mathrm{Var}(X)+\mathrm{Var}(Y)+2\mathrm{Cov}(X,Y)|Variance of a sum of two variables.
+S|U|Law of total expectation|E(X)=E\big(E(X\mid Y)\big)|Averages can be taken in two steps.
+S|U|Geometric distribution|P(X=k)=(1-p)^{k-1}p|Trials until the first success.
+S|U|Exponential distribution density|f(x)=\lambda e^{-\lambda x},\ x\ge0|Waiting time between events in a Poisson process.
+S|U|Uniform distribution mean and variance|\mu=\frac{a+b}{2},\quad\sigma^2=\frac{(b-a)^2}{12}|Moments of a uniform distribution.
+S|U|Chebyshev's inequality|P(\lvert X-\mu\rvert\ge k\sigma)\le\frac{1}{k^2}|Bounds how far a variable can stray from its mean.
+S|U|Markov's inequality|P(X\ge a)\le\frac{E(X)}{a}|Tail bound for a non-negative variable.
+S|U|Central limit theorem|\bar X\ \dot\sim\ N\left(\mu,\frac{\sigma^2}{n}\right)|Sample means become normal for large n.
+S|U|Confidence interval for a mean|\bar x\pm z_{\alpha/2}\frac{\sigma}{\sqrt n}|Interval estimate when sigma is known.
+S|U|t statistic|t=\frac{\bar x-\mu_0}{s/\sqrt n}|Tests a mean when sigma is unknown.
+S|U|Chi-square statistic|\chi^2=\sum\frac{(O_i-E_i)^2}{E_i}|Compares observed and expected counts.
+S|U|Two-sample z statistic|z=\frac{\bar x_1-\bar x_2}{\sqrt{\sigma_1^2/n_1+\sigma_2^2/n_2}}|Compares two means.
+S|U|Coefficient of determination|R^2=1-\frac{SS_{\text{res}}}{SS_{\text{tot}}}|Share of variance explained by a regression.
+S|U|Least-squares intercept|\hat\beta_0=\bar y-\hat\beta_1\bar x|Intercept of the fitted line.
+S|U|Spearman rank correlation|\rho=1-\frac{6\sum d_i^2}{n(n^2-1)}|Correlation of ranks.
+S|U|ANOVA F statistic|F=\frac{MS_{\text{between}}}{MS_{\text{within}}}|Compares group means.
+S|P|Maximum likelihood estimator|\hat\theta=\arg\max_\theta\prod_{i=1}^{n}f(x_i;\theta)|Parameter value that makes the data most likely.
+S|P|Normal equations|\hat\beta=(X^{\mathsf T}X)^{-1}X^{\mathsf T}y|Least-squares solution of multiple regression.
+S|P|Fisher information|I(\theta)=-E\left[\frac{\partial^2}{\partial\theta^2}\ln f(X;\theta)\right]|Information a sample carries about a parameter.
+S|P|Cramer-Rao bound|\mathrm{Var}(\hat\theta)\ge\frac{1}{nI(\theta)}|Lowest variance of an unbiased estimator.
+S|P|Posterior distribution|p(\theta\mid x)\propto p(x\mid\theta)\,p(\theta)|Bayesian update of belief about a parameter.
+S|R|Law of large numbers|\bar X_n\to\mu\ \text{almost surely}|Sample averages converge to the mean.
+S|R|Kullback-Leibler divergence|D_{KL}(P\Vert Q)=\sum_xP(x)\ln\frac{P(x)}{Q(x)}|Distance-like measure between distributions.

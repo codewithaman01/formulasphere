@@ -1,0 +1,8 @@
+{% extends "web/base.html" %}{% block title %}My learning · FormulaSphere{% endblock %}{% block content %}
+<div class="wrap"><section>{% include "learning/_top.html" %}<h1 style="font-size:2rem">My learning</h1>
+<h2>My courses</h2>{% for e in enrollments %}<a class="card" style="margin-bottom:10px" href="{% url 'learning:course' e.course.slug %}"><h3>{{ e.course.title }}</h3><span class="tag {% if e.status == 'active' %}ok{% else %}demo{% endif %}">{{ e.get_status_display }}</span></a>
+{% empty %}<div class="empty">You have not enrolled in a course. <a href="{% url 'learning:courses' %}">Browse courses</a></div>{% endfor %}
+<h2>My upcoming live classes</h2>{% for l in upcoming %}<a class="card" style="margin-bottom:10px" href="{% url 'learning:live_detail' l.slug %}"><h3>{{ l.title }}</h3><p class="muted">{{ l.starts_at|date:"D j M Y, g:i A" }}</p></a>
+{% empty %}<div class="empty">No upcoming classes. <a href="{% url 'learning:live' %}">See live classes</a></div>{% endfor %}
+{% if enquiries %}<h2>My tuition requests</h2>{% for q in enquiries %}<div class="card" style="margin-bottom:10px"><strong>{% if q.offer %}{{ q.offer.title }}{% else %}Tuition request{% endif %}</strong> <span class="tag">{{ q.get_status_display }}</span><p class="muted">Sent {{ q.created_at|date:"j M Y" }}</p></div>{% endfor %}{% endif %}
+</section></div>{% endblock %}

@@ -1,0 +1,8 @@
+{% extends "panel/base.html" %}{% block title %}{{ title }}{% endblock %}{% block content %}
+<div class="top"><div><h1>{{ title }}</h1>{% if intro %}<div class="muted">{{ intro }}</div>{% endif %}</div>
+<div style="display:flex;gap:8px">{% if q != None and page %}<form method="get"><input type="text" name="q" value="{{ q }}" placeholder="Search" aria-label="Search" style="width:200px"></form>{% endif %}
+{% if new_url %}<a class="btn" href="{{ new_url }}">{{ new_label }}</a>{% endif %}</div></div>
+<table><thead><tr>{% for h in heads %}<th>{{ h }}</th>{% endfor %}<th></th></tr></thead><tbody>
+{% for r in rows %}<tr {% if r.muted %}style="opacity:.55"{% endif %}>{% for c in r.cells %}<td>{{ c }}</td>{% endfor %}<td class="act">{% for a in r.actions %}{% if a.2 == "post" %}<form class="inline" method="post" action="{{ a.1 }}">{% csrf_token %}<button class="link">{{ a.0 }}</button></form>{% else %}<a href="{{ a.1 }}">{{ a.0 }}</a>{% endif %}{% endfor %}</td></tr>
+{% empty %}<tr><td colspan="{{ heads|length|add:1 }}" class="muted">Nothing here yet.</td></tr>{% endfor %}</tbody></table>
+{% if page %}{% include "panel/_pager.html" %}{% endif %}{% endblock %}

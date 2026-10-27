@@ -1,0 +1,4 @@
+{% extends "web/base.html" %}{% block title %}{{ page.title }} · FormulaSphere{% endblock %}
+{% block content %}<div class="wrap"><article class="card" style="max-width:780px;margin:24px auto"><h1 style="font-size:2rem">{{ page.title }}</h1>
+{% for kind, text in blocks %}{% if kind == "h" %}<h2 style="font-size:1.25rem;margin-top:22px">{{ text }}</h2>{% else %}{{ text|linebreaks }}{% endif %}{% endfor %}
+<p class="muted" style="margin-top:24px">Last updated {{ page.updated_at|date:"j M Y" }}</p></article></div>{% endblock %}

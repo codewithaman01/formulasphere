@@ -1,0 +1,212 @@
+# Explanations for topics. Format:  @@ topic|subject code|Topic name   then the text. A blank line starts a new paragraph.
+# Loading only fills an explanation that is still empty, so anything you wrote in the panel is never replaced.
+@@ topic|M|Basic arithmetic and averages
+These are the everyday number tools: finding an average, turning a part into a percentage, working out speed, and comparing prices through profit, loss and discount. They are the base for almost all later mathematics, so slow, careful practice here pays off for years.
+@@ topic|M|Mensuration
+Mensuration is the measurement of shapes: how long the boundary is (perimeter), how much flat space is inside (area) and how much room a solid takes up (volume or surface area). Each formula comes from a simple idea, such as counting unit squares or stacking layers, and the units tell you which quantity you have: metres, square metres or cubic metres.
+@@ topic|M|Geometry
+Geometry studies the properties of shapes and angles. Facts such as the angle sum of a triangle let you find unknown angles without measuring, and they are the basis for proofs and for coordinate geometry later.
+@@ topic|M|Algebra
+Algebra uses letters for unknown or changing numbers so that one rule can describe many cases. Identities such as (a+b)^2 and the quadratic formula are shortcuts for expanding, factorising and solving, and the laws of exponents tell you how powers combine.
+@@ topic|M|Trigonometry
+Trigonometry links the angles of a triangle to the ratios of its sides. Sine, cosine and tangent let you find heights and distances, and the identities let you simplify expressions and solve equations involving angles and waves.
+@@ topic|M|Coordinate geometry
+Coordinate geometry places shapes on a grid of x and y values so that geometry problems become algebra. Distance, midpoint, slope and the equations of lines, circles and conics all come from the same idea of describing a point by two numbers.
+@@ topic|M|Sets, sequences and series
+Sets let you count and group objects exactly. Sequences are ordered lists such as arithmetic and geometric progressions, and a series is their sum. Closed formulas turn long additions into one calculation.
+@@ topic|M|Sequences and series
+A sequence follows a rule, such as adding the same number each time (arithmetic) or multiplying by the same number (geometric). The nth-term and sum formulas let you jump straight to any term or total without listing everything.
+@@ topic|M|Logarithms and interest
+Logarithms undo powers, turning multiplication into addition. They are used to solve for an exponent, for example the time needed for money to grow under compound interest, and to measure quantities that span huge ranges.
+@@ topic|M|Permutations and combinations
+These are the methods of counting arrangements and selections. Use permutations when order matters and combinations when it does not. They lead directly to the binomial theorem and to probability.
+@@ topic|M|Probability
+Probability measures how likely an event is, from 0 (impossible) to 1 (certain). The rules for complements, unions and conditional events let you handle several uncertain events together.
+@@ topic|M|Statistics for school
+These tools summarise a table of data with one number that describes its centre or spread, such as the median and mode of grouped data. They help you compare data sets quickly.
+@@ topic|M|Differential calculus
+Differentiation measures how fast something changes at a single instant, such as speed from distance. The derivative gives the slope of a curve, and a handful of rules (power, product, quotient, chain) cover nearly every function you will meet.
+@@ topic|M|Integral calculus
+Integration adds up infinitely many tiny pieces. It finds areas under curves, totals from rates and volumes of solids, and it is the reverse of differentiation by the fundamental theorem of calculus.
+@@ topic|M|Differential equations
+A differential equation links a quantity to its own rate of change, for example population growth or cooling. Solving one means finding the function itself, using methods such as integrating factors or the characteristic equation.
+@@ topic|M|Vectors and matrices
+Vectors carry both size and direction, and matrices organise numbers in rows and columns so that many equations can be handled at once. Dot and cross products, determinants and inverses are the basic operations.
+@@ topic|M|Linear algebra
+Linear algebra studies vector spaces and the maps between them. Eigenvalues, rank and decompositions explain how a matrix stretches, rotates and loses information, and they power modern data science and physics.
+@@ topic|M|Multivariable calculus
+This extends calculus to functions of several variables. The gradient points uphill, and Green, Stokes and the divergence theorem relate integrals over a region to integrals over its boundary.
+@@ topic|M|Complex numbers and series
+Complex numbers add an imaginary unit i so that every polynomial has roots. Combined with power series, they give Euler's formula and a clean way to describe waves and rotations.
+@@ topic|M|Complex analysis
+Complex analysis studies functions of a complex variable. Being complex-differentiable is a strong condition that makes contour integrals, residues and many hard real integrals manageable.
+@@ topic|M|Numerical methods
+When an exact answer is impossible or too slow, numerical methods give accurate approximations: finding roots with Newton-Raphson, estimating integrals with the trapezoid or Simpson rule, and approximating factorials.
+@@ topic|M|Number theory
+Number theory studies whole numbers and primes. Results such as Fermat's little theorem and the Euclidean algorithm underlie modern cryptography.
+@@ topic|M|Fourier analysis and variational methods
+Fourier methods break a signal into simple waves, and variational methods find functions that make a quantity as small or large as possible. Both are everywhere in physics and engineering.
+@@ topic|M|Geometry and topology
+These formulas link local geometry, such as curvature, to global properties of a shape, such as its number of holes. Euler's V - E + F = 2 is the classic example.
+@@ topic|P|Motion
+Motion describes how position changes with time. Speed, velocity and acceleration, together with the equations of motion, let you predict where an object will be and how fast it will move, including projectiles and free fall.
+@@ topic|P|Force and laws of motion
+Newton's laws connect force to motion: a net force changes velocity, forces come in equal and opposite pairs, and momentum is conserved when no outside force acts. Most mechanics problems start by drawing the forces.
+@@ topic|P|Work, energy and power
+Work is force acting through a distance and it changes energy. Kinetic and potential energy trade places while the total stays constant, and power tells you how quickly energy is transferred.
+@@ topic|P|Rotational motion
+Rotation has its own versions of mass, force and momentum: moment of inertia, torque and angular momentum. The same ideas explain spinning wheels, planets and skaters.
+@@ topic|P|Gravitation
+Every mass attracts every other. The same law explains falling apples, tides and planetary orbits, and gives the speeds needed to orbit or escape a planet.
+@@ topic|P|Fluids and pressure
+Fluids are liquids and gases. Pressure, density, buoyancy and the continuity equation explain floating, flow in pipes and why pressure rises with depth.
+@@ topic|P|Oscillations and waves
+Many systems repeat: pendulums, springs, sound and light. Period, frequency and amplitude describe the motion, and the wave speed links frequency to wavelength.
+@@ topic|P|Heat and thermodynamics
+Heat is energy that flows because of a temperature difference. These formulas cover warming a substance, changing state, expansion, gas behaviour and the limits on turning heat into work.
+@@ topic|P|Current electricity
+Electric current is the flow of charge. Ohm's law, resistance, power and Kirchhoff's rules let you analyse circuits and find the current and voltage in every part.
+@@ topic|P|Electrostatics
+Electrostatics studies charges at rest. Coulomb's law, electric field, potential and capacitance describe forces between charges and how energy is stored in electric fields.
+@@ topic|P|Electromagnetism
+Moving charges make magnetic fields, and changing magnetic fields make voltages. This topic covers forces on currents, induction, inductors, alternating current and transformers.
+@@ topic|P|Maxwell's equations
+Four equations summarise all of classical electricity and magnetism and predict that light is an electromagnetic wave travelling at a fixed speed.
+@@ topic|P|Optics
+Optics studies light. Reflection and refraction give mirror and lens formulas, while interference and diffraction show that light behaves as a wave.
+@@ topic|P|Modern physics
+Around 1900 experiments showed that light comes in quanta, atoms have discrete energy levels and nuclei decay. These formulas describe the photoelectric effect, atomic spectra and radioactivity.
+@@ topic|P|Quantum mechanics
+Quantum mechanics describes particles through wave functions. The Schrodinger equation gives allowed energies and the commutator explains why position and momentum cannot both be known exactly.
+@@ topic|P|Classical mechanics advanced
+The Lagrangian and Hamiltonian formulations restate Newton's laws using energy. They make complicated systems easier to handle and form the base of modern theoretical physics.
+@@ topic|P|Special and general relativity
+Special relativity changes how we treat space, time and energy at speeds near light. General relativity explains gravity as the curvature of spacetime.
+@@ topic|P|Statistical physics
+Statistical physics explains bulk properties such as temperature and entropy from the behaviour of huge numbers of particles, using probability distributions over energy states.
+@@ topic|P|Relativistic quantum theory
+These equations combine quantum mechanics with special relativity and describe particles such as electrons and the fields they come from.
+@@ topic|C|Mole concept
+The mole counts particles in bulk. Converting between mass, moles and number of particles is the first step of almost every chemistry calculation, including finding concentrations and gas volumes.
+@@ topic|C|Gas laws
+Gas laws connect pressure, volume, temperature and amount of gas. The ideal gas law combines them, and corrections such as van der Waals' account for real gases.
+@@ topic|C|Solutions
+A solution is a solute dissolved in a solvent. Concentration can be given as molarity, molality or mole fraction, and dissolved particles change the vapour pressure, boiling point, freezing point and osmotic pressure.
+@@ topic|C|Acids, bases and equilibrium
+Many reactions reach a balance rather than finishing. The equilibrium constant tells where the balance lies, and pH measures acidity, which is key for buffers and biological systems.
+@@ topic|C|Thermodynamics and kinetics
+Thermodynamics tells you whether a reaction can happen and how much heat it releases. Kinetics tells you how fast it goes and how temperature and concentration affect the rate.
+@@ topic|C|Electrochemistry
+Electrochemistry links chemical reactions to electricity. Cell potentials, the Nernst equation and Faraday's laws are used in batteries, electroplating and corrosion.
+@@ topic|C|Atomic structure and bonding
+These formulas describe electrons in atoms and molecules: energy levels, wavelengths, formal charge and the quantum model of a particle confined in space.
+@@ topic|C|Solid state and surfaces
+Crystals are described by unit cells, which let you find packing efficiency and density. Adsorption formulas describe how gases stick to surfaces.
+@@ topic|C|Computational chemistry
+Computers solve the quantum equations of molecules approximately. These formulas are the base of the methods used to estimate molecular energies and electron-transfer rates.
+@@ topic|S|Descriptive statistics
+Descriptive statistics summarise data with a centre (mean, median) and a spread (variance, range, interquartile range) so you can compare groups at a glance.
+@@ topic|S|Probability
+Probability gives rules for combining uncertain events: complements, unions, independence and conditional probability, which lead to Bayes' theorem.
+@@ topic|S|Probability distributions
+A distribution lists how likely each value of a random variable is. The binomial, Poisson and normal are the common models for counts and measurements.
+@@ topic|S|Random variables and bounds
+These results describe how random variables combine and how far they can stray from their mean, including the central limit theorem, which explains why the normal curve appears so often.
+@@ topic|S|Inference and regression
+Inference uses a sample to say something about a population through confidence intervals and tests. Regression fits a line to describe how one variable depends on another.
+@@ topic|S|Advanced estimation
+Likelihood and Bayesian methods estimate parameters from data and show the best accuracy any estimator can reach.
+@@ topic|CS|Number systems and data
+Computers store everything in bits. Knowing how many values n bits can hold, how signed numbers are stored and how large a file is lets you reason about memory and storage.
+@@ topic|CS|Algorithms and complexity
+Complexity tells you how the running time of an algorithm grows with the input size. Recurrences such as binary search and merge sort show why some algorithms stay fast on huge data.
+@@ topic|CS|Graphs and trees
+Graphs model networks and relationships, and trees are graphs with no cycles. Counting edges and nodes helps you size data structures and bound algorithms.
+@@ topic|CS|Networks and coding
+Data sent over a network takes time and can be damaged. These formulas give transfer time and delay, the limits of a noisy channel and the error-correcting power of codes.
+@@ topic|CS|Information theory
+Information theory measures information in bits. Entropy, channel capacity and mutual information set the limits of compression and communication.
+@@ topic|CS|Systems and performance
+These formulas estimate how fast a computer system is: the benefit of speeding up part of a program, CPU time, queues and the cost of hash table lookups.
+@@ topic|CS|Cryptography
+Public-key encryption such as RSA uses modular arithmetic: anyone can lock a message with the public key, but only the holder of the private key can unlock it.
+@@ topic|CS|Probabilistic data structures
+Some structures trade a small, known chance of error for large savings in memory. The formulas bound collision and false-positive rates.
+@@ topic|CS|Variables and data types
+A variable is a named box for a value, and its type decides what you can do with it. Understanding integers, decimals, text and true/false values is the base of all programming.
+@@ topic|CS|Conditionals
+Conditionals let a program choose what to do. An if statement runs code only when a condition is true, and else branches handle the other cases.
+@@ topic|CS|Loops
+Loops repeat code. Use a for loop when you know how many times and a while loop when you repeat until a condition changes.
+@@ topic|CS|Functions and methods
+A function packages a task under a name so you can reuse it. Parameters bring values in and a return value sends a result out, which keeps programs short and testable.
+@@ topic|CS|Lists and arrays
+Lists and arrays hold many values in order. You reach each item by its position, starting at zero, and loop over them to process whole collections.
+@@ topic|CS|Strings
+A string is a sequence of characters. Slicing, searching and formatting text are everyday tasks, and strings cannot be changed in place in Python and Java.
+@@ topic|CS|Dictionaries and maps
+A dictionary stores key and value pairs, so you can find a value by its key very quickly instead of searching a list.
+@@ topic|CS|Recursion
+A recursive function calls itself on a smaller version of the problem. It needs a base case to stop, and it suits problems such as factorials, trees and divide-and-conquer.
+@@ topic|CS|Searching and sorting
+Searching finds an item, and sorting puts items in order. Binary search needs sorted data but is far faster than checking every item.
+@@ topic|CS|Classes and objects
+A class is a blueprint and an object is one thing built from it. Objects keep data and the actions on that data together.
+@@ topic|CS|Inheritance
+Inheritance lets a new class reuse and extend an existing one. The child class gets the parent's features and can add or change behaviour.
+@@ topic|CS|Exception handling
+Exceptions are errors that happen while a program runs. Handling them with try and catch (or except) lets a program recover or fail with a clear message instead of crashing.
+@@ topic|CS|File handling
+Programs read and write files to keep data after they stop. Always close a file, or use the language's safe form, so that data is saved and the file is released.
+@@ topic|DS|Evaluation metrics
+Metrics show how good a model is. Accuracy, precision, recall and F1 suit classification, and MAE and RMSE suit predicting numbers. Pick the metric that matches the cost of each kind of mistake.
+@@ topic|DS|Regression and classification
+Regression predicts a number and classification predicts a class. Linear and logistic regression are the simplest models and the starting point for most projects.
+@@ topic|DS|Optimisation and loss
+A loss function scores a model's mistakes, and an optimiser such as gradient descent adjusts the parameters to reduce it. Regularisation keeps a model from fitting noise.
+@@ topic|DS|Clustering and distance
+Clustering groups similar items without labels. Everything depends on the distance or similarity measure, and on scaling features so that one does not dominate.
+@@ topic|DS|Trees and features
+Decision trees split data using impurity measures, and feature methods such as TF-IDF and PCA turn raw data into more useful inputs.
+@@ topic|DS|Deep learning and kernels
+Neural networks stack simple layers, and attention lets a model focus on the relevant inputs. Kernel methods such as SVMs reach complex boundaries by measuring similarity.
+@@ topic|E|Electric circuits
+Circuit analysis finds the voltage and current in every part of a circuit using resistance, capacitance, inductance and power formulas, for both direct and alternating current.
+@@ topic|E|Electronics
+Electronics shapes signals: amplifiers set gain, filters pass some frequencies and block others, and the decibel scale compares signal levels.
+@@ topic|E|Control and signals
+Control systems keep a quantity at its target using feedback. Signal processing tools such as convolution and the Fourier transform describe how systems respond to inputs.
+@@ topic|E|Mechanics of materials
+This topic tells you whether a part will break or bend. Stress, strain, torsion and bending formulas, with a safety factor, are used to size beams, shafts and columns.
+@@ topic|E|Heat transfer
+Heat moves by conduction, convection and radiation. These formulas give the rate of heat flow and how fast an object cools.
+@@ topic|E|Fluid mechanics
+Fluid mechanics predicts pressure, speed and losses in pipes and channels, which is essential for pumps, pipelines and water supply.
+@@ topic|E|Thermodynamics
+Thermodynamics sets the limits of engines and refrigerators. Efficiency and coefficient of performance compare what you get with what you pay in heat or work.
+@@ topic|B|Cell biology and physiology
+These formulas link size, diffusion and electrical signals to how cells and organs work, from microscope magnification to nerve and heart function.
+@@ topic|B|Metabolism
+Metabolism covers how cells make and use energy. The summary equations of photosynthesis and respiration, enzyme rates and binding curves describe these reactions.
+@@ topic|B|Human biology
+Simple measures such as body mass index help you judge health at a glance, but they are screening tools and not a diagnosis.
+@@ topic|B|Genetics
+Genetics studies inheritance. Allele frequencies, test statistics, linkage and heritability describe how traits pass on and change under selection.
+@@ topic|B|Ecology
+Ecology studies populations and their surroundings. Growth equations, diversity indexes and predator-prey models describe how populations change.
+@@ topic|B|Biochemistry
+Biochemistry looks at the chemistry of life. The Michaelis-Menten equation describes how fast an enzyme works as its substrate increases.
+@@ topic|Ec|Microeconomics
+Microeconomics studies the choices of consumers and firms. Costs, revenue and the MR = MC rule show how a firm chooses its output and price.
+@@ topic|Ec|Elasticity
+Elasticity measures how strongly one quantity responds to a change in another, such as price, income or the price of a related good. It tells a business and a government what to expect.
+@@ topic|Ec|Macroeconomics
+Macroeconomics looks at the whole economy: national income, inflation, unemployment, money and growth.
+@@ topic|Ec|Finance
+Finance puts a value on money across time. Present and future value, NPV and risk-return models help compare investments and loans.
+@@ topic|A|Orbits and stars
+These formulas describe how bodies move under gravity and how stars shine: orbital speed and period, energy, luminosity and stability limits.
+@@ topic|A|Distances and light
+Astronomers measure what they cannot reach by using geometry and light: parallax, angular size, brightness and magnitudes.
+@@ topic|A|Cosmology
+Cosmology studies the universe as a whole. Redshift shows that galaxies are moving apart, and the Hubble and Friedmann equations describe how fast it expands.

@@ -1,0 +1,10 @@
+{% extends "web/base.html" %}{% block title %}My submissions · FormulaSphere{% endblock %}
+{% block content %}<div class="wrap"><section><h1 style="font-size:2rem">My submissions</h1>
+{% if messages %}{% for m in messages %}<div role="status" class="card" style="margin-bottom:12px;border-color:{% if m.tags == 'error' %}var(--err){% else %}var(--ok){% endif %}">{{ m }}</div>{% endfor %}{% endif %}
+<p class="lead">Formulas you sent to FormulaSphere. A reviewer checks each one before it is published. <a class="btn" href="{% url 'submit_formula' %}">Add a formula</a></p>
+{% for f in rows %}<div class="card" style="margin-bottom:10px"><strong>{{ f.title }}</strong> <span class="tag {% if f.status == 'published' %}ok{% elif f.status == 'needs_correction' %}demo{% endif %}">{{ f.get_status_display }}</span>
+<div class="eq" data-math="{{ f.latex }}" data-display="1"></div>
+{% if f.note %}<p><strong>Reviewer's note:</strong> {{ f.note }}</p>{% endif %}
+{% if f.can_edit %}<a class="btn sec" href="{% url 'submit_edit' f.pk %}">{% if f.status == 'needs_correction' %}Fix and send again{% else %}Edit{% endif %}</a>{% endif %}
+{% if f.status == 'published' %}<a class="btn sec" href="{% url 'formula_detail' f.slug %}">Open</a>{% endif %}</div>
+{% empty %}<div class="card muted">You have not submitted a formula yet.</div>{% endfor %}</section></div>{% endblock %}

@@ -1,0 +1,9 @@
+{% extends "web/base.html" %}{% block title %}Live classes · FormulaSphere{% endblock %}{% block content %}
+<div class="wrap"><section>{% include "learning/_top.html" %}<h1 style="font-size:2rem">Live classes</h1>
+<p class="lead">Join a teacher online, ask questions and work through problems together.</p>{% include "learning/_filters.html" %}
+<h2>Coming up</h2>{% if upcoming %}<div class="grid">{% for l in upcoming %}<a class="card" href="{% url 'learning:live_detail' l.slug %}"><h3>{{ l.title }}</h3>
+<p class="muted">{{ l.starts_at|date:"D j M Y, g:i A" }} · {{ l.duration_minutes }} min{% if l.teacher_label %} · {{ l.teacher_label }}{% endif %}</p>
+<div><span class="tag">{{ l.subject.name }}</span>{% for g in l.grades.all %}<span class="tag">{{ g.name }}</span>{% endfor %}{% if l.is_full %}<span class="tag demo">Full</span>{% endif %}{% if l.pk in mine %}<span class="tag ok">Registered</span>{% endif %}</div></a>{% endfor %}</div>
+{% else %}<div class="empty">No live classes are scheduled right now.</div>{% endif %}
+{% if recent %}<h2>Recent classes</h2><div class="grid">{% for l in recent %}<a class="card" href="{% url 'learning:live_detail' l.slug %}"><h3>{{ l.title }}</h3><p class="muted">{{ l.starts_at|date:"j M Y" }}</p></a>{% endfor %}</div>{% endif %}
+</section></div>{% endblock %}

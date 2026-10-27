@@ -1,0 +1,28 @@
+# Astronomy
+A|S9|Light-year|1\ \mathrm{ly}=c\times1\ \mathrm{year}\approx9.46\times10^{15}\ \mathrm{m}|Distance light travels in a year.
+A|S12|Kepler's second law|\frac{dA}{dt}=\text{constant}|A planet sweeps equal areas in equal times.
+A|S12|Orbital speed|v=\sqrt{\frac{GM}{r}}|Speed of a circular orbit.
+A|S12|Synodic period|\frac1S=\left\lvert\frac1P_1-\frac1P_2\right\rvert|Time between repeated alignments of two bodies.
+A|U|Small-angle formula|\theta=\frac{d}{D}|Angular size from true size and distance.|\theta~Angle~\mathrm{rad};d~Size~\mathrm{m};D~Distance~\mathrm{m}
+A|U|Parallax distance|d=\frac{1}{p}|Distance in parsecs from parallax in arcseconds.
+A|U|Doppler redshift|z=\frac{\lambda_{\text{obs}}-\lambda_{\text{emit}}}{\lambda_{\text{emit}}}|Fractional shift of wavelength.
+A|U|Radial velocity from redshift|v\approx cz|Valid for small z.
+A|U|Flux and luminosity|F=\frac{L}{4\pi d^2}|Brightness falls with the square of distance.
+A|U|Apparent magnitude difference|m_1-m_2=-2.5\log_{10}\frac{F_1}{F_2}|Magnitudes from flux ratios.
+A|U|Equilibrium temperature of a planet|T=T_\star\sqrt{\frac{R_\star}{2a}}\,(1-A)^{1/4}|Temperature set by starlight and albedo.
+A|U|Orbital energy|E=-\frac{GMm}{2a}|Total energy of a bound orbit.
+A|U|Vis-viva equation|v^2=GM\left(\frac2r-\frac1a\right)|Speed at any point on an orbit.
+A|U|Orbital eccentricity|e=\sqrt{1-\frac{b^2}{a^2}}|Shape of an ellipse.
+A|U|Roche limit|d\approx2.44R\left(\frac{\rho_M}{\rho_m}\right)^{1/3}|Distance inside which a moon is torn apart.
+A|U|Hill sphere radius|r_H\approx a\left(\frac{m}{3M}\right)^{1/3}|Region where a body's gravity dominates.
+A|U|Eddington luminosity|L_{\mathrm{Edd}}=\frac{4\pi GMm_pc}{\sigma_T}|Maximum steady luminosity of a star.
+A|U|Mass-luminosity relation|\frac{L}{L_\odot}\approx\left(\frac{M}{M_\odot}\right)^{3.5}|Rough rule for main-sequence stars.
+A|U|Jeans length|\lambda_J=\sqrt{\frac{15k_BT}{4\pi G\mu\rho}}|Size above which a cloud collapses.
+A|U|Angular resolution of a telescope|\theta=1.22\frac{\lambda}{D}|Diffraction limit of an aperture D.
+A|U|Light-gathering power|\text{LGP}\propto D^2|Collected light grows with the area of the mirror.
+A|P|Friedmann equation|H^2=\frac{8\pi G}{3}\rho-\frac{kc^2}{a^2}+\frac{\Lambda}{3}|Expansion rate of the universe.
+A|P|Critical density|\rho_c=\frac{3H^2}{8\pi G}|Density for a spatially flat universe.
+A|P|Chandrasekhar mass|M_{\mathrm{Ch}}\approx1.4\,M_\odot|Upper mass limit of a white dwarf.
+A|P|Tolman-Oppenheimer-Volkoff equation|\frac{dP}{dr}=-\frac{G(\rho+P/c^2)(m+4\pi r^3P/c^2)}{r^2(1-2Gm/rc^2)}|Structure of a neutron star.
+A|R|Hubble parameter and redshift|H(z)=H_0\sqrt{\Omega_m(1+z)^3+\Omega_\Lambda}|Expansion rate in a flat universe.
+A|R|Comoving distance|D_C=c\int_0^z\frac{dz'}{H(z')}|Distance that stays fixed as the universe expands.

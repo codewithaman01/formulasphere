@@ -1,0 +1,10 @@
+{% extends "web/base.html" %}{% block title %}{{ topic.name }} · FormulaSphere{% endblock %}{% block content %}
+<div class="wrap"><section><nav class="muted"><a href="{% url 'subject' topic.subject.slug %}">{{ topic.subject.name }}</a> / {{ topic.name }}</nav>
+<h1 style="font-size:2rem">{{ topic.name }}</h1>
+{% if topic.explanation %}<div class="card" style="margin:12px 0 20px"><h2 style="margin-top:0">About this topic</h2>{{ topic.explanation|linebreaks }}</div>{% endif %}
+{% if formulas %}<h2>Formulas</h2><div class="grid">{% for f in formulas %}{% include "web/_card.html" %}{% endfor %}</div>{% endif %}
+{% if groups %}<h2>Code examples</h2>{% for g in groups %}<div class="card" style="margin-bottom:16px"><h3>{{ g.title }}</h3><p class="muted">{{ g.explanation }}</p>
+{% if g.locked %}<p>This example is part of Premium. <a href="{% url 'pricing' %}">See plans</a></p>{% else %}<div class="code2">
+{% for s in g.items %}<div><strong>{{ s.get_language_display }}</strong> <button class="btn sec" data-copy="{{ s.code }}">Copy</button><pre>{{ s.code }}</pre>
+{% if s.expected_output %}<span class="muted">Output</span><pre>{{ s.expected_output }}</pre>{% endif %}</div>{% endfor %}</div>{% endif %}</div>{% endfor %}{% endif %}
+{% if not formulas and not groups %}<div class="empty">Nothing in this topic is available for your grade yet.</div>{% endif %}</section></div>{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "panel/base.html" %}{% block title %}Students{% endblock %}{% block content %}
+<div class="top"><h1>Students</h1><form method="get" style="display:flex;gap:8px">
+<input type="text" name="q" value="{{ q }}" placeholder="Name or email" aria-label="Search" style="width:200px">
+<select name="type" onchange="this.form.submit()" aria-label="Account type"><option value="">All account types</option>{% for t in types %}<option value="{{ t.pk }}" {% if t.pk|stringformat:"s" == atype %}selected{% endif %}>{{ t.name }}</option>{% endfor %}</select>
+<select name="grade" onchange="this.form.submit()" aria-label="Grade"><option value="">All grades</option>{% for v,l in grades %}<option value="{{ v }}" {% if v == grade %}selected{% endif %}>{{ l }}</option>{% endfor %}</select></form></div>
+<table><thead><tr><th>User</th><th>Account type</th><th>Grade</th><th>Plan</th><th>Premium until</th><th></th></tr></thead><tbody>
+{% for p in page.object_list %}<tr><td>{{ p.user.username }}<br><span class="muted">{{ p.user.email }}</span></td><td>{{ p.account_type.name|default:"Student" }}</td><td>{% if not p.account_type or p.account_type.asks_grade %}{{ p.grade_label }}{% else %}—{% endif %}</td><td><span class="tag">{{ p.plan }}</span></td>
+<td>{{ p.premium_until|date:"d M Y"|default:"—" }}</td>
+<td class="act"><form class="inline" method="post" action="{% url 'panel:student_grant' p.pk %}">{% csrf_token %}<input type="hidden" name="back" value="{{ request.get_full_path }}"><button class="btn sm sec">Grant {{ grant_days }} days</button></form></td></tr>
+{% empty %}<tr><td colspan="6" class="muted">No students found.</td></tr>{% endfor %}</tbody></table>
+{% include "panel/_pager.html" %}{% endblock %}

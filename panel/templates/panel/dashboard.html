@@ -1,0 +1,19 @@
+{% extends "panel/base.html" %}{% block title %}Home{% endblock %}{% block content %}
+<h1>Hello, {{ user.username }}</h1>
+<p class="muted">{% if user.is_superuser %}You have full access.{% elif roles %}Your role{{ roles|length|pluralize }}: {{ roles|join:", " }}.{% endif %}</p>
+{% if cards %}<h2>Formulas</h2><div class="grid">{% for c in cards %}<a class="tile" href="{{ c.url }}"><b>{{ c.n }}</b><span>{{ c.label }}</span></a>{% endfor %}</div>{% endif %}
+{% if stats %}<h2>Business at a glance</h2><div class="grid">
+<div class="tile"><b>{{ stats.signups_7 }}</b><span>Sign-ups, 7 days ({{ stats.signups_30 }} in 30)</span></div>
+<div class="tile"><b>{{ stats.premium_now }}</b><span>Premium now</span></div>
+<div class="tile"><b>{{ stats.trial_now }}</b><span>In free trial ({{ stats.trial_ending }} ending in 3 days)</span></div>
+<div class="tile"><b>{{ stats.conversion }}%</b><span>Ever paid, of {{ stats.total }} accounts</span></div>
+<div class="tile"><b>{{ stats.pending_payments }}</b><span>Payments to confirm</span></div>
+<div class="tile"><b>{{ stats.demo_published }}</b><span>Published formulas still marked demo (need expert review)</span></div></div>
+<div class="grid" style="margin-top:12px">
+<div class="card"><h3>Most opened formulas (30 days)</h3>{% for r in stats.top_formulas %}<div>{{ r.n }} · {{ r.formula__title }}</div>{% empty %}<span class="muted">No views yet.</span>{% endfor %}</div>
+<div class="card"><h3>Searches that found nothing (30 days)</h3>{% for r in stats.zero_searches %}<div>{{ r.n }} · {{ r.query }}</div>{% empty %}<span class="muted">None. Good.</span>{% endfor %}<p class="muted" style="margin-bottom:0">These are formulas people want that you do not have yet.</p></div>
+<div class="card"><h3>Possible copying (last 24 hours)</h3>{% for r in stats.heavy_viewers %}<div>{{ r.n }} formulas · {{ r.user__username }}</div>{% empty %}<span class="muted">No account opened {{ stats.heavy_flag }} or more different formulas.</span>{% endfor %}</div></div>{% endif %}
+<h2>Your pages</h2>
+{% if pages %}<div class="grid">{% for p in pages %}<a class="tile" href="{{ p.url }}"><strong>{{ p.label }}</strong><br><span>{{ p.text }}</span></a>{% endfor %}</div>
+{% else %}<div class="card">Your role does not open any pages yet. Ask an administrator to update it.</div>{% endif %}
+{% endblock %}

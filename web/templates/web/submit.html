@@ -1,0 +1,18 @@
+{% extends "web/base.html" %}{% block title %}Add a formula · FormulaSphere{% endblock %}
+{% block content %}<div class="wrap"><section style="max-width:760px">
+<h1 style="font-size:2rem">{% if editing %}Fix your formula{% else %}Add a formula{% endif %}</h1>
+<p class="lead">Write the formula in LaTeX. The preview shows exactly how it will look. A reviewer checks it before it is published.</p>
+{% if note %}<div class="card" style="border-color:var(--err);margin-bottom:12px"><strong>Reviewer's note:</strong> {{ note }}</div>{% endif %}
+<style>.lx-bar{display:flex;flex-wrap:wrap;gap:4px;margin:0 0 6px}.lx-bar button{border:1px solid var(--border);background:var(--surface,#fff);color:inherit;border-radius:6px;padding:3px 9px;cursor:pointer;font:inherit;min-width:34px}.lx-prev{margin-top:6px;padding:10px 12px;border:1px dashed var(--border);border-radius:8px;overflow-x:auto;min-height:44px}.lx-prev.bad{border-color:var(--err);color:var(--err);font-size:13px}.fld{margin:0 0 14px}.fld label{display:block;font-weight:600;margin-bottom:4px}.fld input[type=text],.fld textarea,.fld select{width:100%;padding:9px;border:1px solid var(--border);border-radius:8px;font:inherit}.fld ul{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:6px 16px}.errs{color:var(--err);font-size:.9rem}</style>
+<form method="post" class="card">{% csrf_token %}
+{% for field in form %}<div class="fld">{{ field.label_tag }}{{ field }}{% if field.help_text %}<div class="muted" style="font-size:.85rem">{{ field.help_text }}</div>{% endif %}{% for e in field.errors %}<div class="errs">{{ e }}</div>{% endfor %}</div>{% endfor %}
+<button class="btn">{% if editing %}Send again for review{% else %}Send for review{% endif %}</button> <a class="btn sec" href="{% url 'my_submissions' %}">My submissions</a></form>
+<script>
+(function(){var TOOLS=[["a/b","\\frac{}{}",2],["√","\\sqrt{}",1],["xⁿ","^{}",1],["xₙ","_{}",1],["Σ","\\sum_{i=1}^{n} ",0],["∫","\\int_{a}^{b} \\, dx",0],["lim","\\lim_{x \\to 0} ",0],["∞","\\infty ",0],["±","\\pm ",0],["≤","\\leq ",0],["≥","\\geq ",0],["≠","\\neq ",0],["×","\\times ",0],["·","\\cdot ",0],["α","\\alpha ",0],["β","\\beta ",0],["θ","\\theta ",0],["π","\\pi ",0],["Δ","\\Delta ",0],["vec","\\vec{}",1]];
+ function ready(f){if(window.katex)f();else window.addEventListener('load',f)}
+ ready(function(){var el=document.getElementById('id_latex');if(!el)return;var bar=document.createElement('div');bar.className='lx-bar';
+  TOOLS.forEach(function(t){var b=document.createElement('button');b.type='button';b.textContent=t[0];b.title=t[1];b.addEventListener('click',function(){var a=el.selectionStart||0,e=el.selectionEnd||0,sel=el.value.slice(a,e),txt=t[1],back=t[2];if(sel&&txt.indexOf('{}')>-1){txt=txt.replace('{}','{'+sel+'}');back=0}el.value=el.value.slice(0,a)+txt+el.value.slice(e);var p=a+txt.length-back;el.focus();el.setSelectionRange(p,p);el.dispatchEvent(new Event('input'))});bar.append(b)});
+  el.before(bar);var box=document.createElement('div');box.className='lx-prev muted';el.after(box);
+  function r(){var v=el.value.trim();if(!v){box.className='lx-prev muted';box.textContent='Preview appears here as you type.';return}try{katex.render(v,box,{displayMode:true,throwOnError:true,trust:false});box.className='lx-prev'}catch(e){box.className='lx-prev bad';box.textContent='LaTeX problem: '+String(e.message).replace(/^KaTeX parse error:\s*/,'')}}
+  el.addEventListener('input',r);r()})})();
+</script></section></div>{% endblock %}

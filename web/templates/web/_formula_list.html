@@ -1,0 +1,2 @@
+{% for f in formulas %}<a class="card" href="{% if f.locked %}{% url 'pricing' %}{% else %}{% url 'formula_detail' f.slug %}{% endif %}" style="display:block;margin-bottom:10px;text-decoration:none;color:inherit">
+<strong>{{ f.title }}</strong>{% if f.locked %} <span class="tag demo">Premium</span>{% endif %}<br><span class="muted">{{ f.short_explanation }}</span></a>{% empty %}<div class="card muted">{{ empty }}</div>{% endfor %}

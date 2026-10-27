@@ -1,0 +1,3 @@
+<form method="get" class="filters"><select name="subject" aria-label="Subject"><option value="">Any subject</option>{% for s in subjects %}<option value="{{ s.slug }}" {% if filters.subject == s.slug %}selected{% endif %}>{{ s.name }}</option>{% endfor %}</select>
+<select name="grade" aria-label="Grade"><option value="">Any grade</option>{% for g in grades %}<option value="{{ g.slug }}" {% if filters.grade == g.slug %}selected{% endif %}>{{ g.name }}</option>{% endfor %}</select>
+<button class="btn sec">Filter</button></form>

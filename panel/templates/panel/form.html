@@ -1,0 +1,6 @@
+{% extends "panel/base.html" %}{% block title %}{{ title }}{% endblock %}{% block content %}
+<div class="top"><h1>{{ title }}</h1><a href="{{ back }}">‹ Back</a></div>
+<form method="post"{% if form.is_multipart %} enctype="multipart/form-data"{% endif %} class="card" style="max-width:720px">{% csrf_token %}
+{% if form.non_field_errors %}<div class="msg error">{{ form.non_field_errors }}</div>{% endif %}
+{% for field in form %}{% include "panel/_field.html" %}{% endfor %}
+<button class="btn">Save</button> <a class="btn sec" href="{{ back }}">Cancel</a></form>{% endblock %}

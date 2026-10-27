@@ -1,0 +1,11 @@
+{% extends "web/base.html" %}{% block title %}Practice · FormulaSphere{% endblock %}
+{% block content %}<div class="wrap"><section style="max-width:760px">
+<h1 style="font-size:2rem">Practice</h1>
+<p class="muted">{% if stats.total %}You marked {{ stats.got }} of {{ stats.total }} questions as understood ({{ stats.percent }}%). This week: {{ stats.week_got }} of {{ stats.week }}.{% else %}Try the question, then open the solution and mark how you did. Only you see your marks.{% endif %}</p>
+{% if example %}<div class="card"><p class="muted" style="margin:0">From <a href="{% url 'formula_detail' example.formula.slug %}">{{ example.formula.title }}</a> · {{ example.get_difficulty_display }}</p>
+<h2 style="margin:6px 0">{{ example.title }}</h2><p>{{ example.problem }}</p>{% if example.given %}{{ example.given|linebreaks }}{% endif %}
+<details style="margin:12px 0"><summary class="btn sec" style="display:inline-block">Show solution</summary><div style="margin-top:10px">{{ example.solution|linebreaks }}{% if example.result %}<p><strong>{{ example.result }} {{ example.units }}</strong></p>{% endif %}</div></details>
+<form method="post" action="{% url 'practice_answer' example.pk %}" style="display:flex;gap:8px;flex-wrap:wrap">{% csrf_token %}
+<button class="btn" name="got_it" value="1">I got it</button><button class="btn sec" name="got_it" value="0">Not yet</button></form></div>
+{% else %}<div class="card">No practice questions are open for your account yet. Worked examples appear here as they are added to formulas you can open.</div>{% endif %}
+</section></div>{% endblock %}

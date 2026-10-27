@@ -1,0 +1,56 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+{% if site_favicon_url %}<link rel="icon" href="{{ site_favicon_url }}"><link rel="apple-touch-icon" href="{{ site_favicon_url }}">{% else %}<link rel="icon" href="/static/web/img/favicon.svg" type="image/svg+xml"><link rel="icon" href="/static/web/img/favicon.ico" sizes="any"><link rel="apple-touch-icon" href="/static/web/img/apple-touch-icon.png">{% endif %}
+<title>{% block title %}Staff panel{% endblock %} · FormulaSphere</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<style>
+:root{--ink:#1c1b29;--mute:#6b6a7b;--line:#e3e2ec;--bg:#f6f6fb;--card:#fff;--brand:#4F46E5;--ok:#0f7b4a;--err:#b42318;--warn:#946200}
+*{box-sizing:border-box}body{margin:0;font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--bg)}
+a{color:var(--brand)}h1{font-size:1.5rem;margin:0 0 4px}h2{font-size:1.1rem;margin:24px 0 8px}
+.shell{display:grid;grid-template-columns:220px 1fr;min-height:100vh}
+aside{background:#1c1b29;color:#fff;padding:18px 12px;display:flex;flex-direction:column;gap:2px}
+aside .logo{font-weight:700;font-size:1.1rem;padding:4px 10px 14px;color:#fff;text-decoration:none}
+aside a.nav{color:#c9c8da;text-decoration:none;padding:8px 10px;border-radius:6px}
+aside a.nav:hover{background:#2c2a40;color:#fff}aside a.nav.on{background:var(--brand);color:#fff}
+aside .who{margin-top:auto;padding:10px;border-top:1px solid #34324a;font-size:13px;color:#a9a8bd}
+aside .who a,aside .who button{color:#fff;background:none;border:0;padding:0;font:inherit;cursor:pointer;text-decoration:underline}
+main{padding:28px 32px;max-width:1100px;width:100%}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+a.tile{display:block;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}
+a.tile:hover{border-color:var(--brand)}a.tile b{display:block;font-size:1.7rem;color:var(--brand)}a.tile span{color:var(--mute);font-size:13px}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}th{background:#fafafe;font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--mute)}
+tr:last-child td{border-bottom:0}td.act{white-space:nowrap;text-align:right}td.act a,td.act button{margin-left:10px}
+.btn,button.btn{display:inline-block;background:var(--brand);color:#fff;border:0;border-radius:8px;padding:9px 16px;font:inherit;font-weight:600;cursor:pointer;text-decoration:none}
+.btn.sec{background:#fff;color:var(--ink);border:1px solid var(--line)}.btn.red{background:var(--err)}.btn.sm{padding:5px 10px;font-size:13px}
+.link{background:none;border:0;color:var(--brand);cursor:pointer;font:inherit;padding:0}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px;flex-wrap:wrap}
+.muted{color:var(--mute)}.tag{display:inline-block;padding:2px 8px;border-radius:99px;background:#eeeefb;font-size:12px}
+.msg{padding:10px 14px;border-radius:8px;margin-bottom:12px;border:1px solid}.msg.success{background:#e8f6ee;border-color:#b7e2c8;color:var(--ok)}.msg.error{background:#fdecea;border-color:#f5c2bd;color:var(--err)}
+.f{margin-bottom:14px}.f label{display:block;font-weight:600;margin-bottom:4px}.f .help{color:var(--mute);font-size:13px;margin-top:3px}.f .err{color:var(--err);font-size:13px}
+input[type=text],input[type=email],input[type=password],input[type=number],input[type=url],select,textarea{width:100%;padding:9px 10px;border:1px solid #cfcee0;border-radius:8px;font:inherit;background:#fff}
+textarea{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13.5px}select[multiple]{min-height:130px}
+.checks{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:4px 14px}.checks ul{list-style:none;margin:0;padding:0;display:contents}.checks label{font-weight:400;display:flex;gap:6px;align-items:center}
+.perm{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}.perm:last-child{border:0}.perm input{margin-top:4px}.perm small{display:block;color:var(--mute)}
+.formset{border:1px solid var(--line);border-radius:10px;padding:12px;margin-bottom:12px;background:#fff}.formset .row{border-top:1px dashed var(--line);padding-top:10px;margin-top:10px}.formset .row:first-of-type{border:0;margin:0;padding:0}
+.pager{margin:14px 0;display:flex;gap:12px;align-items:center}
+form.inline{display:inline;margin:0}
+@media(max-width:800px){.shell{grid-template-columns:1fr}aside{flex-direction:row;flex-wrap:wrap}aside .who{margin:0;border:0}main{padding:18px}}
+</style></head><body>
+<div class="shell">
+<aside aria-label="Panel menu"><a class="logo" href="{% url 'panel:dashboard' %}" style="display:flex;align-items:center;gap:10px"><img src="{% if site_logo_url %}{{ site_logo_url }}{% else %}/static/web/img/logo.svg{% endif %}" alt="" width="32" height="32" style="flex:none">FormulaSphere</a>
+<a class="nav {% if request.path == '/panel/' %}on{% endif %}" href="{% url 'panel:dashboard' %}">Home</a>
+{% for m in panel_menu %}<a class="nav {% if m.active %}on{% endif %}" href="{{ m.url }}">{{ m.label }}</a>{% endfor %}
+<div class="who">{{ user.username }}<br><a href="{% url 'panel:security' %}">Two-factor</a> · <a href="{% url 'home' %}">View site</a>{% if user.is_superuser %} · <a href="{% url 'admin:index' %}">Superuser tools</a>{% endif %}
+<form method="post" action="{% url 'logout' %}" style="margin-top:6px">{% csrf_token %}<button>Sign out</button></form></div></aside>
+<main>{% for m in messages %}<div class="msg {{ m.tags }}" role="status">{{ m }}</div>{% endfor %}{% block content %}{% endblock %}</main>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded",function(){
+  document.querySelectorAll("[data-latex]").forEach(function(el){try{katex.render(el.dataset.latex,el,{throwOnError:false,trust:false,displayMode:true})}catch(e){}});
+});
+</script>
+{% block script %}{% endblock %}
+</body></html>

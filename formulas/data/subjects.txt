@@ -1,0 +1,12 @@
+# code|name|description|icon (optional)
+# The code (M, P, C...) is what the formula, topic and snippet files use. Add a line for a new subject.
+M|Mathematics|Arithmetic, algebra, geometry, trigonometry, calculus, vectors, matrices and series.|mathematics
+P|Physics|Mechanics, heat, waves, electricity, magnetism, optics, modern physics and relativity.|physics
+C|Chemistry|Mole concept, gases, solutions, equilibrium, thermodynamics, kinetics and electrochemistry.|chemistry
+S|Statistics|Descriptive statistics, probability, distributions, inference and regression.|statistics
+CS|Computer Science|Algorithms, complexity, number systems, networks, information theory and code examples in Python and Java.|computer-science
+DS|Data Science|Machine learning losses, metrics, optimisation, regularisation and linear algebra for data.|data-science
+E|Engineering|Mechanics of materials, fluids, thermodynamics, circuits, signals and control.|engineering
+B|Biology|Genetics, ecology, physiology, enzymes and population biology.|biology
+Ec|Economics|Micro and macroeconomics, finance, growth and money.|economics
+A|Astronomy|Orbits, stars, light, distances and cosmology.|astronomy

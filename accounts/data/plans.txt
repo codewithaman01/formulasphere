@@ -1,0 +1,5 @@
+# slug|name|amount|old amount (or empty)|lasts (days)|tagline|most popular (1 or 0)|what they get (separated by //)|description
+# STARTER PLANS WITH EXAMPLE AMOUNTS. They load hidden. Change the amounts to your own, then tick "Show on the Premium page" in the panel.
+monthly|Monthly|199||30|Try Premium for a month|0|Every formula for your grade, including premium ones // Derivations, worked examples and detailed explanations // Premium code examples in Python and Java|Renew when you like. No lock-in.
+quarterly|3 months|499|597|90|Best for a term or exam season|1|Everything in Monthly // Covers a full term // Lower price per month // Time to revise every chapter||
+yearly|Yearly|1499|2388|365|Best value for the whole school year|0|Everything in Monthly // A full year of access // Lowest price per month // Keeps your access while you move up a class|
